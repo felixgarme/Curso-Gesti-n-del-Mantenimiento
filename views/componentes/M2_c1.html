@@ -1,0 +1,405 @@
+<div class="curso-container">
+  <header class="curso-header">
+    <h1 class="titulo-principal">1. Introducción</h1>
+  </header>
+
+  <main class="contenido-principal">
+    <!-- Sección Objetivo -->
+    <section class="seccion-curso">
+      <div class="tarjeta-contenido">
+        <h2 class="subtitulo">Objetivo</h2>
+        <p class="texto-contenido">
+          Asegurar la eficiencia y rentabilidad de la organización.
+        </p>
+        <button class="btn-expandir" data-target="objetivo">
+          Ver más detalles
+        </button>
+        <div class="contenido-expandible" id="objetivo">
+          <p>El mantenimiento efectivo es fundamental para maximizar el retorno de inversión y garantizar operaciones sostenibles a largo plazo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Contexto Actual -->
+    <section class="seccion-curso">
+      <div class="tarjeta-contenido">
+        <h2 class="subtitulo">Contexto Actual y Relevancia</h2>
+        <p class="texto-contenido">
+          El mantenimiento ha evolucionado debido al aumento en el número, variedad y complejidad de los activos físicos, nuevos métodos de mantenimiento y cambios en la organización y sus responsabilidades.
+        </p>
+        <button class="btn-expandir" data-target="contexto">
+          Explorar evolución
+        </button>
+        <div class="contenido-expandible" id="contexto">
+          <ul class="lista-puntos">
+            <li>Mayor cantidad y diversidad de equipos</li>
+            <li>Tecnologías más sofisticadas</li>
+            <li>Metodologías innovadoras de mantenimiento</li>
+            <li>Restructuración organizacional</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Expectativas -->
+    <section class="seccion-curso">
+      <div class="tarjeta-contenido">
+        <h2 class="subtitulo">Expectativas Cambiantes</h2>
+        <p class="texto-contenido">
+          Mayor conciencia del impacto de las fallas en la seguridad y el medio ambiente, la relación entre mantenimiento y calidad del producto, y la presión por alta disponibilidad con costos controlados.
+        </p>
+        <button class="btn-expandir" data-target="expectativas">
+          Analizar tendencias
+        </button>
+        <div class="contenido-expandible" id="expectativas">
+          <div class="grid-expectativas">
+            <div class="item-expectativa">
+              <h4>Seguridad y Ambiente</h4>
+              <p>Prevención de accidentes y protección ambiental</p>
+            </div>
+            <div class="item-expectativa">
+              <h4>Calidad</h4>
+              <p>Relación directa entre mantenimiento y producto final</p>
+            </div>
+            <div class="item-expectativa">
+              <h4>Disponibilidad</h4>
+              <p>Máximo tiempo operativo con costos optimizados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Desafío -->
+    <section class="seccion-curso">
+      <div class="tarjeta-contenido destacada">
+        <h2 class="subtitulo">Desafío Actual</h2>
+        <p class="texto-contenido">
+          El personal de mantenimiento debe adoptar nuevas formas de pensar, actuando como ingenieros y gerentes, buscando una estructura estratégica coherente para evitar enfoques ineficientes.
+        </p>
+        <button class="btn-accion" data-target="desafio">
+          Estrategias de solución
+        </button>
+        <div class="contenido-expandible" id="desafio">
+          <div class="solucion-steps">
+            <div class="step">
+              <span class="numero-step">1</span>
+              <p>Mentalidad ingenieril y gerencial</p>
+            </div>
+            <div class="step">
+              <span class="numero-step">2</span>
+              <p>Estructura estratégica coherente</p>
+            </div>
+            <div class="step">
+              <span class="numero-step">3</span>
+              <p>Evitar enfoques ineficientes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel de Progreso -->
+    <div class="panel-progreso">
+      <h3>Progreso del Módulo</h3>
+      <div class="barra-progreso">
+        <div class="progreso-fill" id="barraProgreso"></div>
+      </div>
+      <span class="texto-progreso" id="textoProgreso">0% completado</span>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="navegacion-curso">
+      <button class="btn-nav btn-anterior" disabled>
+        Anterior
+      </button>
+      <button class="btn-nav btn-siguiente">
+        Siguiente Módulo
+      </button>
+    </nav>
+  </main>
+</div>
+
+<style>
+.curso-container {
+  max-width: 100%;
+  margin: 0;
+  padding: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.curso-header {
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.titulo-principal {
+  font-size: 2.5rem;
+  color: #031795;
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.contenido-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.seccion-curso {
+  margin-bottom: 10px;
+}
+
+.tarjeta-contenido {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid #e0e0e0;
+}
+
+.tarjeta-contenido:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.tarjeta-contenido.destacada {
+  border-left-color: #031795;
+  background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+}
+
+.subtitulo {
+  color: #031795;
+  font-size: 1.4rem;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.texto-contenido {
+  color: #333;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+}
+
+.btn-expandir,
+.btn-accion {
+  background: #031795;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-expandir:hover,
+.btn-accion:hover {
+  background: #022063;
+  transform: translateY(-1px);
+}
+
+.contenido-expandible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  margin-top: 10px;
+}
+
+.contenido-expandible.activo {
+  max-height: 500px;
+}
+
+.lista-puntos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-puntos li {
+  padding: 5px 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+.lista-puntos li::before {
+  content: '▶';
+  color: #031795;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.grid-expectativas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.item-expectativa {
+  background: #f8f9ff;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e0e6ff;
+}
+
+.item-expectativa h4 {
+  color: #031795;
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+}
+
+.item-expectativa p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.solucion-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  background: #f0f4ff;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.numero-step {
+  background: #031795;
+  color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+
+.panel-progreso {
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.panel-progreso h3 {
+  margin: 0 0 8px 0;
+  color: #031795;
+  font-size: 1.1rem;
+}
+
+.barra-progreso {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progreso-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #031795, #4a69bd);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.texto-progreso {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+  display: block;
+}
+
+.navegacion-curso {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.btn-nav {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  flex: 1;
+  max-width: 200px;
+}
+
+.btn-anterior {
+  background: #e0e0e0;
+  color: #666;
+}
+
+.btn-siguiente {
+  background: #031795;
+  color: white;
+}
+
+.btn-siguiente:hover {
+  background: #022063;
+}
+
+.btn-nav:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .titulo-principal {
+    font-size: 1.8rem;
+  }
+  
+  .subtitulo {
+    font-size: 1.2rem;
+  }
+  
+  .grid-expectativas {
+    grid-template-columns: 1fr;
+  }
+  
+  .navegacion-curso {
+    flex-direction: column;
+  }
+  
+  .btn-nav {
+    max-width: none;
+  }
+}
+
+@media (min-width: 1920px) {
+  .curso-container {
+    padding: 10px 5%;
+  }
+  
+  .titulo-principal {
+    font-size: 3rem;
+  }
+  
+  .contenido-principal {
+    max-width: 1400px;
+  }
+}
+</style>
+
