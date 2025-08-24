@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../assets/css/main_ex.css" />
+  <link rel="stylesheet" href="../assets/css/sidebar.css" />
+  <link rel="stylesheet" href="../assets/css/ProgressBar.css" />
+  <link rel="stylesheet" href="../assets/css/ex1.css" />
+  <link rel="stylesheet" href="../assets/css/M2/M2_s3.css" />
+
+
+  <!-- Scripts -->
+  <script src="../js/sidebar.js" defer></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <button class="back-page-btn" onclick="backPage()">
+        <span class="arrow">❮</span>
+    </button>
+    <nav id="sidebar" class="close">
+        <div id="logo-seccion">
+            <a href="">
+                <img src="../assets/images/logo_blanco.png" height="10px" alt="logo">
+            </a>
+            <button id="toggle-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                </svg>
+            </button>
+        </div>
+        <div id="barra">
+            <span id="barra-titulo"><strong>Progreso del Curso</strong></span>
+            <div id="progreso-container">
+                <div id="progreso-barra"></div>
+                <span id="progreso-texto">0%</span>
+            </div>
+        </div>
+        <div id="menu-container"></div>
+    </nav>
+
+
+  <!-- Logo inferior -->
+  <div class="logo-container"><img src="../assets/images/logo_color.png" alt="Logo AngloAmerican" class="logo" /></div>
+
+  <!-- Título principal -->
+  <!--<header><h1 class="titulo-epp" style="margin: 40px;"><span class="gradient-text2">Titulo</span></h1></header>-->
+
+  <!-- Contenido principal -->
+  <div id="info" class="container" style="margin-left: 10%; margin-right: 10%;">
+    <div class="maintenance-course-container">
+
+
+        <div class="course-header">
+            <h1 class="course-title">Gestión del Mantenimiento</h1>
+        </div>
+
+        <div class="section-tabs">
+            <button class="tab-btn active" data-section="expectativas">Nuevas Expectativas</button>
+            <button class="tab-btn" data-section="investigaciones">Nuevas Investigaciones</button>
+            <button class="tab-btn" data-section="tecnicas">Nuevas Técnicas</button>
+        </div>
+
+        <div class="progress-indicator">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div id="expectativas" class="content-section active">
+            <h2 class="section-title">Nuevas Expectativas</h2>
+            
+            <div class="content-text">
+            La evolución de las expectativas de mantenimiento ha experimentado cambios significativos que han transformado la industria. El tiempo de parada de máquina afecta directamente la capacidad de producción de los activos físicos, reduciendo la producción, aumentando los costos operacionales y comprometiendo el servicio al cliente.
+            </div>
+
+            <div class="highlight-box">
+            <div class="content-text">
+                Los efectos del tiempo de parada se han agravado por la tendencia mundial hacia sistemas 'just-in-time', donde los reducidos inventarios de material en proceso hacen que una pequeña falla en un equipo pueda detener toda la planta.
+            </div>
+            </div>
+
+            <div class="key-points">
+            <div class="key-points-title">Factores Clave de Impacto:</div>
+            <div class="key-point-item">Mayor automatización afecta los parámetros de calidad</div>
+            <div class="key-point-item">Fallas con consecuencias serias para medio ambiente y seguridad</div>
+            <div class="key-point-item">Elevados requisitos de seguridad y cuidado ambiental</div>
+            <div class="key-point-item">Dependencia crítica de la integridad de activos físicos</div>
+            </div>
+
+            <div class="summary-card">
+            <div class="summary-title">Impacto Económico</div>
+            <div class="content-text">
+                El costo de mantenimiento está aumentando tanto en términos absolutos como en proporción del gasto total. En algunas industrias representa el segundo ítem más alto, o hasta el más alto costo operativo. En sólo treinta años ha pasado de ser un costo casi sin importancia a estar en la más alta prioridad en el control de costos.
+            </div>
+            </div>
+
+            <div class="interactive-element">
+            <div class="content-text" style="color: #031794; font-weight: bold;">
+                La supervivencia organizacional depende ahora de mantener la integridad de los activos físicos más allá del simple control de costos.
+            </div>
+            </div>
+        </div>
+
+        <div id="investigaciones" class="content-section">
+            <h2 class="section-title">Nuevas Investigaciones</h2>
+            
+            <div class="content-text">
+            Las nuevas investigaciones están cambiando nuestras creencias más profundas referidas a la edad y las fallas. Parece haber cada vez menos conexión entre la edad de la mayoría de los activos y la probabilidad de que estos fallen.
+            </div>
+
+            <div class="key-points">
+            <div class="key-points-title">Evolución del Entendimiento:</div>
+            <div class="key-point-item">Primera Generación: elementos envejecidos más propensos a fallar</div>
+            <div class="key-point-item">Segunda Generación: curva de "bañera" o "bañadera"</div>
+            <div class="key-point-item">Tercera Generación: seis patrones de falla que realmente ocurren</div>
+            </div>
+
+            <div class="highlight-box">
+            <div class="content-text">
+                Un gran número de tareas que surgen de los conceptos tradicionales de mantenimiento, a pesar de que se realicen exactamente como se planeó, no logran ningún resultado, mientras que otras son contraproducentes y hasta peligrosas.
+            </div>
+            </div>
+
+            <div class="summary-card">
+            <div class="summary-title">Desafío Fundamental</div>
+            <div class="content-text">
+                La industria se enfoca en hacer las tareas de mantenimiento correctamente (hacer correctamente el trabajo), pero se necesita hacer mucho más para asegurarse que los trabajos que se planean son los trabajos que deben hacerse (hacer el trabajo correcto).
+            </div>
+            </div>
+
+            <div class="interactive-element">
+            <div class="content-text" style="color: #031794; font-weight: bold;">
+                Para operar con seguridad los sistemas industriales más modernos y complejos se necesitan realizar tareas que no figuran en los programas tradicionales de mantenimiento.
+            </div>
+            </div>
+        </div>
+
+        <div id="tecnicas" class="content-section">
+            <h2 class="section-title">Nuevas Técnicas</h2>
+            
+            <div class="content-text">
+            Ha habido un crecimiento explosivo de nuevos conceptos y técnicas de mantenimiento. Cientos de ellos han sido desarrollados en los últimos veinte años, y emergen aún más cada semana.
+            </div>
+
+            <div class="key-points">
+            <div class="key-points-title">Nuevos Desarrollos Incluyen:</div>
+            <div class="key-point-item">Herramientas de soporte para toma de decisiones: estudio de riesgo, análisis de modos de falla y efectos, sistemas expertos</div>
+            <div class="key-point-item">Nuevos métodos de mantenimiento: monitoreo de condición</div>
+            <div class="key-point-item">Diseño de equipos con mayor énfasis en confiabilidad y facilidad de mantenimiento</div>
+            <div class="key-point-item">Cambio organizacional hacia participación, trabajo en grupo y flexibilidad</div>
+            </div>
+
+            <div class="highlight-box">
+            <div class="content-text">
+                El crecimiento ha expandido desde los clásicos sistemas administrativos y de control para incluir desarrollos en múltiples áreas especializadas.
+            </div>
+            </div>
+
+            <div class="summary-card">
+            <div class="summary-title">Desafío de Selección</div>
+            <div class="content-text">
+                Uno de los mayores desafíos que enfrenta el personal de mantenimiento es no sólo aprender qué son estas técnicas sino decidir cuáles valen la pena y cuáles no para sus propias organizaciones.
+            </div>
+            </div>
+
+            <div class="interactive-element">
+            <div class="content-text" style="color: #031794; font-weight: bold;">
+                Elecciones adecuadas mejoran el rendimiento y reducen costos. Elecciones inadecuadas crean nuevos problemas mientras empeoran los existentes.
+            </div>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <button class="nav-btn" id="prevBtn" onclick="navigateSection(-1)">Anterior</button>
+            <button class="nav-btn" id="nextBtn" onclick="navigateSection(1)">Siguiente</button>
+        </div>
+
+
+    </div>
+  </div>
+
+  
+  <!-- Botón de continuar -->
+  <button class="start-button" onclick="goToNextPage()">Continuar <span class="arrow">❯</span></button>
+
+  <!--AUDIOv2-->
+  <div class="audio-control-wrapper" style="z-index: 9999;">
+      <button class="audio-toggle-btn" id="audioToggle">
+          <svg id="togglePlayIcon" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+          </svg>
+          <svg id="togglePauseIcon" viewBox="0 0 24 24" style="display: none">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+          </svg>
+      </button>
+
+      <div class="audio-controls" id="audioControls">
+          <div class="custom-audio-player">
+              <div class="audio-main-controls">
+                  <button class="control-btn volume-btn" id="volumeToggle">
+                      <svg id="volumeIcon" viewBox="0 0 24 24">
+                          <path
+                              d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+                      </svg>
+                      <svg id="muteIcon" viewBox="0 0 24 24" style="display: none">
+                          <path
+                              d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+                      </svg>
+                  </button>
+
+                  <button class="control-btn play-pause-btn" id="playPauseBtn">
+                      <svg id="playIcon" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                      </svg>
+                      <svg id="pauseIcon" viewBox="0 0 24 24" style="display: none">
+                          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                      </svg>
+                  </button>
+
+                  <button class="control-btn speed-btn" id="speedBtn">
+                      <svg viewBox="0 0 24 24">
+                          <path
+                              d="M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0-.27-10.44z" />
+                          <path
+                              d="M10.59 15.41a2 2 0 0 0 2.83 0l5.66-5.66a2 2 0 0 0-2.83-2.83L12 11.17 7.76 6.93a2 2 0 0 0-2.83 2.83l5.66 5.65z" />
+                      </svg>
+                  </button>
+              </div>
+
+              <div class="progress-container">
+                  <div class="progress-bar" id="progressBar">
+                      <div class="progress-fill" id="progressFill"></div>
+                  </div>
+                  <div class="time-display">
+                      <span id="currentTime">0:00</span>
+                      <span id="duration">0:00</span>
+                  </div>
+              </div>
+
+              <div class="volume-control">
+                  <div class="volume-slider" id="volumeSlider">
+                      <div class="volume-fill" id="volumeFill"></div>
+                  </div>
+                  <div class="speed-control">
+                      <span class="speed-display" id="speedDisplay">1x</span>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Audio element oculto -->
+          <audio id="audioPlayer" preload="metadata" autoplay>
+              <source src="../assets/audio/M3p3.wav" type="audio/mp3" />
+              Tu navegador no soporta el elemento de audio.
+          </audio>
+      </div>
+  </div>
+
+  <script src="../js/audioPlayer.js"></script>
+  <!--///////-->
+  <!-- Scripts funcionales -->
+  <script src="../js/SCORM.js"></script>
+  <script src="../js/M2/M2_j3.js"></script>
+  <script>
+    // Navegación
+    function goHome() { window.location.href = 'index.html'; }
+    function backPage() { window.location.href = 'M2_pagina2.html'; }
+    function goToNextPage() { window.location.href = 'M2_pagina4.html'; }
+
+    ScormManager.init();
+    ScormManager.guardarProgreso("M2_pagina3.html");
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const progreso = ScormManager.cargarProgreso();
+      const porcentaje = progreso.score ? parseInt(progreso.score) : 0;
+      document.getElementById("progreso-barra").style.width = porcentaje + "%";
+      document.getElementById("progreso-texto").textContent = porcentaje + "%";
+    });
+  </script>
+
+
+</body>
+</html>
