@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../assets/css/main_ex.css" />
+  <link rel="stylesheet" href="../assets/css/sidebar.css" />
+  <link rel="stylesheet" href="../assets/css/ProgressBar.css" />
+  <link rel="stylesheet" href="../assets/css/ex1.css" />
+  <link rel="stylesheet" href="../assets/css/M2/M2_s8.css" />
+
+
+  <!-- Scripts -->
+  <script src="../js/sidebar.js" defer></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <button class="back-page-btn" onclick="backPage()">
+        <span class="arrow">❮</span>
+    </button>
+    <nav id="sidebar" class="close">
+        <div id="logo-seccion">
+            <a href="">
+                <img src="../assets/images/logo_blanco.png" height="10px" alt="logo">
+            </a>
+            <button id="toggle-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                </svg>
+            </button>
+        </div>
+        <div id="barra">
+            <span id="barra-titulo"><strong>Progreso del Curso</strong></span>
+            <div id="progreso-container">
+                <div id="progreso-barra"></div>
+                <span id="progreso-texto">0%</span>
+            </div>
+        </div>
+        <div id="menu-container"></div>
+    </nav>
+
+
+  <!-- Logo inferior -->
+  <div class="logo-container"><img src="../assets/images/logo_color.png" alt="Logo AngloAmerican" class="logo" /></div>
+
+  <!-- Título principal -->
+  <!--<header><h1 class="titulo-epp" style="margin: 40px;"><span class="gradient-text2">Titulo</span></h1></header>-->
+
+  <!-- Contenido principal -->
+  <div id="info" class="container" style="margin-left: 10%; margin-right: 10%;">
+    
+    <div class="rcm-course-container" style="color: aliceblue;">
+    <header class="rcm-header">
+        <h1 class="rcm-main-title">RCM - Las 7 preguntas básicas</h1>
+        <div class="rcm-nav">
+        <button class="nav-btn active" data-section="overview">Introducción</button>
+        <button class="nav-btn" data-section="functions">Funciones</button>
+        <button class="nav-btn" data-section="parameters">Parámetros</button>
+        </div>
+    </header>
+
+    <main class="rcm-content">
+        <!-- Sección Introducción -->
+        <section id="overview" class="content-section active">
+        <div class="info-card">
+            <h2 class="section-title">El proceso de RCM</h2>
+            <p class="intro-text">El proceso de RCM formula siete preguntas acerca del activo o sistema que se intenta revisar:</p>
+        </div>
+
+        <div class="questions-grid">
+            <div class="question-card" data-question="1">
+            <div class="question-number">1</div>
+            <p>¿Cuáles son las funciones y los parámetros de funcionamiento asociados al activo en su actual contexto operacional?</p>
+            </div>
+            
+            <div class="question-card" data-question="2">
+            <div class="question-number">2</div>
+            <p>¿De qué manera falla en satisfacer dichas funciones?</p>
+            </div>
+            
+            <div class="question-card" data-question="3">
+            <div class="question-number">3</div>
+            <p>¿Cuál es la causa de cada falla funcional?</p>
+            </div>
+            
+            <div class="question-card" data-question="4">
+            <div class="question-number">4</div>
+            <p>¿Qué sucede cuando ocurre cada falla?</p>
+            </div>
+            
+            <div class="question-card" data-question="5">
+            <div class="question-number">5</div>
+            <p>¿En qué sentido es importante cada falla?</p>
+            </div>
+            
+            <div class="question-card" data-question="6">
+            <div class="question-number">6</div>
+            <p>¿Qué puede hacerse para prevenir o predecir cada falla?</p>
+            </div>
+            
+            <div class="question-card" data-question="7">
+            <div class="question-number">7</div>
+            <p>¿Qué debe hacerse si no se encuentra una tarea proactiva adecuada?</p>
+            </div>
+        </div>
+
+        <div class="management-footer">
+            <p class="page-number">Gestión del mantenimiento - 1</p>
+        </div>
+        </section>
+
+        <!-- Sección Funciones -->
+        <section id="functions" class="content-section">
+        <div class="info-card">
+            <h2 class="section-title">Funciones y parámetros de funcionamiento</h2>
+            <p class="intro-text">Antes de poder aplicar un proceso para determinar qué debe hacerse para que cualquier activo físico continúe haciendo aquello que sus usuarios quieren que haga en su contexto operacional, necesitamos hacer dos cosas:</p>
+        </div>
+
+        <div class="objectives-grid" >
+            <div class="objective-card">
+            <div class="objective-icon">1</div>
+            <p style="color: white  !important;">Determinar qué es lo que sus usuarios quieren que haga</p>
+            </div>
+            
+            <div class="objective-card">
+            <div class="objective-icon">2</div>
+            <p style="color: white  !important;">Asegurar que es capaz de realizar aquello que sus usuarios quieren que haga</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <p>Por esto el primer paso en el proceso de RCM es definir las funciones de cada activo en su contexto operacional, junto con los parámetros de funcionamiento deseados. Lo que los usuarios esperan que los activos sean capaces de hacer puede ser dividido en dos categorías:</p>
+        </div>
+
+        <div class="functions-grid">
+            <div class="function-card primary">
+            <h3 class="function-title">Funciones Primarias</h3>
+            <p>Que en primera instancia resumen el por qué de la adquisición del activo. Esta categoría de funciones cubre temas como velocidad, producción, capacidad de almacenaje o carga, calidad de producto y servicio al cliente.</p>
+            </div>
+            
+            <div class="function-card secondary">
+            <h3 class="function-title">Funciones Secundarias</h3>
+            <p>La cuál reconoce que se espera de cada activo que haga más que simplemente cubrir sus funciones primarias. Los usuarios también tienen expectativas relacionadas con las áreas de seguridad, control, contención, confort, integridad estructural, economía, protección, eficiencia operacional, cumplimiento de regulaciones ambientales, y hasta de apariencia del activo.</p>
+            </div>
+        </div>
+
+        <div class="management-footer">
+            <p class="page-number">Gestión del mantenimiento - 2</p>
+        </div>
+        </section>
+
+        <!-- Sección Parámetros -->
+        <section id="parameters" class="content-section">
+        <div class="info-card">
+            <h2 class="section-title">Consideraciones importantes</h2>
+        </div>
+
+        <div class="highlight-card">
+            <p style="color: white  !important;">Los usuarios de los activos generalmente están en la mejor posición por lejos para saber exactamente qué contribuciones físicas y financieras hace el activo para el bienestar de la organización como un todo. Por ello es esencial que estén involucrados en el proceso de RCM desde el comienzo.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+           
+            <h4>Tiempo de análisis</h4>
+            <p>Si es hecho correctamente, este paso toma alrededor de un tercio del tiempo que implica un análisis RCM completo.</p>
+            </div>
+            
+            <div class="stat-card">
+            <div class="stat-icon">📚</div>
+            <h4>Aprendizaje</h4>
+            <p>Hace que el grupo que realiza el análisis logre un aprendizaje considerable - muchas veces una cantidad alarmante - acerca de la forma en que realmente funciona el equipo.</p>
+            </div>
+        </div>
+
+        <div class="management-footer">
+            <p class="page-number">Gestión del mantenimiento - 3</p>
+        </div>
+        </section>
+    </main>
+
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+    </div>
+
+  </div>
+
+  
+  <!-- Botón de continuar -->
+  <button class="start-button" onclick="goToNextPage()">Continuar <span class="arrow">❯</span></button>
+
+  <!--AUDIOv2-->
+  <div class="audio-control-wrapper" style="z-index: 9999;">
+      <button class="audio-toggle-btn" id="audioToggle">
+          <svg id="togglePlayIcon" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+          </svg>
+          <svg id="togglePauseIcon" viewBox="0 0 24 24" style="display: none">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+          </svg>
+      </button>
+
+      <div class="audio-controls" id="audioControls">
+          <div class="custom-audio-player">
+              <div class="audio-main-controls">
+                  <button class="control-btn volume-btn" id="volumeToggle">
+                      <svg id="volumeIcon" viewBox="0 0 24 24">
+                          <path
+                              d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+                      </svg>
+                      <svg id="muteIcon" viewBox="0 0 24 24" style="display: none">
+                          <path
+                              d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+                      </svg>
+                  </button>
+
+                  <button class="control-btn play-pause-btn" id="playPauseBtn">
+                      <svg id="playIcon" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                      </svg>
+                      <svg id="pauseIcon" viewBox="0 0 24 24" style="display: none">
+                          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                      </svg>
+                  </button>
+
+                  <button class="control-btn speed-btn" id="speedBtn">
+                      <svg viewBox="0 0 24 24">
+                          <path
+                              d="M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0-.27-10.44z" />
+                          <path
+                              d="M10.59 15.41a2 2 0 0 0 2.83 0l5.66-5.66a2 2 0 0 0-2.83-2.83L12 11.17 7.76 6.93a2 2 0 0 0-2.83 2.83l5.66 5.65z" />
+                      </svg>
+                  </button>
+              </div>
+
+              <div class="progress-container">
+                  <div class="progress-bar" id="progressBar">
+                      <div class="progress-fill" id="progressFill"></div>
+                  </div>
+                  <div class="time-display">
+                      <span id="currentTime">0:00</span>
+                      <span id="duration">0:00</span>
+                  </div>
+              </div>
+
+              <div class="volume-control">
+                  <div class="volume-slider" id="volumeSlider">
+                      <div class="volume-fill" id="volumeFill"></div>
+                  </div>
+                  <div class="speed-control">
+                      <span class="speed-display" id="speedDisplay">1x</span>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Audio element oculto -->
+          <audio id="audioPlayer" preload="metadata" autoplay>
+              <source src="../assets/audio/M3p3.wav" type="audio/mp3" />
+              Tu navegador no soporta el elemento de audio.
+          </audio>
+      </div>
+  </div>
+
+  <script src="../js/audioPlayer.js"></script>
+  <!--///////-->
+  <!-- Scripts funcionales -->
+  <script src="../js/SCORM.js"></script>
+  <script src="../js/M2/M2_j8.js"></script>
+  <script>
+    // Navegación
+    function goHome() { window.location.href = 'index.html'; }
+    function backPage() { window.location.href = 'M2_pagina7.html'; }
+    function goToNextPage() { window.location.href = 'M2_pagina9.html'; }
+
+    ScormManager.init();
+    ScormManager.guardarProgreso("M2_pagina8.html");
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const progreso = ScormManager.cargarProgreso();
+      const porcentaje = progreso.score ? parseInt(progreso.score) : 0;
+      document.getElementById("progreso-barra").style.width = porcentaje + "%";
+      document.getElementById("progreso-texto").textContent = porcentaje + "%";
+    });
+  </script>
+
+
+</body>
+</html>
