@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../assets/css/main_ex.css" />
+  <link rel="stylesheet" href="../assets/css/sidebar.css" />
+  <link rel="stylesheet" href="../assets/css/ProgressBar.css" />
+  <link rel="stylesheet" href="../assets/css/ex1.css" />
+  <link rel="stylesheet" href="../assets/css/M2/M2_s11.css" />
+
+
+  <!-- Scripts -->
+  <script src="../js/sidebar.js" defer></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <button class="back-page-btn" onclick="backPage()">
+        <span class="arrow">❮</span>
+    </button>
+    <nav id="sidebar" class="close">
+        <div id="logo-seccion">
+            <a href="">
+                <img src="../assets/images/logo_blanco.png" height="10px" alt="logo">
+            </a>
+            <button id="toggle-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                </svg>
+            </button>
+        </div>
+        <div id="barra">
+            <span id="barra-titulo"><strong>Progreso del Curso</strong></span>
+            <div id="progreso-container">
+                <div id="progreso-barra"></div>
+                <span id="progreso-texto">0%</span>
+            </div>
+        </div>
+        <div id="menu-container"></div>
+    </nav>
+
+
+  <!-- Logo inferior -->
+  <div class="logo-container"><img src="../assets/images/logo_color.png" alt="Logo AngloAmerican" class="logo" /></div>
+
+  <!-- Título principal -->
+  <header><h1 class="titulo-epp" style="margin: 40px;"><span class="gradient-text2">Gestión del Mantenimiento</span></h1></header>
+
+  <!-- Contenido principal -->
+  <div id="info" class="container" style="margin-left: 10%; margin-right: 10%;">
+
+
+    <div class="curso-container">
+        <nav class="curso-nav">
+            <div class="curso-nav-buttons">
+                <button class="curso-nav-btn" id="prevBtn">← Anterior</button>
+                <button class="curso-nav-btn" id="nextBtn">Siguiente →</button>
+            </div>
+            <div class="curso-progress">
+                <div class="curso-progress-bar" id="progressBar"></div>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Slide 1: Introducción a las Consecuencias -->
+            <section class="curso-slide active" data-slide="1">
+                <div class="curso-slide-number">Gestión del mantenimiento - 42</div>
+                <h2 class="curso-slide-title">Consecuencias de falla</h2>
+                <div class="curso-content">
+                    <div class="curso-stats-box">
+                        Una empresa industrial promedio puede tener entre 3,000 y 10,000 posibles modos de falla
+                    </div>
+                    
+                    <p>Cada una de estas fallas afecta a la organización de algún modo, pero en cada caso, los efectos son diferentes. Pueden afectar operaciones. También pueden afectar a la calidad del producto, el servicio al cliente, la seguridad o el medio ambiente. Todas para ser reparadas tomarán tiempo y costarán dinero.</p>
+                    
+                    <div class="curso-highlight">
+                        <p><strong>Principio fundamental:</strong> <span class="curso-emphasis">Son estas consecuencias las que más influencian el intento de prevenir cada falla.</span> En otras palabras, si una falla tiene serias consecuencias, haremos un gran esfuerzo para intentar evitarla.</p>
+                    </div>
+                    
+                    <div class="curso-interactive-element" onclick="toggleExpand(this)">
+                        <strong>¿Por qué importan más las consecuencias? (Click para expandir)</strong>
+                        <div class="curso-expandable-content">
+                            Las consecuencias determinan el nivel de esfuerzo y recursos que debemos dedicar al mantenimiento preventivo. Una falla con consecuencias catastróficas requiere mucha más atención que una con impacto mínimo.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 2: Filosofía del RCM -->
+            <section class="curso-slide" data-slide="2">
+                <div class="curso-slide-number">Gestión del mantenimiento - 43</div>
+                <h2 class="curso-slide-title">Consecuencias de falla</h2>
+                <div class="curso-content">
+                    <p>Por otro lado, si no tiene consecuencias o tiene consecuencias leves, quizás decidamos no hacer más mantenimiento de rutina que una simple limpieza y lubricación básica.</p>
+                    
+                    <div class="curso-info-box">
+                        <p><strong>Fortaleza del RCM:</strong> Reconoce que las consecuencias de las fallas son más importantes que sus características técnicas.</p>
+                    </div>
+                    
+                    <div class="curso-highlight">
+                        <p><strong>Objetivo del mantenimiento proactivo:</strong> <span class="curso-emphasis">La única razón para hacer cualquier tipo de mantenimiento proactivo no es evitar las fallas per se sino evitar o reducir las consecuencias de las fallas.</span></p>
+                    </div>
+                    
+                    <div class="curso-interactive-element" onclick="toggleExpand(this)">
+                        <strong>Cambio de paradigma (Click para expandir)</strong>
+                        <div class="curso-expandable-content">
+                            <p>El enfoque tradicional se centra en evitar fallas técnicas. El RCM se centra en gestionar las consecuencias de esas fallas, optimizando recursos y esfuerzos donde realmente importa.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="curso-warning-box">
+                        <p><strong>El proceso de RCM clasifica estas consecuencias en cuatro grupos:</strong> Esta clasificación permite una gestión más efectiva y estratégica del mantenimiento.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Consecuencias Ocultas y de Seguridad -->
+            <section class="curso-slide" data-slide="3">
+                <div class="curso-slide-number">Gestión del mantenimiento - 44</div>
+                <h2 class="curso-slide-title">Consecuencias de falla</h2>
+                <div class="curso-content">
+                    <div class="curso-category-grid">
+                        <div class="curso-category-card" onclick="selectCategory(this, 1)">
+                            <div class="curso-category-title">Consecuencias de fallas ocultas</div>
+                            <div class="curso-category-description">
+                                Las fallas ocultas no tienen un impacto directo, pero exponen a la organización a fallas múltiples con consecuencias serias y hasta catastróficas.
+                            </div>
+                        </div>
+                        
+                        <div class="curso-category-card" onclick="selectCategory(this, 2)">
+                            <div class="curso-category-title">Consecuencias de Seguridad</div>
+                            <div class="curso-category-description">
+                                Una falla tiene consecuencias para la seguridad si es posible que cause daño o la muerte a alguna persona.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="curso-interactive-element" onclick="toggleExpand(this)">
+                        <strong>Sistemas de protección sin seguridad inherente</strong>
+                        <div class="curso-expandable-content">
+                            <p>La mayoría de las fallas ocultas están asociadas a sistemas de protección que no tienen seguridad inherente. Estos sistemas pueden fallar sin que nos demos cuenta hasta que realmente los necesitemos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="curso-info-box">
+                        <p><strong>Consecuencias ambientales:</strong> Una falla tiene consecuencias ambientales si infringe alguna normativa o reglamento ambiental tanto corporativo como regional, nacional o internacional.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Consecuencias Operacionales -->
+            <section class="curso-slide" data-slide="4">
+                <div class="curso-slide-number">Gestión del mantenimiento - 45</div>
+                <h2 class="curso-slide-title">Consecuencias de falla</h2>
+                <div class="curso-content">
+                    <div class="curso-category-card selected">
+                        <div class="curso-category-title">Consecuencias Operacionales</div>
+                        <div class="curso-category-description">
+                            Una falla tiene consecuencias operacionales si afecta la producción (cantidad, calidad del producto, atención al cliente, o costos operacionales además del costo directo de la reparación).
+                        </div>
+                    </div>
+                    
+                    <div class="curso-interactive-element" onclick="toggleExpand(this)">
+                        <strong>Impactos en la producción (Click para expandir)</strong>
+                        <div class="curso-expandable-content">
+                            <ul style="margin: 5px 0; padding-left: 20px;">
+                                <li><strong>Cantidad:</strong> Reducción en la capacidad de producción</li>
+                                <li><strong>Calidad:</strong> Productos defectuosos o fuera de especificación</li>
+                                <li><strong>Servicio al cliente:</strong> Retrasos en entregas, insatisfacción</li>
+                                <li><strong>Costos operacionales:</strong> Gastos adicionales más allá de la reparación</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="curso-highlight">
+                        <p><strong>Evaluación integral:</strong> Las consecuencias operacionales van más allá del costo directo de reparación e incluyen todos los impactos en el negocio y la operación.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Consecuencias No-Operacionales y Resumen -->
+            <section class="curso-slide" data-slide="5">
+                <div class="curso-slide-number">Gestión del mantenimiento - 45 (continuación)</div>
+                <h2 class="curso-slide-title">Consecuencias de falla</h2>
+                <div class="curso-content">
+                    <div class="curso-category-card">
+                        <div class="curso-category-title">Consecuencias No-Operacionales</div>
+                        <div class="curso-category-description">
+                            Las fallas que caen en esta categoría no afectan a la seguridad ni la producción, sólo implican el costo directo de la reparación.
+                        </div>
+                    </div>
+                    
+                    <div class="curso-info-box">
+                        <p><strong>Resumen de los cuatro tipos de consecuencias:</strong></p>
+                        <div style="margin: 8px 0;">
+                            <div style="margin: 5px 0;"><strong>1. Ocultas:</strong> Exponen a fallas múltiples catastróficas</div>
+                            <div style="margin: 5px 0;"><strong>2. Seguridad/Ambientales:</strong> Causan daño a personas o medio ambiente</div>
+                            <div style="margin: 5px 0;"><strong>3. Operacionales:</strong> Afectan producción y operación</div>
+                            <div style="margin: 5px 0;"><strong>4. No-Operacionales:</strong> Solo costo de reparación</div>
+                        </div>
+                    </div>
+                    
+                    <div class="curso-interactive-element" onclick="toggleExpand(this)">
+                        <strong>Importancia de la clasificación (Click para expandir)</strong>
+                        <div class="curso-expandable-content">
+                            <p>Esta clasificación permite priorizar esfuerzos de mantenimiento según el impacto real en la organización, asignando recursos de manera más eficiente y efectiva.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="curso-highlight">
+                        <p><strong>Principio clave:</strong> <span class="curso-emphasis">El nivel de mantenimiento debe ser proporcional a las consecuencias de la falla, no a su complejidad técnica.</span></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 5;
+        let selectedCategories = new Set();
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressBar = document.getElementById('progressBar');
+
+        function updateSlide() {
+            // Hide all slides
+            document.querySelectorAll('.curso-slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Show current slide
+            const activeSlide = document.querySelector(`[data-slide="${currentSlide}"]`);
+            if (activeSlide) {
+                activeSlide.classList.add('active');
+            }
+            
+            // Update progress bar
+            const progress = (currentSlide / totalSlides) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            // Update button states
+            prevBtn.disabled = currentSlide === 1;
+            nextBtn.disabled = currentSlide === totalSlides;
+            
+            // Update button text for last slide
+            if (currentSlide === totalSlides) {
+                nextBtn.textContent = 'Finalizar';
+            } else {
+                nextBtn.textContent = 'Siguiente →';
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlide();
+            } else {
+                alert('¡Curso completado! Has terminado el módulo sobre Consecuencias de Falla en RCM.');
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        function toggleExpand(element) {
+            const content = element.querySelector('.curso-expandable-content');
+            const isExpanded = element.classList.contains('expanded');
+            
+            if (isExpanded) {
+                element.classList.remove('expanded');
+                content.classList.remove('show');
+            } else {
+                element.classList.add('expanded');
+                content.classList.add('show');
+            }
+        }
+
+        function selectCategory(element, categoryId) {
+            const isSelected = element.classList.contains('selected');
+            
+            if (isSelected) {
+                element.classList.remove('selected');
+                selectedCategories.delete(categoryId);
+            } else {
+                element.classList.add('selected');
+                selectedCategories.add(categoryId);
+                
+                // Provide feedback
+                setTimeout(() => {
+                    element.style.borderColor = '#34C0C0';
+                    setTimeout(() => {
+                        element.style.borderColor = '#031794';
+                    }, 500);
+                }, 100);
+            }
+            
+            console.log('Categorías seleccionadas:', Array.from(selectedCategories));
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Initialize
+        updateSlide();
+
+        // Auto-save progress (simulated)
+        function saveProgress() {
+            console.log(`Progreso guardado: Slide ${currentSlide} de ${totalSlides}`);
+            console.log('Categorías exploradas:', Array.from(selectedCategories));
+        }
+
+        // Save progress every time slide changes
+        window.addEventListener('beforeunload', saveProgress);
+
+        // Touch/swipe support for mobile
+        let touchStartX = null;
+        
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            if (touchStartX === null) return;
+            
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > 50) { // Minimum swipe distance
+                if (diff > 0) {
+                    nextSlide(); // Swipe left - next slide
+                } else {
+                    prevSlide(); // Swipe right - previous slide
+                }
+            }
+            
+            touchStartX = null;
+        });
+
+        // Add visual feedback for interactions
+        function addVisualFeedback() {
+            const interactiveElements = document.querySelectorAll('.curso-interactive-element');
+            interactiveElements.forEach(element => {
+                element.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        }
+
+        // Initialize visual feedback
+        addVisualFeedback();
+
+        // Track user engagement
+        let slideTimeSpent = {};
+        let slideStartTime = Date.now();
+
+        function trackSlideTime() {
+            const timeSpent = Date.now() - slideStartTime;
+            slideTimeSpent[currentSlide - 1] = (slideTimeSpent[currentSlide - 1] || 0) + timeSpent;
+            slideStartTime = Date.now();
+        }
+
+        // Track time when changing slides
+        const originalNextSlide = nextSlide;
+        const originalPrevSlide = prevSlide;
+
+        nextSlide = function() {
+            trackSlideTime();
+            originalNextSlide();
+        };
+
+        prevSlide = function() {
+            trackSlideTime();
+            originalPrevSlide();
+        };
+    </script>
+  </div>
+
+  
+  <!-- Botón de continuar -->
+  <button class="start-button" onclick="goToNextPage()">Continuar <span class="arrow">❯</span></button>
+
+  <!--AUDIOv2-->
+  <div class="audio-control-wrapper" style="z-index: 9999;">
+      <button class="audio-toggle-btn" id="audioToggle">
+          <svg id="togglePlayIcon" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+          </svg>
+          <svg id="togglePauseIcon" viewBox="0 0 24 24" style="display: none">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+          </svg>
+      </button>
+
+      <div class="audio-controls" id="audioControls">
+          <div class="custom-audio-player">
+              <div class="audio-main-controls">
+                  <button class="control-btn volume-btn" id="volumeToggle">
+                      <svg id="volumeIcon" viewBox="0 0 24 24">
+                          <path
+                              d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+                      </svg>
+                      <svg id="muteIcon" viewBox="0 0 24 24" style="display: none">
+                          <path
+                              d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+                      </svg>
+                  </button>
+
+                  <button class="control-btn play-pause-btn" id="playPauseBtn">
+                      <svg id="playIcon" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                      </svg>
+                      <svg id="pauseIcon" viewBox="0 0 24 24" style="display: none">
+                          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                      </svg>
+                  </button>
+
+                  <button class="control-btn speed-btn" id="speedBtn">
+                      <svg viewBox="0 0 24 24">
+                          <path
+                              d="M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0-.27-10.44z" />
+                          <path
+                              d="M10.59 15.41a2 2 0 0 0 2.83 0l5.66-5.66a2 2 0 0 0-2.83-2.83L12 11.17 7.76 6.93a2 2 0 0 0-2.83 2.83l5.66 5.65z" />
+                      </svg>
+                  </button>
+              </div>
+
+              <div class="progress-container">
+                  <div class="progress-bar" id="progressBar">
+                      <div class="progress-fill" id="progressFill"></div>
+                  </div>
+                  <div class="time-display">
+                      <span id="currentTime">0:00</span>
+                      <span id="duration">0:00</span>
+                  </div>
+              </div>
+
+              <div class="volume-control">
+                  <div class="volume-slider" id="volumeSlider">
+                      <div class="volume-fill" id="volumeFill"></div>
+                  </div>
+                  <div class="speed-control">
+                      <span class="speed-display" id="speedDisplay">1x</span>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Audio element oculto -->
+          <audio id="audioPlayer" preload="metadata" autoplay>
+              <source src="../assets/audio/M3p3.wav" type="audio/mp3" />
+              Tu navegador no soporta el elemento de audio.
+          </audio>
+      </div>
+  </div>
+
+  <script src="../js/audioPlayer.js"></script>
+  <!--///////-->
+  <!-- Scripts funcionales -->
+  <script src="../js/SCORM.js"></script>
+  <script src="../js/M2/M2pg7.js"></script>
+  <script>
+    // Navegación
+    function goHome() { window.location.href = 'index.html'; }
+    function backPage() { window.location.href = 'M2_pagina10.html'; }
+    function goToNextPage() { window.location.href = 'M2_pagina12.html'; }
+
+    ScormManager.init();
+    ScormManager.guardarProgreso("M2_pagina9.html");
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const progreso = ScormManager.cargarProgreso();
+      const porcentaje = progreso.score ? parseInt(progreso.score) : 0;
+      document.getElementById("progreso-barra").style.width = porcentaje + "%";
+      document.getElementById("progreso-texto").textContent = porcentaje + "%";
+    });
+  </script>
+
+
+</body>
+</html>

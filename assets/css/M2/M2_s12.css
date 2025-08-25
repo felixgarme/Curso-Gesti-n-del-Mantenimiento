@@ -1,0 +1,332 @@
+
+.pump-exercise-container {
+  max-width: 100%;
+  margin: 0;
+  padding: 10px;
+
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.pump-exercise-header {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  border: 2px solid #DDE8F5;
+}
+
+.pump-exercise-title {
+  background: linear-gradient(90deg, #FF0000 0%, #351EBD 25%, #3479F6 75%, #1F87C6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  line-height: 1.2;
+}
+
+.pump-exercise-subtitle {
+  color: #031794;
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.pump-exercise-description {
+  color: #4D4D4E;
+  font-size: clamp(14px, 3vw, 16px);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.pump-exercise-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .pump-exercise-content {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.pump-exercise-problems {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 10px;
+  border: 2px solid #DDE8F5;
+}
+
+.pump-problem-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.pump-problem-number {
+  background: linear-gradient(90deg, #FF0000 0%, #351EBD 25%, #3479F6 75%, #1F87C6 100%);
+  color: #FFFFFF;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pump-problem-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.pump-problem-list li {
+  color: #4D4D4E;
+  font-size: clamp(13px, 2.5vw, 15px);
+  line-height: 1.5;
+  padding: 2px 0;
+}
+
+.pump-problem-list li::before {
+  content: "• ";
+  color: #031794;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.pump-exercise-instruction {
+  margin: 10px 0;
+  padding: 8px;
+  background: #E5F0F9;
+  border-radius: 6px;
+  border-left: 4px solid #031794;
+}
+
+.pump-exercise-instruction p {
+  color: #4D4D4E;
+  font-size: clamp(13px, 2.5vw, 15px);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.pump-highlight {
+  color: #031794;
+  font-weight: 600;
+}
+
+.pump-failure-modes {
+  margin-top: 10px;
+}
+
+.pump-mode-buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 480px) {
+  .pump-mode-buttons {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+.pump-mode-btn {
+  background: linear-gradient(135deg, #2A5BDF 0%, #031794 100%);
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: clamp(12px, 2vw, 14px);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.pump-mode-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(3, 23, 148, 0.3);
+}
+
+.pump-mode-btn.selected {
+  background: linear-gradient(135deg, #FF0000 0%, #351EBD 100%);
+  transform: scale(1.02);
+}
+
+.pump-mode-btn.correct {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  pointer-events: none;
+}
+
+.pump-mode-btn.incorrect {
+  background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.pump-effects-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+
+.pump-effect-card {
+  background: #FFFFFF;
+  border: 2px solid #DDE8F5;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.pump-effect-card:hover {
+  border-color: #6B8BDF;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(107, 139, 223, 0.2);
+}
+
+.pump-effect-card.highlight {
+  border-color: #031794;
+  background: #E5F0F9;
+}
+
+.pump-effect-card.correct {
+  border-color: #28a745;
+  background: #d4edda;
+}
+
+.pump-effect-card.incorrect {
+  border-color: #dc3545;
+  background: #f8d7da;
+}
+
+.pump-effect-title {
+  color: #4D4D4E;
+  font-size: clamp(12px, 2vw, 14px);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.pump-image-section {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 10px;
+  border: 2px solid #DDE8F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pump-image-container {
+  width: 100%;
+  max-width: 300px;
+}
+
+.pump-svg {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+}
+
+#impeller {
+  animation: rotate 3s linear infinite;
+  transform-origin: 150px 100px;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.pump-feedback-section {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 10px;
+  border: 2px solid #DDE8F5;
+  text-align: center;
+}
+
+.pump-score {
+  color: #031794;
+  font-size: clamp(16px, 3vw, 18px);
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.pump-feedback {
+  color: #4D4D4E;
+  font-size: clamp(13px, 2.5vw, 15px);
+  margin-bottom: 8px;
+  min-height: 20px;
+  line-height: 1.4;
+}
+
+.pump-reset-btn {
+  background: linear-gradient(135deg, #6B8BDF 0%, #031794 100%);
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: clamp(13px, 2.5vw, 15px);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.pump-reset-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(3, 23, 148, 0.3);
+}
+
+@media (max-width: 480px) {
+  .pump-exercise-container {
+    padding: 8px;
+  }
+  
+  .pump-exercise-header,
+  .pump-exercise-problems,
+  .pump-image-section,
+  .pump-feedback-section {
+    padding: 8px;
+  }
+  
+  .pump-problem-number {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+  
+  .pump-mode-btn,
+  .pump-reset-btn {
+    padding: 6px 8px;
+  }
+  
+  .pump-effect-card {
+    padding: 6px;
+    min-height: 40px;
+  }
+}

@@ -48,11 +48,152 @@
   <div class="logo-container"><img src="../assets/images/logo_color.png" alt="Logo AngloAmerican" class="logo" /></div>
 
   <!-- Título principal -->
-  <header><h1 class="titulo-epp" style="margin: 40px;"><span class="gradient-text2">Titulo</span></h1></header>
+    <header>
+        <h1 class="titulo-epp" style="margin: 40px;">
+            <span class="gradient-text2">Fallas Funcionales</span>
+            <p class="rcm-subtitle">Gestión del Mantenimiento - RCM</p>
+        </h1>
 
+    </header>
+    
   <!-- Contenido principal -->
   <div id="info" class="container" style="margin-left: 10%; margin-right: 10%;">
-    asddsadasd
+
+    <!-- Componente del Curso RCM - Fallas Funcionales -->
+    <div class="rcm-container">
+
+    <nav class="rcm-nav">
+        <button class="rcm-nav-btn active" data-slide="0">Introducción</button>
+        <button class="rcm-nav-btn" data-slide="1">Proceso RCM</button>
+        <button class="rcm-nav-btn" data-slide="2">Definición</button>
+        <button class="rcm-nav-btn" data-slide="3">Evaluación</button>
+    </nav>
+
+    <main class="rcm-content">
+        <!-- Slide 1: Introducción -->
+        <div class="rcm-slide active" data-slide="0">
+        <h2>Objetivos del Mantenimiento y Fallas</h2>
+        
+        <div class="rcm-highlight">
+            <strong>Pregunta clave:</strong> ¿Cómo puede el mantenimiento alcanzar sus objetivos?
+        </div>
+        
+        <p>Los objetivos del mantenimiento son definidos por las funciones y expectativas de funcionamiento asociadas al activo en cuestión.</p>
+        
+        <div class="rcm-definition-box">
+            <p><strong>El único hecho que puede hacer que un activo no pueda desempeñarse conforme a los parámetros requeridos por sus usuarios es alguna clase de falla.</strong></p>
+        </div>
+        
+        <p>Esto sugiere que el mantenimiento cumple sus objetivos al adoptar una política apropiada para el manejo de una falla. Sin embargo, antes de poder aplicar una combinación adecuada de herramientas para el manejo de una falla, necesitamos identificar qué fallas pueden ocurrir.</p>
+
+        <div class="rcm-interactive-element" onclick="showConcept('failure-impact')">
+            <p><strong>Haz clic para explorar:</strong> Impacto de las fallas en los activos</p>
+        </div>
+        </div>
+
+        <!-- Slide 2: Proceso RCM -->
+        <div class="rcm-slide" data-slide="1">
+        <h2>El Proceso RCM para Identificar Fallas</h2>
+        
+        <p>El proceso de RCM identifica las fallas en dos niveles específicos:</p>
+        
+        <div class="rcm-process-steps">
+            <div class="rcm-process-step">
+            <h3>Nivel 1: Identificación de Circunstancias</h3>
+            <p>En primer lugar, identifica las circunstancias que llevaron a la falla</p>
+            </div>
+            
+            <div class="rcm-process-step">
+            <h3>Nivel 2: Análisis de Eventos Causales</h3>
+            <p>Luego se pregunta qué eventos pueden causar que el activo falle</p>
+            </div>
+        </div>
+        
+        <div class="rcm-highlight">
+            <p><strong>En el mundo del RCM:</strong> Los estados de falla son conocidos como <em>fallas funcionales</em> porque ocurren cuando el activo no puede cumplir una función de acuerdo al parámetro de funcionamiento que el usuario considera aceptable.</p>
+        </div>
+
+        <div class="rcm-interactive-element" onclick="showQuiz('rcm-levels')">
+            <p><strong>Prueba tu conocimiento:</strong> Niveles del proceso RCM</p>
+        </div>
+        </div>
+
+        <!-- Slide 3: Definición de Fallas Funcionales -->
+        <div class="rcm-slide" data-slide="2">
+        <h2>Definición de Fallas Funcionales</h2>
+        
+        <div class="rcm-definition-box">
+            <p><strong>Fallas Funcionales:</strong> Estados de falla que ocurren cuando el activo no puede cumplir una función de acuerdo al parámetro de funcionamiento que el usuario considera aceptable.</p>
+        </div>
+        
+        <h3>Tipos de Fallas Funcionales</h3>
+        
+        <div class="rcm-process-steps">
+            <div class="rcm-process-step">
+            <h3>Incapacidad Total</h3>
+            <p>El activo no puede funcionar en absoluto</p>
+            </div>
+            
+            <div class="rcm-process-step">
+            <h3>Fallas Parciales</h3>
+            <p>El activo todavía funciona, pero con un nivel de desempeño inaceptable</p>
+            </div>
+        </div>
+        
+        <div class="rcm-highlight">
+            <p><strong>Incluye situaciones donde:</strong></p>
+            <p>• El activo no puede mantener los niveles de calidad requeridos</p>
+            <p>• El activo no puede mantener los niveles de precisión necesarios</p>
+        </div>
+        </div>
+
+        <!-- Slide 4: Identificación y Evaluación -->
+        <div class="rcm-slide" data-slide="3">
+        <h2>Identificación de Fallas Funcionales</h2>
+        
+        <div class="rcm-highlight">
+            <strong>Requisito previo:</strong> Las fallas funcionales solo pueden ser identificadas luego de haber definido las funciones y parámetros del activo.
+        </div>
+        
+        <h3>Pasos para la Identificación</h3>
+        
+        <div class="rcm-process-steps">
+            <div class="rcm-process-step">
+            <h3>1. Definir Funciones</h3>
+            <p>Establecer qué debe hacer el activo</p>
+            </div>
+            
+            <div class="rcm-process-step">
+            <h3>2. Establecer Parámetros</h3>
+            <p>Definir los estándares de desempeño aceptables</p>
+            </div>
+            
+            <div class="rcm-process-step">
+            <h3>3. Identificar Fallas</h3>
+            <p>Determinar cuándo el activo no cumple con las funciones definidas</p>
+            </div>
+        </div>
+
+        <div class="rcm-interactive-element" onclick="showExample('functional-failure')">
+            <p><strong>Ver ejemplo práctico:</strong> Caso de estudio de falla funcional</p>
+        </div>
+        </div>
+    </main>
+
+    <footer class="rcm-controls">
+        <button class="rcm-control-btn" id="prevBtn" onclick="changeSlide(-1)">Anterior</button>
+        
+        <div class="rcm-progress">
+        <div class="rcm-progress-bar">
+            <div class="rcm-progress-fill" id="progressFill"></div>
+        </div>
+        <span id="slideCounter">1 de 4</span>
+        </div>
+        
+        <button class="rcm-control-btn" id="nextBtn" onclick="changeSlide(1)">Siguiente</button>
+    </footer>
+    </div>
+
   </div>
 
   
@@ -140,7 +281,7 @@
     // Navegación
     function goHome() { window.location.href = 'index.html'; }
     function backPage() { window.location.href = 'M2_pagina8.html'; }
-    function goToNextPage() { window.location.href = 'M3_pagina10.html'; }
+    function goToNextPage() { window.location.href = 'M2_pagina10.html'; }
 
     ScormManager.init();
     ScormManager.guardarProgreso("M2_pagina9.html");
