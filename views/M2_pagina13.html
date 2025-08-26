@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../assets/css/sidebar.css" />
   <link rel="stylesheet" href="../assets/css/ProgressBar.css" />
   <link rel="stylesheet" href="../assets/css/ex1.css" />
-  <link rel="stylesheet" href="../assets/css/M2/M2_s12.css" />
+  <link rel="stylesheet" href="../assets/css/M2/M2_s13.css" />
 
 
   <!-- Scripts -->
@@ -51,251 +51,154 @@
   <!-- <header><h1 class="titulo-epp" style="margin: 40px;"><span class="gradient-text2">Titulo</span></h1></header> -->
 
   <!-- Contenido principal -->
-  <div id="info" class="container" style="margin-left: 10%; margin-right: 10%;">
-    <div class="pump-exercise-container">
-  <div class="pump-exercise-header">
-    <h1 class="pump-exercise-title">Ejercicio interactivo</h1>
-    <h2 class="pump-exercise-subtitle">Modos y efectos de falla</h2>
-    <p class="pump-exercise-description">En una planta minera, una bomba de pulpa presenta los siguientes problemas:</p>
-  </div>
-
-  <div class="pump-exercise-content">
-    <div class="pump-exercise-problems">
-      <div class="pump-problem-item">
-        <div class="pump-problem-number">1</div>
-        <ul class="pump-problem-list">
-          <li>Desgaste prematuro del impulsor.</li>
-          <li>Fugas en el sello mecánico.</li>
-          <li>Vibraciones excesivas en el motor acoplado.</li>
-        </ul>
-      </div>
-      
-      <div class="pump-exercise-instruction">
-        <p>Relaciona cada <span class="pump-highlight">modo de falla</span> con su posible <span class="pump-highlight">efecto en la operación</span>.</p>
-      </div>
-
-      <div class="pump-failure-modes">
-        <div class="pump-mode-buttons">
-          <button class="pump-mode-btn" data-mode="impulsor">Desgaste del impulsor</button>
-          <button class="pump-mode-btn" data-mode="sello">Fuga en el sello mecánico</button>
-          <button class="pump-mode-btn" data-mode="vibracion">Vibración en motor</button>
+    
+    <!-- Componente del ejercicio -->
+    <div class="ejercicio-container">
+      <div class="ejercicio-content">
+        <div class="header">
+          <h1 class="titulo-principal">Ejercicio interactivo</h1>
+          <h2 class="subtitulo">Modos y efectos de falla</h2>
         </div>
-
-        <div class="pump-effects-container">
-          <div class="pump-effect-card" data-effect="impulsor">
-            <div class="pump-effect-title">Parada de la línea de transporte de pulpa por sobrecalentamiento</div>
+        
+        <div class="content-wrapper">
+          <div class="pregunta-section">
+            <div class="info-box">
+              <p>Durante la operación de un espesador de relaves, se presenta una falla en el sistema de transmisión (engranajes). El equipo se detiene y genera riesgo de desborde de relaves.</p>
+              <p class="pregunta"><strong>Según el RCM, ¿qué tipo de consecuencia de falla aplica en este caso?</strong></p>
+            </div>
+            
+            <div class="opciones-container">
+              <button class="opcion-btn" data-opcion="operacional">Operacional</button>
+              <button class="opcion-btn" data-opcion="ambiental">Ambiental y de seguridad</button>
+              <button class="opcion-btn" data-opcion="no-operacional">No operacional</button>
+              <button class="opcion-btn" data-opcion="oculta">Oculta</button>
+            </div>
+            
+            <div class="verificar-container">
+              <button class="verificar-btn" id="verificarBtn" disabled>Verificar respuesta</button>
+            </div>
+            
+            <div class="feedback" id="feedback" style="display: none;">
+              <div class="feedback-content">
+                <div class="feedback-icon">✓</div>
+                <div class="feedback-text">
+                  <h3>¡Correcto!</h3>
+                  <p>Has seleccionado <strong>Operacional</strong> y <strong>Ambiental y de seguridad</strong>. Esta falla tiene consecuencias operacionales porque detiene el proceso, y también ambientales/de seguridad debido al riesgo de desborde de relaves.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="feedback error" id="feedback-error" style="display: none;">
+              <div class="feedback-content">
+                <div class="feedback-icon error">✗</div>
+                <div class="feedback-text">
+                  <h3>Incorrecto</h3>
+                  <p>La respuesta correcta incluye tanto <strong>Operacional</strong> como <strong>Ambiental y de seguridad</strong>. Esta falla afecta la operación del equipo y también genera riesgos ambientales por el posible desborde.</p>
+                </div>
+              </div>
+            </div>
           </div>
           
-          <div class="pump-effect-card" data-effect="sello">
-            <div class="pump-effect-title">Pérdida de eficiencia hidráulica y menor caudal de bombeo</div>
-          </div>
-          
-          <div class="pump-effect-card" data-effect="vibracion">
-            <div class="pump-effect-title">Riesgo de contaminación ambiental por derrame de pulpa</div>
+          <div class="componente-derecho">
+            <iframe src="./componentes/Ex3d/Ex3d.html" frameborder="0" width="100%" height="100%"></iframe>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="pump-image-section">
-      <div class="pump-image-container">
-        <svg class="pump-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-          <!-- Cuerpo principal de la bomba -->
-          <ellipse cx="150" cy="100" rx="80" ry="50" fill="url(#pumpGradient)" stroke="#031794" stroke-width="3"/>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const opciones = document.querySelectorAll('.opcion-btn');
+      const verificarBtn = document.getElementById('verificarBtn');
+      const feedback = document.getElementById('feedback');
+      const feedbackError = document.getElementById('feedback-error');
+      let opcionesSeleccionadas = new Set();
+      
+      const respuestasCorrectas = new Set(['operacional', 'ambiental']);
+      
+      opciones.forEach(opcion => {
+        opcion.addEventListener('click', function() {
+          if (this.disabled) return;
           
-          <!-- Impulsor central -->
-          <circle cx="150" cy="100" r="25" fill="#031794" stroke="#FF0000" stroke-width="2"/>
+          const valorOpcion = this.dataset.opcion;
           
-          <!-- Aspas del impulsor -->
-          <g id="impeller">
-            <path d="M 150,85 Q 165,95 150,105 Q 135,95 150,85" fill="#FFFFFF" opacity="0.8"/>
-            <path d="M 165,100 Q 155,115 145,100 Q 155,85 165,100" fill="#FFFFFF" opacity="0.8"/>
-            <path d="M 150,115 Q 135,105 150,95 Q 165,105 150,115" fill="#FFFFFF" opacity="0.8"/>
-            <path d="M 135,100 Q 145,85 155,100 Q 145,115 135,100" fill="#FFFFFF" opacity="0.8"/>
-          </g>
+          if (this.classList.contains('selected')) {
+            // Deseleccionar
+            this.classList.remove('selected');
+            opcionesSeleccionadas.delete(valorOpcion);
+          } else {
+            // Seleccionar
+            this.classList.add('selected');
+            opcionesSeleccionadas.add(valorOpcion);
+          }
           
-          <!-- Entrada -->
-          <rect x="70" y="90" width="30" height="20" fill="#2A5BDF" stroke="#031794" stroke-width="2"/>
-          <text x="85" y="84" font-size="10" fill="red" text-anchor="middle">Entrada</text>
+          // Habilitar/deshabilitar botón verificar
+          verificarBtn.disabled = opcionesSeleccionadas.size === 0;
           
-          <!-- Salida -->
-          <rect x="200" y="90" width="30" height="20" fill="#2A5BDF" stroke="#031794" stroke-width="2"/>
-          <text x="215" y="84" font-size="10" fill="red" text-anchor="middle" font-weight="bold">Salida</text>
-
-          <!-- Motor -->
-          <rect x="120" y="40" width="60" height="30" rx="5" fill="#031794" stroke="#FF0000" stroke-width="2"/>
-          <text x="150" y="30" font-size="12" fill="#031794" text-anchor="middle" font-weight="bold">Motor</text>
-
-          <!-- Sello mecánico -->
-          <circle cx="150" cy="75" r="8" fill="#FF0000" stroke="#031794" stroke-width="2"/>
-          <text x="150" y="65" font-size="8" fill="#031794" text-anchor="middle">Sello</text>
+          // Ocultar feedback previo
+          feedback.style.display = 'none';
+          feedbackError.style.display = 'none';
+        });
+      });
+      
+      verificarBtn.addEventListener('click', function() {
+        // Verificar si las respuestas coinciden exactamente
+        const esCorrecta = opcionesSeleccionadas.size === respuestasCorrectas.size &&
+                          [...opcionesSeleccionadas].every(opcion => respuestasCorrectas.has(opcion));
+        
+        // Marcar opciones como correctas o incorrectas
+        opciones.forEach(opcion => {
+          const valorOpcion = opcion.dataset.opcion;
           
-          <!-- Base -->
-          <rect x="100" y="150" width="100" height="15" rx="5" fill="#6B8BDF" stroke="#031794" stroke-width="1"/>
+          if (opcion.classList.contains('selected')) {
+            if (respuestasCorrectas.has(valorOpcion)) {
+              opcion.classList.add('correcta');
+              opcion.classList.remove('incorrecta');
+            } else {
+              opcion.classList.add('incorrecta');
+              opcion.classList.remove('correcta');
+            }
+          }
           
-          <!-- Definir gradiente -->
-          <defs>
-            <linearGradient id="pumpGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:#031794;stop-opacity:1" />
-              <stop offset="50%" style="stop-color:#2A5BDF;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#34C0C0;stop-opacity:1" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-    </div>
-  </div>
-
-  <div class="pump-feedback-section">
-    <div class="pump-score">Aciertos: <span id="pump-score">0</span>/3</div>
-    <div class="pump-feedback" id="pump-feedback"></div>
-    <button class="pump-reset-btn" id="pump-reset">Reiniciar ejercicio</button>
-  </div>
-</div>
-
-
-
-<script>
-(function() {
-  'use strict';
-  
-  const correctMatches = {
-    'impulsor': 'sello',
-    'sello': 'vibracion', 
-    'vibracion': 'impulsor'
-  };
-  
-  let selectedMode = null;
-  let score = 0;
-  let attempts = {};
-  
-  const modeButtons = document.querySelectorAll('.pump-mode-btn');
-  const effectCards = document.querySelectorAll('.pump-effect-card');
-  const scoreElement = document.getElementById('pump-score');
-  const feedbackElement = document.getElementById('pump-feedback');
-  const resetButton = document.getElementById('pump-reset');
-  
-  function initializeExercise() {
-    modeButtons.forEach(button => {
-      button.addEventListener('click', handleModeSelection);
+          // Deshabilitar todas las opciones
+          opcion.disabled = true;
+        });
+        
+        // Mostrar feedback
+        if (esCorrecta) {
+          setTimeout(() => {
+            feedback.style.display = 'block';
+            feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 300);
+        } else {
+          setTimeout(() => {
+            feedbackError.style.display = 'block';
+            feedbackError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 300);
+        }
+        
+        // Deshabilitar botón verificar
+        this.disabled = true;
+      });
+      
+      // Efectos hover
+      opciones.forEach(opcion => {
+        opcion.addEventListener('mouseenter', function() {
+          if (!this.disabled && !this.classList.contains('selected')) {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 4px 12px rgba(3, 23, 148, 0.1)';
+          }
+        });
+        
+        opcion.addEventListener('mouseleave', function() {
+          if (!this.classList.contains('selected')) {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
+          }
+        });
+      });
     });
-    
-    effectCards.forEach(card => {
-      card.addEventListener('click', handleEffectSelection);
-    });
-    
-    resetButton.addEventListener('click', resetExercise);
-    
-    updateScore();
-  }
-  
-  function handleModeSelection(event) {
-    const button = event.target;
-    const mode = button.dataset.mode;
-    
-    if (button.classList.contains('correct')) {
-      return;
-    }
-    
-    modeButtons.forEach(btn => btn.classList.remove('selected'));
-    button.classList.add('selected');
-    selectedMode = mode;
-    
-    effectCards.forEach(card => card.classList.remove('highlight'));
-    
-    showFeedback('Selecciona el efecto correspondiente a este modo de falla.');
-  }
-  
-  function handleEffectSelection(event) {
-    if (!selectedMode) {
-      showFeedback('Primero selecciona un modo de falla.');
-      return;
-    }
-    
-    const card = event.target.closest('.pump-effect-card');
-    const effect = card.dataset.effect;
-    const selectedButton = document.querySelector(`[data-mode="${selectedMode}"]`);
-    
-    if (selectedButton.classList.contains('correct')) {
-      return;
-    }
-    
-    const isCorrect = correctMatches[selectedMode] === effect;
-    
-    if (isCorrect) {
-      selectedButton.classList.add('correct');
-      selectedButton.classList.remove('selected', 'incorrect');
-      card.classList.add('correct');
-      card.classList.remove('highlight', 'incorrect');
-      
-      score++;
-      attempts[selectedMode] = true;
-      
-      showFeedback('¡Correcto! Has relacionado correctamente el modo de falla con su efecto.');
-      
-      if (score === 3) {
-        setTimeout(() => {
-          showFeedback('¡Excelente! Has completado el ejercicio correctamente. Todas las relaciones son correctas.');
-        }, 1000);
-      }
-    } else {
-      selectedButton.classList.add('incorrect');
-      card.classList.add('incorrect');
-      
-      setTimeout(() => {
-        selectedButton.classList.remove('incorrect');
-        card.classList.remove('incorrect');
-      }, 1000);
-      
-      showFeedback('Incorrecto. Intenta nuevamente. Piensa en las consecuencias directas de cada modo de falla.');
-    }
-    
-    selectedMode = null;
-    modeButtons.forEach(btn => btn.classList.remove('selected'));
-    
-    updateScore();
-  }
-  
-  function showFeedback(message) {
-    feedbackElement.textContent = message;
-    feedbackElement.style.opacity = '0';
-    setTimeout(() => {
-      feedbackElement.style.opacity = '1';
-    }, 100);
-  }
-  
-  function updateScore() {
-    scoreElement.textContent = score;
-  }
-  
-  function resetExercise() {
-    score = 0;
-    selectedMode = null;
-    attempts = {};
-    
-    modeButtons.forEach(button => {
-      button.classList.remove('selected', 'correct', 'incorrect');
-    });
-    
-    effectCards.forEach(card => {
-      card.classList.remove('highlight', 'correct', 'incorrect');
-    });
-    
-    updateScore();
-    showFeedback('Ejercicio reiniciado. Selecciona un modo de falla para comenzar.');
-  }
-  
-  document.addEventListener('DOMContentLoaded', initializeExercise);
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeExercise);
-  } else {
-    initializeExercise();
-  }
-})();
-</script>
-  </div>
-
+    </script>
   
   <!-- Botón de continuar -->
   <button class="start-button" onclick="goToNextPage()">Continuar <span class="arrow">❯</span></button>
