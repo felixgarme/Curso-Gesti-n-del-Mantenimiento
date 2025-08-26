@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 7%;
  
 }
 
@@ -277,6 +278,7 @@
     padding: 20px;
     height: auto;
     min-height: 90vh;
+    margin-bottom: 9%;
   }
   
   .componente-derecho {
