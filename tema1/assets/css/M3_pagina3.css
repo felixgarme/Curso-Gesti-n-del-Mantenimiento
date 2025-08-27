@@ -111,4 +111,501 @@ body {
 }
 
 /*ESTILOS DE INTERACTIVO*/
+:root {
+    --primary-color: #031795; 
+    --secondary-color: #2575fc; 
+    --text-color: #333;
+    --light-gray: #f0f0f0;
+    --dark-gray: #888;
+    --white: #ffffff;
+    --box-shadow-neumorphic-light: 8px 8px 16px rgba(174, 174, 192, 0.4),
+                                    -8px -8px 16px rgba(255, 255, 255, 0.8);
+    --box-shadow-neumorphic-dark: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+                                   inset -5px -5px 10px rgba(255, 255, 255, 0.7);
+    --border-radius-lg: 20px;
+    --border-radius-md: 12px;
+    --transition-speed: 0.3s ease-in-out;
+}
 
+/* Estilos globales para el componente */
+.brainstorm-component {
+    --font-family: 'AA Smart Sans', Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden; /* Para animaciones de fondo */
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--box-shadow-neumorphic-light);
+    max-width: 1400px;
+    margin: 40px auto;
+    font-family: var(--font-family);
+    line-height: 1.6;
+    transition: all var(--transition-speed);
+    
+}
+
+.brainstorm-component::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    opacity: 0.05; /* Fondo de degradado sutil */
+    z-index: -1;
+    animation: backgroundShift 20s infinite alternate linear;
+    border-radius: var(--border-radius-lg);
+}
+
+@keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+h1 { font-size: 2.5em; margin-top: 20px; }
+h2 { font-size: 2em; border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; display: inline-block; }
+h3 { font-size: 1.6em; }
+
+p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+    padding-left: 25px;
+    position: relative;
+}
+
+ul li::before {
+    content: '💡'; 
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1.2em;
+}
+
+/* Contenedores de secciones */
+.section {
+    background-color: var(--white);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-neumorphic-light);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+}
+
+.section:hover {
+    transform: translateY(-5px) scale(1.005);
+    box-shadow: 12px 12px 24px rgba(174, 174, 192, 0.6),
+                -12px -12px 24px rgba(255, 255, 255, 1);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-header h2 {
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    transition: color var(--transition-speed);
+}
+
+.section-header:hover h2 {
+    color: var(--secondary-color);
+}
+
+.toggle-icon {
+    font-size: 1.8em;
+    margin-left: 15px;
+    color: var(--primary-color);
+    transition: transform var(--transition-speed);
+}
+
+.section.active .toggle-icon {
+    transform: rotate(90deg);
+}
+
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+}
+
+.section.active .section-content {
+    max-height: 2000px; /* Aumentado para asegurar que el contenido no se corte */
+    opacity: 1;
+}
+
+/* Estilo para la imagen del brainstorming */
+.brainstorm-image-container {
+    text-align: center;
+    margin-bottom: 30px;
+    perspective: 1000px; /* Para efecto 3D falso */
+}
+
+.brainstorm-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-neumorphic-light);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease-in-out;
+    display: block;
+    margin: 0 auto;
+}
+
+.brainstorm-image:hover {
+    transform: rotateY(10deg) rotateX(5deg) scale(1.02);
+    filter: brightness(1.1);
+}
+
+/* Elementos interactivos */
+.interactive-quiz {
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    padding: 25px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-neumorphic-dark);
+    margin-top: 20px;
+}
+
+.quiz-question {
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.quiz-options label {
+    display: block;
+    background-color: var(--white);
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius-md);
+    box-shadow: 4px 4px 8px rgba(174, 174, 192, 0.2),
+                -4px -4px 8px rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    display: flex;
+    align-items: center;
+}
+
+.quiz-options label:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 12px rgba(174, 174, 192, 0.3),
+                -6px -6px 12px rgba(255, 255, 255, 0.9);
+}
+
+.quiz-options input[type="radio"] {
+    margin-right: 10px;
+    accent-color: var(--secondary-color);
+}
+
+.quiz-feedback {
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+.quiz-feedback.correct {
+    color: green;
+}
+
+.quiz-feedback.incorrect {
+    color: red;
+}
+
+.check-button {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+    transition: all var(--transition-speed);
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+}
+
+.check-button:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    filter: brightness(1.1);
+}
+
+.check-button:active {
+    transform: translateY(1px);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Microinteracciones para elementos de lista */
+.rule-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-neumorphic-light);
+    transition: all var(--transition-speed);
+    overflow: hidden; /* Para el efecto de degradado animado */
+    position: relative;
+    cursor: pointer;
+}
+
+.rule-item:hover {
+    transform: translateX(5px);
+    box-shadow: 6px 6px 12px rgba(174, 174, 192, 0.3),
+                -6px -6px 12px rgba(255, 255, 255, 0.9);
+}
+
+.rule-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(var(--primary-color), 0.1), transparent);
+    transition: left 0.7s ease-in-out;
+    z-index: 0;
+}
+
+.rule-item:hover::before {
+    left: 100%;
+}
+
+.rule-icon {
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: var(--secondary-color);
+    transition: transform 0.4s ease-out;
+    z-index: 1;
+}
+
+.rule-item:hover .rule-icon {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.rule-text {
+    flex-grow: 1;
+    z-index: 1;
+}
+
+.rules-container {
+    display: grid;
+    /* Crea columnas responsivas: tantas columnas de 300px como quepan, si no, se envuelven */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px; /* Espaciado entre las reglas */
+    margin-top: 30px;
+}
+
+/* Animación de fondo para secciones específicas */
+.definition-section::after {
+    content: '💭';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    font-size: 150px;
+    opacity: 0.05;
+    z-index: 0;
+    animation: floatingIcon 15s infinite ease-in-out alternate;
+}
+
+.how-to-section::after {
+    content: '✅';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-size: 100px;
+    opacity: 0.03;
+    z-index: 0;
+    animation: floatingIcon 12s infinite reverse ease-in-out;
+}
+
+@keyframes floatingIcon {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(10px, -10px) rotate(5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Contenedor de escenarios de uso (ahora es una cuadrícula responsiva) */
+.scroll-container {
+    display: grid;
+    /* Crea columnas flexibles. Cada columna tendrá un mínimo de 250px y crecerá para ocupar el espacio. Se ajustarán automáticamente. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Espacio entre los elementos */
+    padding: 15px 0;
+}
+
+.scroll-item {
+    /* Las propiedades de ancho y margen ya no son necesarias gracias a grid */
+    padding: 20px;
+    background: linear-gradient(145deg, var(--white), var(--light-gray));
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-neumorphic-light);
+    transition: transform var(--transition-speed);
+    white-space: normal; /* Permite que el texto dentro del item se ajuste */
+}
+
+.scroll-item:hover {
+    transform: translateY(-8px);
+}
+
+.scroll-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Animación isométrica para lista de precauciones */
+.isometric-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    perspective: 800px;
+}
+
+.isometric-item {
+    background: linear-gradient(135deg, var(--white), var(--light-gray));
+    padding: 20px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-neumorphic-light);
+    transform: rotateX(5deg) rotateY(-5deg); /* Inclinación inicial */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    width: calc(50% - 10px); /* Dos columnas */
+    max-width: 300px;
+    position: relative;
+    z-index: 1;
+}
+
+.isometric-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: var(--border-radius-md);
+    z-index: -1;
+}
+
+.isometric-item:hover {
+    transform: rotateX(0deg) rotateY(0deg) scale(1.05); /* Endereza y agranda */
+    box-shadow: 15px 15px 30px rgba(174, 174, 192, 0.8),
+                -15px -15px 30px rgba(255, 255, 255, 1.2);
+    z-index: 2; /* Para que se vea encima al hacer hover */
+}
+
+.isometric-item:hover::before {
+    opacity: 0.1; /* Revela el degradado sutil */
+}
+
+.isometric-item p {
+    margin-bottom: 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.6em; }
+    h3 { font-size: 1.3em; }
+
+    .section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .brainstorm-image {
+        max-width: 100%;
+    }
+
+    .quiz-question {
+        font-size: 1.1em;
+    }
+
+    .rule-item {
+        padding: 10px;
+    }
+
+    .rule-icon {
+        font-size: 1.3em;
+        margin-right: 10px;
+    }
+
+    .scroll-item {
+        width: 250px;
+        margin-right: 15px;
+    }
+
+    .isometric-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .brainstorm-component {
+        padding: 10px;
+    }
+
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .toggle-icon {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .quiz-options label {
+        font-size: 0.9em;
+        padding: 10px 12px;
+    }
+
+    .check-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .rule-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .rule-icon {
+        margin-bottom: 8px;
+    }
+  }
