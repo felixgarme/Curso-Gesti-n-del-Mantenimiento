@@ -1,0 +1,283 @@
+body {
+  background-color: #ffffff;
+  color: var(--color-gris);
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo responsive */
+.logo-container {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: clamp(150px, 15vw, 200px);
+  margin: 3vh 3vh;
+}
+
+.container {
+  margin: auto;
+}
+
+/* Hero Section */
+.page-header {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto 0px;
+}
+
+.page-header h1 {
+  font-weight: normal;
+  background: var(--degrade-textos, linear-gradient(278deg, #7BDBFF 8.87%, #55b5da 39.24%, #3937bd 44.76%, #ea0606 54.73%, #eda3a4 100.62%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-header h4 {
+  color: var(--color-azul-degradado);
+  font-weight: normal;
+}
+
+/* Section styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.section-header p {
+  font-size: var(--font-6);
+  color: var(--color-gris);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content-section > .section-title {
+  font-size: var(--font-4);
+}
+
+/* Continue button */
+.start-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .logo {
+    width: 100px;
+  }
+
+  .logo-container {
+    top: 15px;
+    right: 15px;
+  }
+
+  .start-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/*ESTILOS DE INTERACTIVO*/
+
+/* ========================================================================= */
+/*      ESTILOS PARA LOS NUEVOS COMPONENTES DE CÓDIGOS Y BENEFICIOS          */
+/* ========================================================================= */
+
+.code-info-container {
+    max-width: 1200px;
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+/* --- Componente 6: Ubicación y Equipo --- */
+.le-cards-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    perspective: 1000px; /* Habilita el efecto 3D */
+    flex-wrap: wrap;
+}
+.le-flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 150px;
+    border: none;
+    cursor: pointer;
+}
+.le-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.le-flip-card.flipped .le-card-inner {
+    transform: rotateY(180deg);
+}
+.le-card-front, .le-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+}
+.le-card-front {
+    background: var(--color-blanco);
+    border: 1px solid #e2e8f0;
+    color: var(--color-azul-oscuro);
+}
+.le-card-front svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--color-azul);
+    margin-bottom: var(--spacing-xs);
+}
+.le-card-back {
+    background: var(--color-azul-degradado);
+    color: var(--color-blanco);
+    transform: rotateY(180deg);
+}
+.le-card-back p { color: var(--color-blanco); margin-bottom: var(--spacing-xs); }
+.le-card-back span { font-family: monospace; background: rgba(0,0,0,0.2); padding: 3px 6px; border-radius: 4px; }
+
+.le-benefit-card {
+    margin-top: var(--spacing-md);
+    text-align: center;
+}
+
+/* --- Componente 7: Causa, Daño, Actividad --- */
+.cda-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin: var(--spacing-lg) 0;
+}
+.cda-accordion-item {
+    background: var(--color-blanco);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+.cda-accordion-header {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: none;
+    background: #f8fafc;
+    text-align: left;
+    font-size: var(--font-5);
+    font-weight: 600;
+    color: var(--color-azul);
+    cursor: pointer;
+}
+.cda-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-normal), padding var(--transition-normal);
+}
+.cda-accordion-content.visible {
+    max-height: 100px;
+    padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+}
+.cda-usage-card {
+    background: #f0f5fa;
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.cda-scenario-exercise {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    background: #f0f5fa;
+    text-align: center;
+}
+.scenario-text {
+    background: var(--color-blanco);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    margin: var(--spacing-sm) 0 var(--spacing-lg) 0;
+}
+.scenario-buttons { display: flex; justify-content: center; gap: var(--spacing-sm); flex-wrap: wrap; }
+.scenario-btn { /* Reutiliza estilo start-button */
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 12px 24px; border: 1px solid var(--color-azul); border-radius: 60px;
+    background: var(--color-blanco); color: var(--color-azul); font-size: var(--font-6);
+    font-weight: 600; transition: all var(--transition-normal); cursor: pointer;
+}
+.scenario-btn:hover { background: var(--color-azul); color: var(--color-blanco); }
+.scenario-feedback { margin-top: var(--spacing-lg); padding: var(--spacing-md); background: #e0e7ff; border-radius: var(--border-radius-md); }
+.scenario-feedback strong { color: var(--color-azul-oscuro); }
+
+/* --- Componente 8: Beneficios --- */
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+.benefits-list li {
+    background: var(--color-blanco);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    /* Para la animación */
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.benefits-list li.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.benefits-list li svg {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    fill: var(--color-azul-claro);
+}

@@ -1,0 +1,350 @@
+body {
+  background-color: #ffffff;
+  color: var(--color-gris);
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo responsive */
+.logo-container {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: clamp(150px, 15vw, 200px);
+  margin: 3vh 3vh;
+}
+
+.container {
+  margin: auto;
+}
+
+/* Hero Section */
+.page-header {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto 60px;
+}
+
+h1 {
+  font-weight: normal;
+  background: var(--degrade-textos, linear-gradient(278deg, #7BDBFF 8.87%, #55b5da 39.24%, #3937bd 44.76%, #ea0606 54.73%, #eda3a4 100.62%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+  font-size: var(--font-3);
+  text-align: center;
+}
+
+h4 {
+  color: var(--color-azul-degradado);
+  font-weight: normal;
+}
+
+.highlight {
+    background: var(--color-azul-degradado);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+/* Section styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  margin-bottom: 15px;
+  font-weight: normal;
+  font-size: var(--font-4);
+}
+
+.section-header p {
+  font-size: var(--font-6);
+  color: var(--color-gris);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content-section > .section-title {
+  font-size: var(--font-4);
+}
+
+/* Continue button */
+.start-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .logo {
+    width: 100px;
+  }
+
+  .logo-container {
+    top: 15px;
+    right: 15px;
+  }
+
+  .start-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/*ESTILOS DE INTERACTIVO*/
+
+/* Usando variables del main.css de referencia */
+:root {
+    --color-azul: #031795;
+    --color-azul-oscuro: #1D107A;
+    --color-celeste: #2A83DF;
+    --color-gris: #4d4d4d;
+    --color-blanco: #FFF;
+    --border-radius-md: 15px;
+    --spacing-lg: 2rem;
+    --font-family: 'AA Smart Sans', Arial, sans-serif;
+    --shadow: 0px 4px 29.2px 3px rgba(3, 23, 149, 0.15);
+    --transition-normal: 0.3s ease;
+}
+
+.interactive-container {
+    font-family: var(--font-family);
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.topic-section {
+    margin-bottom: 6rem;
+}
+
+.section-title {
+    font-size: var(--font-4);
+    color: var(--color-azul);
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-celeste), var(--color-azul));
+    border-radius: 2px;
+}
+
+/* 1. Intro Cards & Hover Effects */
+.intro-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.intro-card {
+    background: var(--color-blanco);
+    padding: 1.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+.intro-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+.intro-card h3 { color: var(--color-azul-oscuro); margin-bottom: 1rem; font-size: var(--font-4); }
+.intro-card p { color: var(--color-gris); line-height: 1.6; }
+
+
+/* 2. Tabs */
+.tab-buttons {
+    display: flex;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 1.5rem;
+}
+.tab-btn {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-gris);
+    border-bottom: 3px solid transparent;
+    transition: color var(--transition-normal), border-color var(--transition-normal);
+}
+.tab-btn:hover {
+    color: var(--color-azul);
+}
+.tab-btn.active {
+    color: var(--color-azul);
+    border-bottom-color: var(--color-azul);
+}
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+.tab-pane.active {
+    display: block;
+}
+.tab-pane h3 { color: var(--color-azul-oscuro); margin-bottom: 1rem; }
+.tab-pane p { color: var(--color-gris); line-height: 1.6; }
+
+/* 3. Accordion */
+.accordion-item {
+    background: var(--color-blanco);
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    background: #f8fafc;
+}
+.accordion-header h4 { 
+  margin: 0;
+  font-size: var(--font-5); 
+  color: var(--color-azul-oscuro); 
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-azul);
+    transition: transform var(--transition-normal);
+}
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+.accordion-content p {
+    padding: 0 1.5rem 1.5rem;
+    margin: 0;
+    color: var(--color-gris);
+    line-height: 1.6;
+}
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+.accordion-item.active .accordion-content {
+    max-height: 200px; /* Ajustar si el contenido es más largo */
+}
+
+
+/* 4. Flip Cards, Tooltip & Modal */
+.section-subtitle { text-align: center; color: var(--color-gris); margin-top: -1rem; margin-bottom: 2rem; }
+.flip-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: 2rem;
+}
+.flip-card { background-color: transparent; height: 180px; perspective: 1000px; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+.flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+    position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    padding: 1rem; border-radius: var(--border-radius-md); box-shadow: var(--shadow);
+}
+.flip-card-front { background: linear-gradient(135deg, var(--color-celeste), var(--color-azul)); color: var(--color-blanco); }
+.flip-card-back { background: var(--color-blanco); color: var(--color-gris); transform: rotateY(180deg); }
+.flip-card-back p { font-size: 0.95rem; line-height: 1.5; }
+
+/* Tooltip */
+.tooltip { position: relative; display: inline-block; border-bottom: 2px dotted var(--color-celeste); cursor: help; }
+.tooltip .tooltip-text {
+    visibility: hidden; width: 220px; background-color: var(--color-azul-oscuro); color: #fff;
+    text-align: center; border-radius: 6px; padding: 10px; position: absolute;
+    z-index: 1; bottom: 125%; left: 50%; margin-left: -110px;
+    opacity: 0; transition: opacity var(--transition-normal);
+}
+.tooltip:hover .tooltip-text { visibility: visible; opacity: 1; }
+
+/* Modal */
+.modal-trigger-container { text-align: center; margin-top: 3rem; }
+.continue-btn {
+    background: var(--color-azul); color: var(--color-blanco); border: none;
+    border-radius: 50px; padding: 14px 32px; font-size: 1rem;
+    font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+}
+.continue-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(3, 23, 149, 0.3); }
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); z-index: 1000;
+    display: none; align-items: center; justify-content: center;
+    backdrop-filter: blur(5px);
+}
+.modal-overlay.active { display: flex; animation: fadeIn 0.3s ease; }
+.modal-content {
+    background: var(--color-blanco); padding: 2.5rem;
+    border-radius: var(--border-radius-md); max-width: 600px;
+    position: relative; animation: slideIn 0.4s ease-out;
+}
+.modal-content h3 { color: var(--color-azul-oscuro); }
+.close-modal {
+    position: absolute; top: 15px; right: 20px;
+    background: none; border: none; font-size: 2rem;
+    color: var(--color-gris); cursor: pointer;
+}
+.modal-image { width: 100%; max-width: 300px; display: block; margin: 1.5rem auto 0; border-radius: 10px; }
+
+
+/* Animación para revelar al hacer scroll */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animaciones */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideIn { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }

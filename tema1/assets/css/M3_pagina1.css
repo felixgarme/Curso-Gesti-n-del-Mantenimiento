@@ -1,0 +1,242 @@
+body {
+  background-color: #ffffff;
+  color: var(--color-gris);
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo responsive */
+.logo-container {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: clamp(150px, 15vw, 200px);
+  margin: 3vh 3vh;
+}
+
+.container {
+  margin: auto;
+}
+
+/* Hero Section */
+.page-header {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto 60px;
+}
+
+.page-header h1 {
+  font-weight: normal;
+  background: var(--degrade-textos, linear-gradient(278deg, #7BDBFF 8.87%, #55b5da 39.24%, #3937bd 44.76%, #ea0606 54.73%, #eda3a4 100.62%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-weight: normal;
+  background: linear-gradient(to right, #ff0000 20%, #351ee0, #347ff6, #1f87c6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;  
+}
+
+h2 ,h4 {
+  color: var(--color-azul);
+  font-weight: normal;
+}
+
+/* Section styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.section-header p {
+  font-size: var(--font-6);
+  color: var(--color-gris);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content-section > .section-title {
+  font-size: var(--font-4);
+}
+
+/* Continue button */
+.start-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .logo {
+    width: 100px;
+  }
+
+  .logo-container {
+    top: 15px;
+    right: 15px;
+  }
+
+  .start-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/*ESTILOS DE INTERACTIVO*/
+
+/* ========================================================================= */
+/*      ESTILOS PARA EL COMPONENTE REDISEÑADO ACR - 8 DISCIPLINAS            */
+/* ========================================================================= */
+
+.acr-8d-container {
+    max-width: 1100px;
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-md);
+}
+
+.acr-scrolly-wrapper {
+    display: flex;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+/* Panel de Contenido (Izquierda) */
+.acr-scroll-content {
+    flex-basis: 65%;
+}
+.scroll-intro {
+    padding: var(--spacing-lg);
+    background: #f8fafc;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-xl);
+}
+.scroll-step-card {
+    padding: var(--spacing-lg);
+    background: var(--color-blanco);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-xl);
+    /* Animación de entrada */
+    opacity: 0.3;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scroll-step-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.scroll-step-card h4 {
+    font-size: var(--font-4);
+    color: var(--color-azul);
+    margin-bottom: var(--spacing-md);
+}
+.scroll-step-card ul { list-style: none; padding-left: 0; }
+.scroll-step-card li { position: relative; padding-left: 25px; margin-bottom: var(--spacing-sm); }
+.scroll-step-card li::before { content: '•'; position: absolute; left: 0; color: var(--color-celeste); font-weight: bold; font-size: 1.2em; }
+
+/* Navegación Fija (Derecha) */
+.acr-sticky-nav {
+    flex-basis: 35%;
+    position: sticky;
+    top: 100px; /* Ajusta según tu layout */
+    height: fit-content;
+    background: #f8fafc;
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+}
+.sticky-nav-title {
+    font-size: var(--font-5);
+    font-weight: 600;
+    color: var(--color-azul-oscuro);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid #e2e8f0;
+}
+.sticky-step {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-normal);
+}
+.sticky-step.active {
+    background: var(--color-azul-degradado);
+    color: var(--color-blanco);
+    box-shadow: 0 4px 15px rgba(53, 30, 237, 0.2);
+}
+.sticky-step .step-code {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 600;
+    background: var(--color-azul-oscuro);
+    color: var(--color-blanco);
+    transition: all var(--transition-normal);
+}
+.sticky-step.active .step-code {
+    background: var(--color-blanco);
+    color: var(--color-azul);
+}
+.sticky-step .step-text { font-weight: 600; }
+.sticky-step:not(.active) .step-text { color: var(--color-gris); }
+
+/* Nuevo Mini-Ejercicio */
+.acr-scenario-exercise { margin-top: var(--spacing-xl); padding: var(--spacing-xl); background-color: #f0f5fa; border-radius: var(--border-radius-lg); }
+.scenario-context { font-style: italic; color: var(--color-gris); }
+.scenario-question { font-size: var(--font-5); font-weight: 600; color: var(--color-azul-oscuro); margin: var(--spacing-sm) 0; }
+.scenario-options { display: flex; flex-direction: column; gap: var(--spacing-sm); }
+.scenario-option-btn { text-align: left; padding: var(--spacing-sm); border: 1px solid #e2e8f0; background: var(--color-blanco); border-radius: var(--border-radius-md); cursor: pointer; transition: all var(--transition-normal); }
+.scenario-option-btn:not([disabled]):hover { background: #f1f5f9; border-color: var(--color-azul); }
+.scenario-option-btn.correct { background: #e6ffed; border-color: #28a745; font-weight: 600; }
+.scenario-option-btn.incorrect { background: #fee2e2; border-color: var(--color-rojo); opacity: 0.7; }
+.scenario-feedback { margin-top: var(--spacing-md); font-weight: 600; text-align: center; padding: var(--spacing-sm); border-radius: var(--border-radius-md); display: none; }
+
+/* Responsive */
+@media (max-width: 992px) {
+    .acr-scrolly-wrapper { flex-direction: column; }
+    .acr-sticky-nav {
+        position: static; /* Deja de ser fijo */
+        order: -1; /* Se mueve a la parte superior */
+    }
+}

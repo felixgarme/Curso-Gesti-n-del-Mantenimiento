@@ -1,0 +1,231 @@
+body {
+  background-color: #ffffff;
+  color: var(--color-gris);
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo responsive */
+.logo-container {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: clamp(150px, 15vw, 200px);
+  margin: 3vh 3vh;
+}
+
+.container {
+  margin: auto;
+}
+
+/* Hero Section */
+.page-header {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto 0px;
+}
+
+.page-header h1 {
+  font-weight: normal;
+  background: var(--degrade-textos, linear-gradient(278deg, #7BDBFF 8.87%, #55b5da 39.24%, #3937bd 44.76%, #ea0606 54.73%, #eda3a4 100.62%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-header h4 {
+  color: var(--color-azul-degradado);
+  font-weight: normal;
+}
+
+/* Section styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.section-header p {
+  font-size: var(--font-6);
+  color: var(--color-gris);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content-section > .section-title {
+  font-size: var(--font-4);
+}
+
+/* Continue button */
+.start-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .logo {
+    width: 100px;
+  }
+
+  .logo-container {
+    top: 15px;
+    right: 15px;
+  }
+
+  .start-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/*ESTILOS DE INTERACTIVO*/
+
+/* ========================================================================= */
+/*      ESTILOS PARA LOS EJERCICIOS INTERACTIVOS                             */
+/* ========================================================================= */
+
+.interactive-exercises-container {
+    max-width: 1400px;
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.exercise-main-title {
+    text-align: center;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.multiple-choice-exercise, .matching-exercise {
+    background: var(--color-blanco);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    padding: var(--spacing-xl);
+}
+
+.exercise-header { margin-bottom: var(--spacing-lg); }
+.exercise-header h4 { font-size: var(--font-5); color: var(--color-azul); }
+.exercise-question { display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg); }
+.question-number { flex-shrink: 0; width: 2.5em; height: 2.5em; line-height: 2.5em; text-align: center; border-radius: 50%; background: var(--color-azul-oscuro); color: var(--color-blanco); font-weight: 600; font-size: var(--font-6); }
+
+/* --- Estilos de Selección Múltiple --- */
+.mc-options-container { display: flex; flex-direction: column; gap: var(--spacing-sm); max-width: 400px; margin: 0 auto; }
+.mc-option {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--color-azul);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-blanco);
+    font-size: var(--font-6);
+    font-weight: 600;
+    color: var(--color-azul);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+.mc-option:not([disabled]):hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+/* La clase .is-correct-answer ya no tiene estilos iniciales */
+.mc-option.correct {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: var(--color-blanco);
+}
+.mc-option.incorrect {
+    background-color: var(--color-rojo);
+    border-color: var(--color-rojo);
+    color: var(--color-blanco);
+    animation: shake 0.5s;
+}
+
+.mc-feedback { margin-top: var(--spacing-lg); padding: var(--spacing-md); border-radius: var(--border-radius-md); min-height: 50px; text-align: center; display: none; }
+.mc-feedback.visible { display: block; }
+.mc-feedback.correct { background-color: #e6ffed; border: 1px solid #28a745; }
+.mc-feedback.incorrect { background-color: #fee2e2; border: 1px solid var(--color-rojo); }
+.mc-feedback p { margin: 0; }
+.mc-feedback strong { color: var(--color-azul-oscuro); }
+
+/* --- Estilos de Emparejamiento --- */
+.matching-wrapper {
+    position: relative; /* Contenedor para el SVG */
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+}
+.matching-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; /* Permite hacer clic a través del SVG */
+    z-index: 1;
+}
+.matching-canvas line {
+    stroke: var(--color-celeste);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 5 5;
+    animation: draw-line 0.5s ease-out forwards;
+}
+@keyframes draw-line {
+    from { stroke-dashoffset: 200; }
+    to { stroke-dashoffset: 0; }
+}
+
+.matching-column-left, .matching-column-right {
+    display: flex; flex-direction: column; gap: var(--spacing-sm);
+    flex: 1;
+    z-index: 2; /* Por encima de las líneas */
+}
+.matching-item {
+    padding: var(--spacing-md);
+    border: 2px solid var(--color-azul);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-blanco);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-align: center;
+}
+.matching-item:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.matching-item.selected { background-color: #e0e7ff; border-color: var(--color-azul-claro); box-shadow: var(--shadow); }
+.matching-item.matched-correct { background-color: #e6ffed; border-color: #28a745; color: #15803d; cursor: default; }
+.matching-item.matched-incorrect { background-color: #fee2e2; border-color: var(--color-rojo); animation: shake 0.5s; }
+.matching-feedback { margin-top: var(--spacing-lg); text-align: center; font-weight: 600; min-height: 24px; }
+
+/* --- Responsive para Emparejamiento --- */
+@media (max-width: 768px) {
+    .matching-wrapper { flex-direction: column; align-items: stretch; }
+}
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
