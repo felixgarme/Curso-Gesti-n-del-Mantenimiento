@@ -151,7 +151,7 @@ align-items: center;
 position: absolute;
 top: -10px;
 left: 10px;
-background: var(--gradient-1);
+background: linear-gradient(90deg, #1f3bf1, #031794, #3049ee, #2039d8);
 color: var(--text-4);
 width: 30px;
 height: 30px;

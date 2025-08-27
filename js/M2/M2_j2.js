@@ -25,16 +25,16 @@ cards.forEach((card, index) => {
     cardObserver.observe(card);
 });
 
-// Efecto hover mejorado para tarjetas de destacados
-highlightCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-    this.style.background = 'linear-gradient(135deg, #E5F0F9 0%, #DDE8F5 100%)';
-    });
+// // Efecto hover mejorado para tarjetas de destacados
+// highlightCards.forEach(card => {
+//     card.addEventListener('mouseenter', function() {
+//     this.style.background = 'linear-gradient(135deg, #E5F0F9 0%, #DDE8F5 100%)';
+//     });
     
-    card.addEventListener('mouseleave', function() {
-    this.style.background = 'linear-gradient(135deg, #E5F0F9 0%, #FFFFFF 100%)';
-    });
-});
+//     card.addEventListener('mouseleave', function() {
+//     this.style.background = 'linear-gradient(135deg, #E5F0F9 0%, #FFFFFF 100%)';
+//     });
+// });
 
 // Efecto de parallax sutil en dispositivos de escritorio
 if (window.innerWidth > 768) {
