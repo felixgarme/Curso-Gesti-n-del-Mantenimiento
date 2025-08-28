@@ -65,32 +65,27 @@ class ScormManager {
 // 👉 Lista actualizada de páginas del curso según el menú actual
 ScormManager.paginasCurso = [
 
-  // Módulo 1: Acabados superficiales
+  // Módulo 1: introducción
   "M1_inicio.html",
   "M1_pagina1.html",
-  "M1_pagina2.html", 
-  "M1_pagina3.html",
-  "M1_pagina4.html",
 
-  
-  // Módulo 2: Selección de la clase según la aplicación
+  // Módulo 2: Modelo de gestión empleado en el módulo PM
   "M2_inicio.html",
   "M2_pagina1.html",
   "M2_pagina2.html", 
+  "M2_pagina3.html",
+  "M2_pagina4.html",
+  "M2_pagina5.html",
+  "M2_pagina6.html",
 
-
-  // Módulo 3: Obtención de clase según proceso
+  // Módulo 3: Códigos utilizados para la gestión de órdenes de trabajo
   "M3_inicio.html",
   "M3_pagina1.html",
   "M3_pagina2.html", 
   "M3_pagina3.html", 
   "M3_pagina4.html", 
-
-  // Módulo 4: Instrumentos de medición
-  "M4_inicio.html",
-  "M4_pagina1.html",
-  "M4_pagina2.html", 
-  "M4_pagina3.html",
+  "M3_pagina5.html", 
+  "M3_pagina6.html", 
 
   // Conclusiones
   "conclusiones.html"

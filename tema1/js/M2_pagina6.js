@@ -1,7 +1,7 @@
 // Funciones de navegación y SCORM
         function goToNextPage() {
             // Redirigir a la siguiente página
-            window.location.href = 'conclusiones.html';
+            window.location.href = 'M3_inicio.html';
         }
 
         function backPage() {
@@ -28,135 +28,101 @@
         });
 
 /*Interactivo*/
-
 document.addEventListener('DOMContentLoaded', () => {
-    const formContainer = document.getElementById('final-entry-form');
-    const progressBar = document.getElementById('progress-bar');
-    const progressText = document.getElementById('progress-text-header');
-    const feedbackEl = document.getElementById('final-feedback');
-    const retryBtn = document.getElementById('retry-btn');
-    const revealBtn = document.getElementById('reveal-btn');
 
-    const exerciseData = [
-        { label: 'Tipo de orden', answer: 'PM01', validation: 'exact', hint: 'La falla se encontró en una inspección, pero si no se actúa, causará una parada. ¿Es planificada o no?' },
-        { label: 'Prioridad', answer: '2', validation: 'exact', hint: 'La detención no es inmediata pero es necesaria pronto. No es "urgente" (1), pero sí es de...' },
-        { label: 'Ubicación técnica', answer: 'PLT-CHANC-FAJA01', validation: 'startsWith', hint: 'Debe seguir el formato Planta-Área-Equipo. Ej: PLT-AREA-ID.' },
-        { label: 'Código de equipo', answer: 'EQ00025678', validation: 'startsWith', hint: 'Es el número de activo único. Usualmente empieza con "EQ".' },
-        { label: 'Código de causa', answer: 'CS02', validation: 'startsWith', hint: 'El desgaste fue "excesivo", no normal. ¿Qué código de causa refleja esto?' },
-        { label: 'Código de daño', answer: 'DM03', validation: 'startsWith', hint: 'El desgaste excesivo provocó una deformación en la pieza. ¿Cuál es el daño?' },
-        { label: 'Código de actividad', answer: 'AC07', validation: 'startsWith', hint: 'La pieza dañada debe ser reemplazada por una nueva. ¿Qué actividad es esa?' }
-    ];
+    // =========================================================================
+    // LÓGICA PARA EL COMPONENTE 1: ESTATUS (VERSIÓN HORIZONTAL + CLIC)
+    // =========================================================================
+    const timelineItemsH = document.querySelectorAll('.timeline-item-h');
+    const statusTitleH = document.getElementById('status-title-h');
+    const statusDescriptionH = document.getElementById('status-description-h');
+    const timelineProgressH = document.querySelector('.timeline-progress-h');
 
-    function initExercise() {
-        formContainer.innerHTML = '';
-        const shuffledData = [...exerciseData].sort(() => Math.random() - 0.5);
-
-        shuffledData.forEach(item => {
-            const row = document.createElement('div');
-            row.className = 'final-entry-row';
-            row.innerHTML = `
-                <div class="final-entry-label">
-                    ${item.label}
-                    <span class="hint-icon" title="Mostrar pista">?</span>
-                </div>
-                <div class="final-input-wrapper">
-                    <input type="text" class="final-entry-input" placeholder="Escriba aquí..." 
-                           data-answer="${item.answer}" data-validation="${item.validation}" data-hint="${item.hint}">
-                    <button class="verify-row-btn" title="Verificar">
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg>
-                    </button>
-                    <span class="validation-icon"></span>
-                </div>
-            `;
-            formContainer.appendChild(row);
-        });
-
-        updateProgress(0);
-        feedbackEl.innerHTML = `<p><strong>Pista:</strong> Haz clic en el icono (?) para obtener ayuda.</p>`;
-        feedbackEl.className = 'final-feedback';
+    if (timelineItemsH.length > 0) {
         
-        attachEventListeners();
-    }
+        function updateTimelineView(activeIndex) {
+            // Actualizar la información en el panel
+            const activeItem = timelineItemsH[activeIndex];
+            statusTitleH.textContent = activeItem.dataset.title;
+            statusDescriptionH.textContent = activeItem.dataset.description;
 
-    function attachEventListeners() {
-        formContainer.querySelectorAll('.verify-row-btn').forEach(btn => {
-            btn.addEventListener('click', handleVerification);
-        });
-        formContainer.querySelectorAll('.hint-icon').forEach(icon => {
-            icon.addEventListener('click', showHint);
-        });
-    }
+            // Actualizar la clase 'active' para estilos visuales
+            timelineItemsH.forEach((item, idx) => {
+                if (idx === activeIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
 
-    function handleVerification(event) {
-        const btn = event.currentTarget;
-        const wrapper = btn.closest('.final-input-wrapper');
-        const input = wrapper.querySelector('.final-entry-input');
-        const icon = wrapper.querySelector('.validation-icon');
-        
-        const userAnswer = input.value.trim().toUpperCase();
-        const idealAnswer = input.dataset.answer.toUpperCase();
-        const validationType = input.dataset.validation;
-        let isCorrect = false;
-
-        if (userAnswer === "") { isCorrect = false; } 
-        else if (validationType === 'exact') { isCorrect = (userAnswer === idealAnswer || (idealAnswer === '2' && userAnswer === '2 ALTA')); } 
-        else if (validationType === 'startsWith') { isCorrect = userAnswer.startsWith(idealAnswer.substring(0, 2)); }
-        
-        btn.disabled = true;
-        input.disabled = true;
-        
-        icon.classList.add('visible');
-        if (isCorrect) {
-            input.style.borderColor = '#28a745';
-            icon.classList.add('correct');
-            icon.textContent = '✓';
-            feedbackEl.innerHTML = `<p><strong>¡Correcto!</strong> El valor para "${btn.closest('.final-entry-row').querySelector('.final-entry-label').textContent.trim().replace('?', '')}" es adecuado.</p>`;
-            feedbackEl.className = 'final-feedback correct';
-        } else {
-            input.style.borderColor = 'var(--color-rojo)';
-            icon.classList.add('incorrect');
-            icon.textContent = '✗';
-            feedbackEl.innerHTML = `<p><strong>Intenta de nuevo.</strong> El valor ingresado no es el esperado. La respuesta ideal empieza con "${idealAnswer.substring(0,2)}...".</p>`;
-            feedbackEl.className = 'final-feedback incorrect';
+            // Actualizar la barra de progreso
+            // Se calcula el progreso basado en la posición del ítem activo
+            const progressPercentage = (activeIndex / (timelineItemsH.length - 1)) * 100;
+            
+            // Detección de layout para animar width o height
+            if (window.innerWidth <= 992) {
+                // Modo vertical
+                const containerRect = activeItem.parentElement.getBoundingClientRect();
+                const itemRect = activeItem.getBoundingClientRect();
+                const progressHeight = itemRect.top - containerRect.top + itemRect.height / 2;
+                timelineProgressH.style.height = `${progressHeight}px`;
+                timelineProgressH.style.width = '4px'; // Asegurar el ancho en vertical
+            } else {
+                // Modo horizontal
+                timelineProgressH.style.width = `${progressPercentage}%`;
+                timelineProgressH.style.height = '4px'; // Asegurar la altura en horizontal
+            }
         }
         
-        updateProgress();
-    }
-    
-    function showHint(event) {
-        const icon = event.target;
-        const input = icon.closest('.final-entry-row').querySelector('.final-entry-input');
-        feedbackEl.innerHTML = `<p><strong>Pista:</strong> ${input.dataset.hint}</p>`;
-        feedbackEl.className = 'final-feedback';
-    }
-    
-    function updateProgress() {
-        const totalInputs = exerciseData.length;
-        const correctInputs = formContainer.querySelectorAll('.validation-icon.correct').length;
-        const percentage = (correctInputs / totalInputs) * 100;
-        
-        progressBar.style.width = `${percentage}%`;
-        progressText.textContent = `${correctInputs}/${totalInputs}`;
-    }
-    
-    function revealAnswers() {
-        formContainer.querySelectorAll('.final-entry-input').forEach(input => {
-            input.value = input.dataset.answer;
-            input.disabled = true;
-            input.style.borderColor = '#28a745';
-            const wrapper = input.closest('.final-input-wrapper');
-            wrapper.querySelector('.verify-row-btn').disabled = true;
-            const icon = wrapper.querySelector('.validation-icon');
-            icon.className = 'validation-icon visible correct';
-            icon.textContent = '✓';
+        // Añadir el listener de clic a cada item
+        timelineItemsH.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                updateTimelineView(index);
+            });
         });
-        updateProgress();
-        feedbackEl.innerHTML = `<p>Estas son las respuestas ideales para el escenario propuesto.</p>`;
-        feedbackEl.className = 'final-feedback';
-    }
-    
-    retryBtn.addEventListener('click', initExercise);
-    revealBtn.addEventListener('click', revealAnswers);
 
-    initExercise();
+        // Iniciar con el primer elemento activo por defecto
+        updateTimelineView(0);
+    }
+
+
+    // Lógica del Mini-Ejercicio 1 (sin cambios)
+    const quizOptions = document.querySelectorAll('.quiz-option');
+    const feedbackEl = document.querySelector('.quiz-feedback-status');
+    if(quizOptions.length > 0 && feedbackEl){
+        quizOptions.forEach(button => {
+            button.addEventListener('click', () => {
+                if (button.classList.contains('correct-answer')) {
+                    feedbackEl.textContent = "¡Correcto! IMPR (impresa) y MOVM (movimiento de mercancías) son los estados necesarios.";
+                    feedbackEl.style.color = 'var(--color-azul-claro)';
+                } else {
+                    feedbackEl.textContent = "Incorrecto. Intenta de nuevo.";
+                    feedbackEl.style.color = 'var(--color-rojo)';
+                }
+            });
+        });
+    }
+
+    // =========================================================================
+    // LÓGICA PARA EL COMPONENTE 2: MANTENIMIENTO PLANIFICADO (SIN CAMBIOS)
+    // =========================================================================
+    const pmCards = document.querySelectorAll('.pm-card');
+    const pmModal = document.getElementById('pm-modal');
+    if(pmCards.length > 0 && pmModal) {
+        const pmModalCloseBtn = document.querySelector('.pm-modal-close-btn');
+        const modalTitle = document.getElementById('pm-modal-title');
+        const modalCode = document.getElementById('pm-modal-code');
+        const modalDetails = document.getElementById('pm-modal-details');
+        pmCards.forEach(card => {
+            card.addEventListener('click', () => {
+                modalTitle.textContent = card.dataset.title;
+                modalCode.textContent = card.dataset.code;
+                modalDetails.textContent = card.dataset.details;
+                pmModal.classList.add('visible');
+            });
+        });
+        const closeModal = () => { pmModal.classList.remove('visible'); }
+        pmModalCloseBtn.addEventListener('click', closeModal);
+        pmModal.addEventListener('click', (e) => { if (e.target === pmModal) closeModal(); });
+    }
 });

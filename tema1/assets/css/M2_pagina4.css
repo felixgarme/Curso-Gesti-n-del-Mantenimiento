@@ -24,20 +24,33 @@ body {
 .page-header {
   text-align: center;
   width: 80%;
-  margin: 0 auto 0px;
+  margin: 0 auto 60px;
 }
 
-.page-header h1 {
+h1 {
   font-weight: normal;
   background: var(--degrade-textos, linear-gradient(278deg, #7BDBFF 8.87%, #55b5da 39.24%, #3937bd 44.76%, #ea0606 54.73%, #eda3a4 100.62%));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  font-size: var(--font-3);
+  text-align: center;
 }
 
-.page-header h4 {
+
+h4 {
   color: var(--color-azul-degradado);
   font-weight: normal;
+}
+
+.highlight {
+    background: var(--color-azul-degradado);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
 }
 
 /* Section styles */
@@ -111,173 +124,92 @@ body {
 
 /*ESTILOS DE INTERACTIVO*/
 
-/* ========================================================================= */
-/*      ESTILOS PARA LOS NUEVOS COMPONENTES DE CÓDIGOS Y BENEFICIOS          */
-/* ========================================================================= */
+/* --- ESTILOS ADICIONALES PARA EL MÓDULO INTERACTIVO DE AVISOS (VERSIÓN REFINADA) --- */
 
-.code-info-container {
-    max-width: 1200px;
-    margin: var(--spacing-xl) auto;
-    padding: var(--spacing-md);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xl);
+/* --- TIPOGRAFÍA Y ESTILOS DE TEXTO --- */
+.section-title { color: var(--color-gris); font-size: var(--font-3); font-weight: 600; margin-bottom: var(--spacing-sm); }
+.section-title-accent { color: var(--color-azul); font-size: var(--font-4); font-weight: 600; margin-bottom: var(--spacing-sm); }
+.sub-heading {
+  font-size: var(--font-5);
+  color: #333;
+  font-weight: 600;
+  margin: var(--spacing-md) 0 var(--spacing-xs);
 }
-
-/* --- Componente 6: Ubicación y Equipo --- */
-.le-cards-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-lg);
-    margin: var(--spacing-lg) 0;
-    perspective: 1000px; /* Habilita el efecto 3D */
-    flex-wrap: wrap;
+.content-card p {
+  font-size: var(--font-6);
+  color: var(--color-gris);
+  line-height: 1.6;
 }
-.le-flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 150px;
-    border: none;
-    cursor: pointer;
-}
-.le-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-.le-flip-card.flipped .le-card-inner {
-    transform: rotateY(180deg);
-}
-.le-card-front, .le-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-md);
-}
-.le-card-front {
-    background: var(--color-blanco);
-    border: 1px solid #e2e8f0;
-    color: var(--color-azul-oscuro);
-}
-.le-card-front svg {
-    width: 40px;
-    height: 40px;
-    fill: var(--color-azul);
-    margin-bottom: var(--spacing-xs);
-}
-.le-card-back {
-    background: var(--color-azul-degradado);
-    color: var(--color-blanco);
-    transform: rotateY(180deg);
-}
-.le-card-back p { color: var(--color-blanco); margin-bottom: var(--spacing-xs); }
-.le-card-back span { font-family: monospace; background: rgba(0,0,0,0.2); padding: 3px 6px; border-radius: 4px; }
-
-.le-benefit-card {
-    margin-top: var(--spacing-md);
-    text-align: center;
+.monospace-text {
+  font-family: Consolas, "Courier New", monospace;
+  background-color: #f8fafc;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid #eef2f7;
+  line-height: 1.7;
+  color: var(--color-gris);
 }
 
-/* --- Componente 7: Causa, Daño, Actividad --- */
-.cda-accordion {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-    margin: var(--spacing-lg) 0;
-}
-.cda-accordion-item {
-    background: var(--color-blanco);
-    border: 1px solid #e2e8f0;
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
-}
-.cda-accordion-header {
-    width: 100%;
-    padding: var(--spacing-md);
-    border: none;
-    background: #f8fafc;
-    text-align: left;
-    font-size: var(--font-5);
-    font-weight: 600;
-    color: var(--color-azul);
-    cursor: pointer;
-}
-.cda-accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--transition-normal), padding var(--transition-normal);
-}
-.cda-accordion-content.visible {
-    max-height: 100px;
-    padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
-}
-.cda-usage-card {
-    background: #f0f5fa;
-    border-radius: var(--border-radius-md);
-    padding: var(--spacing-md);
-    text-align: center;
-}
+/* --- TEMA 1: FLIP CARDS CON ICONOS SVG --- */
+.features-list-interactive { display: flex; flex-direction: column; gap: var(--spacing-sm); }
+.flip-card { background-color: transparent; width: 100%; height: 100px; perspective: 1000px; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; }
+.flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: flex-start; padding: 0 var(--spacing-md); }
 
-.cda-scenario-exercise {
-    margin-top: var(--spacing-xl);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-lg);
-    background: #f0f5fa;
-    text-align: center;
+.flip-card-front {
+  background-color: #f8fafc;
+  border: 1px solid #eef2f7;
+  color: var(--color-azul);
+  gap: var(--spacing-md);
 }
-.scenario-text {
-    background: var(--color-blanco);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius-md);
-    margin: var(--spacing-sm) 0 var(--spacing-lg) 0;
+.feature-icon-wrapper {
+  background-color: rgba(3, 23, 149, 0.1);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
-.scenario-buttons { display: flex; justify-content: center; gap: var(--spacing-sm); flex-wrap: wrap; }
-.scenario-btn { /* Reutiliza estilo start-button */
-    display: inline-flex; align-items: center; justify-content: center;
-    padding: 12px 24px; border: 1px solid var(--color-azul); border-radius: 60px;
-    background: var(--color-blanco); color: var(--color-azul); font-size: var(--font-6);
-    font-weight: 600; transition: all var(--transition-normal); cursor: pointer;
+.feature-icon-svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-azul);
 }
-.scenario-btn:hover { background: var(--color-azul); color: var(--color-blanco); }
-.scenario-feedback { margin-top: var(--spacing-lg); padding: var(--spacing-md); background: #e0e7ff; border-radius: var(--border-radius-md); }
-.scenario-feedback strong { color: var(--color-azul-oscuro); }
+.feature-title { font-size: var(--font-5); font-weight: 600; margin: 0; text-align: center;}
 
-/* --- Componente 8: Beneficios --- */
-.benefits-list {
-    list-style: none;
-    padding: 0;
+.flip-card-back {
+  background-color: var(--color-azul);
+  color: var(--color-blanco);
+  transform: rotateY(180deg);
+  padding: var(--spacing-sm);
+  justify-content: center;
 }
-.benefits-list li {
-    background: var(--color-blanco);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow);
-    padding: var(--spacing-lg);
-    margin-bottom: var(--spacing-md);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-    /* Para la animación */
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.benefits-list li.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-.benefits-list li svg {
-    flex-shrink: 0;
-    width: 30px;
-    height: 30px;
-    fill: var(--color-azul-claro);
-}
+.flip-card-back p { color: var(--color-blanco); }
+
+/* --- OTROS ESTILOS (sin cambios, ya correctos de la versión anterior) --- */
+.sap-pm-module-container { max-width: 1400px; margin: 0 auto; padding: var(--spacing-lg) var(--spacing-md); }
+.content-card { background-color: var(--color-blanco); border-radius: var(--border-radius-lg); padding: clamp(1.5rem, 4vw, 2.5rem); box-shadow: 0 10px 40px rgba(0, 70, 170, 0.08); opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.content-card.is-visible { 
+  opacity: 1; 
+  transform: translateY(0);
+  }
+.intro-grid { display: grid; grid-template-columns: 1fr; gap: var(--spacing-lg); align-items: center; margin-top: var(--spacing-md); }
+@media (min-width: 992px) { .intro-grid { grid-template-columns: 1fr 0.8fr; } }
+.creation-grid { display: grid; grid-template-columns: 1fr; gap: var(--spacing-lg); }
+@media (min-width: 768px) { .creation-grid { grid-template-columns: 1fr 1fr; } }
+.dark-section { background: var(--color-azul); }
+.dark-section .section-title-light { color: var(--color-blanco); font-weight: 600; }
+.diagram-grid { display: grid; grid-template-columns: 1fr; gap: var(--spacing-sm) var(--spacing-lg); margin-bottom: var(--spacing-md); }
+@media (min-width: 768px) { .diagram-grid { grid-template-columns: 1fr 1fr; } }
+.diagram-column { display: flex; flex-direction: column; gap: var(--spacing-sm); }
+.diagram-node { background-color: var(--color-azul-oscuro); color: var(--color-blanco); padding: 12px var(--spacing-md); border-radius: var(--border-radius-md); font-size: var(--font-6); text-align: left; transition: var(--transition-normal); cursor: pointer; transform-style: preserve-3d; }
+.diagram-node:hover { background-color: var(--color-celeste); transform: translateZ(20px) translateX(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.image-container-styled.single-image { max-width: 950px; margin: var(--spacing-md) auto 0; }
+.process-flow-container { overflow: hidden; }
+.process-flow-viewport { display: flex; transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1); }
+.process-step { width: 100%; flex-shrink: 0; padding: 0 2px; }
+.process-flow-controls { margin-top: var(--spacing-md); text-align: center; }
+.process-flow-container.show-step-2 .process-flow-viewport { transform: translateX(-100%); }

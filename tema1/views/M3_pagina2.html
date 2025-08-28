@@ -97,78 +97,121 @@
     </div>
 
     <main>
+        <div class="page-header">
+            <h1>Estatus de Órdenes y Tipos de Órdenes de Trabajo</h1>
+        </div>
+        <div class="sap-types-container">
+            <div class="instruction-box">
+                <h3>Tipos de órdenes de trabajo en SAP PM</h3>
+                <p>Explora los diferentes tipos de órdenes de trabajo y su propósito principal dentro del sistema.</p>
+            </div>
 
-<!-- =============== COMPONENTE REDISEÑADO: INFORME 8D Y MEJORA CONTINUA =============== -->
-<div class="report-8d-container">
-    <div class="exercise-main-title">
-        <h2>Las 8 Disciplinas: El Informe 8D</h2>
-    </div>
+            <div class="ot-types-grid">
+                <div class="ot-type-card hover-borde">
+                    <div class="ot-card-header">
+                        <span class="ot-code">PM01</span>
+                        <h4 class="ot-type">Mantenimiento Correctivo</h4>
+                    </div>
+                    <p class="ot-usage"><strong>Uso:</strong> Reparaciones no planificadas.</p>
+                </div>
+                <div class="ot-type-card hover-borde">
+                    <div class="ot-card-header">
+                        <span class="ot-code">PM02</span>
+                        <h4 class="ot-type">Mantenimiento Preventivo</h4>
+                    </div>
+                    <p class="ot-usage"><strong>Uso:</strong> Inspecciones y mantenimiento programado.</p>
+                </div>
+                <div class="ot-type-card hover-borde">
+                    <div class="ot-card-header">
+                        <span class="ot-code">PM03</span>
+                        <h4 class="ot-type">Mantenimiento Predictivo</h4>
+                    </div>
+                    <p class="ot-usage"><strong>Uso:</strong> Basado en condición (vibraciones, térmico).</p>
+                </div>
+                <div class="ot-type-card hover-borde">
+                    <div class="ot-card-header">
+                        <span class="ot-code">PM04</span>
+                        <h4 class="ot-type">Revisión General (Overhaul)</h4>
+                    </div>
+                    <p class="ot-usage"><strong>Uso:</strong> Paradas técnicas grandes.</p>
+                </div>
+            </div>
 
-    <div class="instruction-box">
-        <h3>Un Proceso de Mejora Continua</h3>
-        <p>El Informe 8D no es solo un documento, es el centro de un ciclo de monitoreo y mejora. Haz clic en cada etapa del proceso para entender su función.</p>
-    </div>
-
-    <div class="report-process-wrapper">
-        <!-- Flecha Circular SVG de fondo -->
-        <svg class="process-circular-arrow" viewBox="0 0 100 100">
-            <defs>
-                <linearGradient id="arrow-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="var(--color-celeste)" />
-                    <stop offset="100%" stop-color="var(--color-azul-claro)" />
-                </linearGradient>
-            </defs>
-            <path d="M 50,7 A 43,43 0 1,1 49.9,7.001" stroke="url(#arrow-gradient)" stroke-width="6" fill="none" />
-            <!-- Arrowheads -->
-            <polygon points="88,58 97,50 88,42" fill="url(#arrow-gradient)" />
-            <polygon points="12,42 3,50 12,58" fill="url(#arrow-gradient)" />
-            <polygon points="42,12 50,3 58,12" fill="url(#arrow-gradient)" />
-            <polygon points="58,88 50,97 42,88" fill="url(#arrow-gradient)" />
-        </svg>
-
-        <!-- Etapas del Proceso -->
-        <div class="process-step" data-step="1"><h4>1. Completar y Archivar</h4></div>
-        <div class="process-step" data-step="2"><h4>2. Monitorear Acciones</h4></div>
-        <div class="process-step" data-step="3"><h4>3. Revisar Regularmente</h4></div>
-        <div class="process-step" data-step="4"><h4>4. Identificar Oportunidades</h4></div>
-
-        <!-- Elemento Central -->
-        <div class="process-center">
-            <a class="process-image-container" href="#" title="Haz clic para expandir">
-                <img src="https://i.imgur.com/7gB8s2g.png" alt="Plantilla de Informe 8D">
-            </a>
-            <div class="process-description-panel">
-                <h4 id="process-title"></h4>
-                <p id="process-details"></p>
+            <div class="priority-codes-section">
+                <h4>Código de Prioridad: Determina urgencia</h4>
+                <ul>
+                    <li><span class="priority-code">1</span> Urgente</li>
+                    <li><span class="priority-code">2</span> Alta</li>
+                    <li><span class="priority-code">3</span> Media</li>
+                    <li><span class="priority-code">4</span> Baja</li>
+                </ul>
             </div>
         </div>
-    </div>
 
-    <!-- Nuevo Mini-Ejercicio -->
-    <div class="report-quiz-container">
-        <h4>Mini-Ejercicio: Toma de Decisión</h4>
-        <p class="quiz-question">Un cliente reporta un fallo crítico en un producto. Para asegurar que el problema no llegue a más clientes, ¿qué acción del ciclo 8D es la más urgente?</p>
-        <div class="quiz-dropdown-wrapper">
-            <select id="quiz-select">
-                <option value="">Selecciona una acción...</option>
-                <option value="step1">Completar y Archivar</option>
-                <option value="step2">Monitorear Acciones</option>
-                <option value="step3">Revisar Regularmente</option>
-                <option value="step4">Identificar Oportunidades</option>
-            </select>
-            <button id="check-answer-btn" class="start-button">Verificar</button>
+
+        <div class="lifecycle-container">
+            <div class="instruction-box">
+                <h3>Ciclo de vida en una Orden de Trabajo</h3>
+                <p>Haz clic en cada etapa del ciclo para conocer su función. Luego, ordena las etapas en el mini-ejercicio.</p>
+            </div>
+            
+            <div class="lifecycle-wrapper">
+                <div class="lifecycle-diagram">
+                    <!-- Líneas de conexión -->
+                    <div class="lifecycle-connector" id="connector-1"></div>
+                    <div class="lifecycle-connector" id="connector-2"></div>
+                    <div class="lifecycle-connector" id="connector-3"></div>
+                    <div class="lifecycle-connector" id="connector-4"></div>
+                    <div class="lifecycle-connector" id="connector-5"></div>
+                    <div class="lifecycle-connector" id="connector-6"></div>
+
+                    <!-- Etapas del ciclo -->
+                    <div class="lifecycle-stage" data-stage="creacion">
+                        <h4>Creación</h4>
+                        <p>Con base en avisos o planificación</p>
+                    </div>
+                    <div class="lifecycle-stage" data-stage="planificacion">
+                        <h4>Planificación</h4>
+                        <p>Recursos materiales, tiempos</p>
+                    </div>
+                    <div class="lifecycle-stage" data-stage="liberacion">
+                        <h4>Liberación</h4>
+                        <p>Aprobación para ejecución</p>
+                    </div>
+                    <div class="lifecycle-stage" data-stage="ejecucion">
+                        <h4>Ejecución</h4>
+                        <p>Trabajos en campo</p>
+                    </div>
+                    <div class="lifecycle-stage" data-stage="confirmacion">
+                        <h4>Confirmación</h4>
+                        <p>Registro de tiempos y materiales usados</p>
+                    </div>
+                    <div class="lifecycle-stage" data-stage="cierre">
+                        <h4>Cierre técnico y contable</h4>
+                    </div>
+                    <div class="lifecycle-center-text">
+                        SAP PM
+                    </div>
+                </div>
+
+                <!-- Panel de descripción que se mueve -->
+                <div class="lifecycle-description-panel" id="lifecycle-description-panel">
+                    <h4 id="lifecycle-title"></h4>
+                    <p id="lifecycle-details"></p>
+                </div>
+            </div>
+            
+            <!-- Mini-Ejercicio de Secuenciación -->
+            <div class="lifecycle-quiz-container">
+                <h3>Mini-Ejercicio: Ordena el Ciclo</h3>
+                <p>Arrastra las etapas para colocarlas en el orden correcto del ciclo de vida.</p>
+                <div class="lifecycle-quiz-wrapper">
+                    <div id="lifecycle-drop-area" class="lifecycle-drop-area"></div>
+                    <div id="lifecycle-drag-items" class="lifecycle-drag-items"></div>
+                </div>
+                <p id="lifecycle-quiz-feedback" class="lifecycle-quiz-feedback"></p>
+            </div>
         </div>
-        <p class="quiz-feedback"></p>
-    </div>
-</div>
-
-<!-- Modal para la Imagen -->
-<div id="image-modal" class="image-modal-container">
-    <span class="modal-close-btn">&times;</span>
-    <img id="modal-image" src="https://i.imgur.com/7gB8s2g.png" alt="Plantilla de Informe 8D ampliada">
-    <a id="download-btn" href="https://i.imgur.com/7gB8s2g.png" download="Informe_8D_Plantilla.png" class="start-button">Descargar Plantilla</a>
-</div>
-
     </main>
     
     <button id="next-btn" class="start-button" onclick="goToNextPage()">

@@ -97,70 +97,130 @@
     </div>
 
     <main>
+        <!-- Se asume que tu HTML principal ya enlaza a 'main.css' -->
+        <div class="sap-pm-module-container">
+        <!-- Título Principal -->
+        <header class="module-main-header">
+            <h1>Gestión de Objetos Técnicos en SAP PM</h1>
+        </header>
 
-<!-- =============== CONTENEDOR PRINCIPAL PARA LOS NUEVOS EJERCICIOS =============== -->
-<div class="interactive-exercises-container">
-    <div class="page-header">
-        <h1>Ejercicios Interactivos</h1>
-    </div>
-
-    <!-- =============== EJERCICIO 1: SELECCIÓN MÚLTIPLE =============== -->
-    <div class="multiple-choice-exercise">
-        <div class="exercise-header">
-            <h4>Aplicación de selección múltiple</h4>
-        </div>
-        <div class="exercise-question">
-            <span class="question-number">1</span>
-            <p>¿Cuál de los siguientes códigos corresponde a una orden de mantenimiento preventivo en SAP PM?:</p>
-        </div>
-        
-        <div class="mc-options-container">
-            <!-- Las opciones se desordenarán con JavaScript -->
-            <button class="mc-option" data-correct="false">PM01</button>
-            <button class="mc-option" data-correct="true">PM02</button>
-            <button class="mc-option" data-correct="false">PM03</button>
-            <button class="mc-option" data-correct="false">PM04</button>
-        </div>
-
-        <div class="mc-feedback">
-            <!-- La retroalimentación aparecerá aquí -->
-        </div>
-    </div>
-
-    <!-- =============== EJERCICIO 2: EMPAREJAMIENTO =============== -->
-    <div class="matching-exercise">
-        <div class="exercise-header">
-            <h4>Aplicación de emparejamiento</h4>
-        </div>
-        <div class="exercise-question">
-            <span class="question-number">1</span>
-            <p>Relaciona el código con su descripción:</p>
-        </div>
-
-        <div class="matching-wrapper">
-            <!-- Canvas SVG para dibujar las flechas -->
-            <svg class="matching-canvas"></svg>
-
-            <!-- Columna Izquierda: Códigos -->
-            <div class="matching-column-left">
-                <div class="matching-item" data-pair-id="pm01">PM01</div>
-                <div class="matching-item" data-pair-id="pm03">PM03</div>
-                <div class="matching-item" data-pair-id="pm04">PM04</div>
+        <!-- ====================================================== -->
+        <!-- TEMA 1: EQUIPOS                                        -->
+        <!-- ====================================================== -->
+        <section class="content-card">
+            <h2 class="gradient-text2">Equipos</h2>
+            <p>
+            Son objetos individuales y físicos que requieren un histórico de mantenimiento independiente. Las principales transacciones son Crear equipo, modificar equipo y visualizar equipo.
+            </p>
+            <div class="content-grid">
+            <div class="text-content">
+                <h4>Acceso en SAP:</h4>
+                <p class="monospace-text">Logística → Mantenimiento → Gestión de objetos técnicos → Equipo</p>
+                <h4>Transacciones:</h4>
+                <p class="monospace-text">
+                IE01 - Crear<br />
+                IE02 - Modificar<br />
+                IE03 - Visualizar
+                </p>
             </div>
-            <!-- Columna Derecha: Descripciones -->
-            <div class="matching-column-right">
-                <div class="matching-item" data-pair-id="pm03">Basado en condición (vibraciones, térmico)</div>
-                <div class="matching-item" data-pair-id="pm01">Reparaciones no planificadas</div>
-                <div class="matching-item" data-pair-id="pm04">Paradas técnicas grandes</div>
+            <div class="media-content">
+                <div class="image-container-styled">
+                <img src="../assets/images/Modulo1/estructura_equipos.png" alt="Visualizar Estructura de Equipo en SAP" />
+                <p class="image-caption-styled">Visualizar Estructura de Equipo en SAP</p>
+                </div>
             </div>
-        </div>
-        
-        <div class="matching-feedback">
-             <!-- La retroalimentación aparecerá aquí -->
-        </div>
-    </div>
+            </div>
+        </section>
 
-</div>
+        <!-- ====================================================== -->
+        <!-- TEMA 2: DIAGRAMA DE DATOS                              -->
+        <!-- ====================================================== -->
+        <section class="content-card dark-section">
+            <h2 class="section-title-light">Ubicaciones Técnicas y Equipos</h2>
+            <p>Información necesaria para la administración y gestión de objetos técnicos.</p>
+            <div class="interactive-diagram">
+            <!-- Contenido del diagrama (sin cambios) -->
+            <div class="diagram-row">
+                <div class="diagram-node main-topic">Objeto Técnico</div>
+                <div class="diagram-node category">Ubicaciones Técnicas</div>
+            </div>
+            <div class="diagram-row">
+                <div class="diagram-node main-topic">Información General</div>
+                <div class="diagram-node category" data-tooltip="Clase, Objeto, No. de inventario">Datos Generales</div>
+                <div class="diagram-node category" data-tooltip="Valor adqui., Fecha adqui.">Datos de aprovisionamiento</div>
+                <div class="diagram-node category" data-tooltip="Fabricante, Denominación, País, Serie">Datos de fabricación</div>
+            </div>
+            <div class="diagram-row">
+                <div class="diagram-node main-topic">Emplazamiento</div>
+                <div class="diagram-node category">Ce. Emplazamiento</div>
+                <div class="diagram-node category">Emplazamiento</div>
+                <div class="diagram-node category">Área de empresa</div>
+                <div class="diagram-node category">Criticidad</div>
+            </div>
+            <div class="diagram-row">
+                <div class="diagram-node main-topic">Organización</div>
+                <div class="diagram-node category" data-tooltip="Activo fijo, Centro de costos">Imputación</div>
+                <div class="diagram-node category" data-tooltip="Grupo planif., Puesto trab. resp.">Responsabilidad</div>
+                <div class="diagram-node category">Perfil catálogo</div>
+            </div>
+            <div class="diagram-row">
+                <div class="diagram-node main-topic">Estructura</div>
+                <div class="diagram-node category">Ubicación Técnica Superior</div>
+                <div class="diagram-node category">Equipo Superior</div>
+                <div class="diagram-node category">Equipos Instalados</div>
+            </div>
+            </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- TEMA 3: LISTA DE MATERIALES                            -->
+        <!-- ====================================================== -->
+        <section class="content-card">
+            <h2 class="gradient-text2">Lista de materiales</h2>
+            <p>Es la lista de componentes y/o repuestos que utiliza un equipo y/o ubicación técnica.</p>
+            <div class="content-grid">
+            <div class="text-content">
+                <h4>Acceso en SAP:</h4>
+                <p class="monospace-text">Logística → Mantenimiento → Gestión de objetos técnicos → Lista de materiales</p>
+                <h4>Transacciones:</h4>
+                <p class="monospace-text">
+                IB01 - Crear<br />
+                IB02 - Modificar<br />
+                IB03 - Visualizar
+                </p>
+            </div>
+            <div class="media-content">
+                <div class="image-switcher">
+                <div class="image-container-styled">
+                    <div class="image-fade-wrapper">
+                    <img src="../assets/images/Modulo1/acceso_inicial.png" alt="Acceso inicial a Lista de Materiales" class="switcher-image is-visible" />
+                    <img src="../assets/images/Modulo1/resumen_posiciones.png" alt="Resumen de posiciones de Lista de Materiales" class="switcher-image" />
+                    </div>
+                    <p class="image-caption-styled" id="imageCaption">Vista: Acceso Inicial</p>
+                </div>
+                <button class="image-switcher-btn">Alternar Vista</button>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Separador -->
+        <hr class="section-separator" />
+
+        <!-- ====================================================== -->
+        <!-- TEMA 4: CUESTIONARIO                                   -->
+        <!-- ====================================================== -->
+        <section class="content-card">
+            <h2 class="gradient-text2">¡Comprueba lo aprendido!</h2>
+            <p>Un objeto técnico individual y físico con su propio histórico de mantenimiento es un/una...</p>
+            <div class="quiz-options-wrapper">
+            <button class="quiz-option" data-correct="false">Lista de Materiales</button>
+            <button class="quiz-option" data-correct="true">Equipo</button>
+            <button class="quiz-option" data-correct="false">Ubicación Técnica</button>
+            </div>
+            <div class="quiz-feedback"></div>
+        </section>
+        </div>
     </main>
     
     <button id="next-btn" class="start-button" onclick="goToNextPage()">

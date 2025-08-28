@@ -97,123 +97,113 @@
     </div>
 
     <main>
-        <div class="page-header">
-            <h1>Estatus de Órdenes y Tipos de Órdenes de Trabajo</h1>
-        </div>
-<!-- =============== COMPONENTE 4: TIPOS DE ORDENES DE TRABAJO (SIN MINI-EJERCICIO) =============== -->
-<div class="sap-types-container">
-    <div class="instruction-box">
-        <h3>Tipos de órdenes de trabajo en SAP PM</h3>
-        <p>Explora los diferentes tipos de órdenes de trabajo y su propósito principal dentro del sistema.</p>
-    </div>
-
-    <div class="ot-types-grid">
-        <div class="ot-type-card hover-borde">
-            <div class="ot-card-header">
-                <span class="ot-code">PM01</span>
-                <h4 class="ot-type">Mantenimiento Correctivo</h4>
-            </div>
-            <p class="ot-usage"><strong>Uso:</strong> Reparaciones no planificadas.</p>
-        </div>
-        <div class="ot-type-card hover-borde">
-            <div class="ot-card-header">
-                <span class="ot-code">PM02</span>
-                <h4 class="ot-type">Mantenimiento Preventivo</h4>
-            </div>
-            <p class="ot-usage"><strong>Uso:</strong> Inspecciones y mantenimiento programado.</p>
-        </div>
-        <div class="ot-type-card hover-borde">
-            <div class="ot-card-header">
-                <span class="ot-code">PM03</span>
-                <h4 class="ot-type">Mantenimiento Predictivo</h4>
-            </div>
-            <p class="ot-usage"><strong>Uso:</strong> Basado en condición (vibraciones, térmico).</p>
-        </div>
-        <div class="ot-type-card hover-borde">
-            <div class="ot-card-header">
-                <span class="ot-code">PM04</span>
-                <h4 class="ot-type">Revisión General (Overhaul)</h4>
-            </div>
-            <p class="ot-usage"><strong>Uso:</strong> Paradas técnicas grandes.</p>
-        </div>
-    </div>
-
-    <div class="priority-codes-section">
-        <h4>Código de Prioridad: Determina urgencia</h4>
-        <ul>
-            <li><span class="priority-code">1</span> Urgente</li>
-            <li><span class="priority-code">2</span> Alta</li>
-            <li><span class="priority-code">3</span> Media</li>
-            <li><span class="priority-code">4</span> Baja</li>
-        </ul>
-    </div>
-</div>
-
-
-<!-- =============== COMPONENTE 5: CICLO DE VIDA (DISEÑO MEJORADO) =============== -->
-<div class="lifecycle-container">
-     <div class="instruction-box">
-        <h3>Ciclo de vida en una Orden de Trabajo</h3>
-        <p>Haz clic en cada etapa del ciclo para conocer su función. Luego, ordena las etapas en el mini-ejercicio.</p>
-    </div>
-    
-    <div class="lifecycle-wrapper">
-        <div class="lifecycle-diagram">
-            <!-- Líneas de conexión -->
-            <div class="lifecycle-connector" id="connector-1"></div>
-            <div class="lifecycle-connector" id="connector-2"></div>
-            <div class="lifecycle-connector" id="connector-3"></div>
-            <div class="lifecycle-connector" id="connector-4"></div>
-            <div class="lifecycle-connector" id="connector-5"></div>
-            <div class="lifecycle-connector" id="connector-6"></div>
-
-            <!-- Etapas del ciclo -->
-            <div class="lifecycle-stage" data-stage="creacion">
-                <h4>Creación</h4>
-                <p>Con base en avisos o planificación</p>
-            </div>
-            <div class="lifecycle-stage" data-stage="planificacion">
-                <h4>Planificación</h4>
-                <p>Recursos materiales, tiempos</p>
-            </div>
-            <div class="lifecycle-stage" data-stage="liberacion">
-                <h4>Liberación</h4>
-                <p>Aprobación para ejecución</p>
-            </div>
-            <div class="lifecycle-stage" data-stage="ejecucion">
-                <h4>Ejecución</h4>
-                <p>Trabajos en campo</p>
-            </div>
-            <div class="lifecycle-stage" data-stage="confirmacion">
-                <h4>Confirmación</h4>
-                <p>Registro de tiempos y materiales usados</p>
-            </div>
-            <div class="lifecycle-stage" data-stage="cierre">
-                <h4>Cierre técnico y contable</h4>
-            </div>
-            <div class="lifecycle-center-text">
-                SAP PM
-            </div>
+      <!-- Se asume que tu HTML principal ya enlaza a 'main.css' -->
+      <div class="sap-pm-module-container">
+        <div class="header-container">
+          <h1 class="tracking-in-contract">
+            Ubicaciones Técnicas en SAP PM
+          </h1>
+          <div class="instruction-box">
+            <h3>Bienvenido al Módulo Interactivo</h3>
+            <p>
+              Explora cada sección a continuación para comprender los conceptos clave.
+              Interactúa con los elementos y pon a prueba tus conocimientos.
+            </p>
+          </div>
         </div>
 
-        <!-- Panel de descripción que se mueve -->
-        <div class="lifecycle-description-panel" id="lifecycle-description-panel">
-            <h4 id="lifecycle-title"></h4>
-            <p id="lifecycle-details"></p>
-        </div>
-    </div>
-    
-    <!-- Mini-Ejercicio de Secuenciación -->
-    <div class="lifecycle-quiz-container">
-        <h3>Mini-Ejercicio: Ordena el Ciclo</h3>
-        <p>Arrastra las etapas para colocarlas en el orden correcto del ciclo de vida.</p>
-        <div class="lifecycle-quiz-wrapper">
-            <div id="lifecycle-drop-area" class="lifecycle-drop-area"></div>
-            <div id="lifecycle-drag-items" class="lifecycle-drag-items"></div>
-        </div>
-        <p id="lifecycle-quiz-feedback" class="lifecycle-quiz-feedback"></p>
-    </div>
-</div>
+        <!-- Bloque 1: Definición -->
+        <section class="content-block" data-animation="showContent">
+          <div class="hover-borde">
+            <h2 class="gradient-text2">¿Qué son?</h2>
+            <p>
+              Representan el lugar físico, técnico o funcional donde se debe efectuar
+              una medida de mantenimiento dentro de una planta.
+            </p>
+            <h3 class="highlight">Criterios de Organización</h3>
+            <div class="criteria-wrapper">
+              <div class="criterion-item">
+                <div class="criterion-icon">📍</div>
+                <span>Espaciales</span>
+              </div>
+              <div class="criterion-item">
+                <div class="criterion-icon">🛠️</div>
+                <span>Técnicos</span>
+              </div>
+              <div class="criterion-item">
+                <div class="criterion-icon">⚙️</div>
+                <span>Funcionales</span>
+              </div>
+            </div>
+          </div>
+        </section
+
+        <!-- Bloque 2: Acceso en SAP -->
+        <section class="content-block" data-animation="moverDesdeIzquierda">
+          <div class="hover-borde">
+            <h2 class="gradient-text2">Acceso en SAP</h2>
+            <h4>Menú SAP:</h4>
+            <p class="menu-path">
+              Logística → Mantenimiento → Gestión de objetos técnicos → Ubicación
+              técnica
+            </p>
+            <h4>Transacción:</h4>
+            <div class="tcode-wrapper">
+              <div class="tcode-item">
+                <span class="code">IL01</span><span class="desc">- Crear</span>
+              </div>
+              <div class="tcode-item">
+                <span class="code">IL02</span><span class="desc">- Modificar</span>
+              </div>
+              <div class="tcode-item">
+                <span class="code">IL03</span><span class="desc">- Visualizar</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bloque 3: Visualizador -->
+        <section class="content-block" data-animation="moverDesdeDerecha">
+          <div class="hover-borde visualizer-container">
+            <h2 class="gradient-text2">Explorador de Vistas</h2>
+            <div class="flipper-wrapper">
+              <div class="flipper">
+                <div class="flipper-face front">
+                  <img
+                    src="../assets/images/Modulo1/ubicaciones_tecnicas.png"
+                    alt="Visualizar ubicación técnica: Acceso"
+                  />
+                  <p class="caption">Vista de Acceso</p>
+                </div>
+                <div class="flipper-face back">
+                  <img
+                    src="../assets/images/Modulo1/resultado_estructural.png"
+                    alt="Visualizar ubicación técnica: Lista de estructura"
+                  />
+                  <p class="caption">Vista de Estructura</p>
+                </div>
+              </div>
+            </div>
+            <button class="flip-button">Voltear Vista</button>
+          </div>
+        </section>
+
+        <!-- Bloque 4: Cuestionario -->
+        <section class="content-block" data-animation="zoomIn">
+          <div class="hover-borde">
+            <h2 class="gradient-text2">¡Ponte a Prueba!</h2>
+            <p>
+              ¿Qué código de transacción se utiliza para
+              <strong class="highlight">CREAR</strong> una ubicación técnica?
+            </p>
+            <div class="quiz-options-wrapper">
+              <button class="quiz-option" data-answer="IL02">IL02</button>
+              <button class="quiz-option" data-answer="IL01">IL01</button>
+              <button class="quiz-option" data-answer="IL03">IL03</button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+        </section>
     </main>
     
     <button id="next-btn" class="start-button" onclick="goToNextPage()">

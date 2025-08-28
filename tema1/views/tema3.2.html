@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/sidebar.css">
     <link rel="stylesheet" href="../assets/css/ProgressBar.css">
-    <link rel="stylesheet" href="../assets/css/M1_pagina3.css">
+    <link rel="stylesheet" href="../assets/css/tema3.2.css">
     <script type="text/javascript" src="../js/sidebar.js" defer></script>
 </head>
 <body>
@@ -86,7 +86,7 @@
 
             <!-- Audio element oculto -->
             <audio id="audioPlayer" preload="metadata" autoplay>
-                <source src="../assets/audio/M1_pagina3.wav" type="audio/mp3" />
+                <source src="../assets/audio/tema3.2.wav" type="audio/mp3" />
                 Tu navegador no soporta el elemento de audio.
             </audio>
         </div>
@@ -97,113 +97,77 @@
     </div>
 
     <main>
-<!-- Se asume que tu HTML principal ya enlaza a 'main.css' -->
-<div class="sap-pm-module-container">
-  <div class="header-container">
-    <h1 class="tracking-in-contract">
-      Ubicaciones Técnicas en SAP PM
-    </h1>
-    <div class="instruction-box">
-      <h3>Bienvenido al Módulo Interactivo</h3>
-      <p>
-        Explora cada sección a continuación para comprender los conceptos clave.
-        Interactúa con los elementos y pon a prueba tus conocimientos.
-      </p>
-    </div>
-  </div>
 
-  <!-- Bloque 1: Definición -->
-  <section class="content-block" data-animation="showContent">
-    <div class="hover-borde">
-      <h2 class="gradient-text2">¿Qué son?</h2>
-      <p>
-        Representan el lugar físico, técnico o funcional donde se debe efectuar
-        una medida de mantenimiento dentro de una planta.
-      </p>
-      <h3 class="highlight">Criterios de Organización</h3>
-      <div class="criteria-wrapper">
-        <div class="criterion-item">
-          <div class="criterion-icon">📍</div>
-          <span>Espaciales</span>
-        </div>
-        <div class="criterion-item">
-          <div class="criterion-icon">🛠️</div>
-          <span>Técnicos</span>
-        </div>
-        <div class="criterion-item">
-          <div class="criterion-icon">⚙️</div>
-          <span>Funcionales</span>
-        </div>
-      </div>
-    </div>
-  </section
+        <div class="report-8d-container">
+            <div class="exercise-main-title">
+                <h2>Las 8 Disciplinas: El Informe 8D</h2>
+            </div>
 
-  <!-- Bloque 2: Acceso en SAP -->
-  <section class="content-block" data-animation="moverDesdeIzquierda">
-    <div class="hover-borde">
-      <h2 class="gradient-text2">Acceso en SAP</h2>
-      <h4>Menú SAP:</h4>
-      <p class="menu-path">
-        Logística → Mantenimiento → Gestión de objetos técnicos → Ubicación
-        técnica
-      </p>
-      <h4>Transacción:</h4>
-      <div class="tcode-wrapper">
-        <div class="tcode-item">
-          <span class="code">IL01</span><span class="desc">- Crear</span>
-        </div>
-        <div class="tcode-item">
-          <span class="code">IL02</span><span class="desc">- Modificar</span>
-        </div>
-        <div class="tcode-item">
-          <span class="code">IL03</span><span class="desc">- Visualizar</span>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="instruction-box">
+                <h3>Un Proceso de Mejora Continua</h3>
+                <p>El Informe 8D no es solo un documento, es el centro de un ciclo de monitoreo y mejora. Haz clic en cada etapa del proceso para entender su función.</p>
+            </div>
 
-  <!-- Bloque 3: Visualizador -->
-  <section class="content-block" data-animation="moverDesdeDerecha">
-    <div class="hover-borde visualizer-container">
-      <h2 class="gradient-text2">Explorador de Vistas</h2>
-      <div class="flipper-wrapper">
-        <div class="flipper">
-          <div class="flipper-face front">
-            <img
-              src="../assets/images/Modulo1/ubicaciones_tecnicas.png"
-              alt="Visualizar ubicación técnica: Acceso"
-            />
-            <p class="caption">Vista de Acceso</p>
-          </div>
-          <div class="flipper-face back">
-            <img
-              src="../assets/images/Modulo1/resultado_estructural.png"
-              alt="Visualizar ubicación técnica: Lista de estructura"
-            />
-            <p class="caption">Vista de Estructura</p>
-          </div>
-        </div>
-      </div>
-      <button class="flip-button">Voltear Vista</button>
-    </div>
-  </section>
+            <div class="report-process-wrapper">
+                <!-- Flecha Circular SVG de fondo -->
+                <svg class="process-circular-arrow" viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="arrow-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="var(--color-celeste)" />
+                            <stop offset="100%" stop-color="var(--color-azul-claro)" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M 50,7 A 43,43 0 1,1 49.9,7.001" stroke="url(#arrow-gradient)" stroke-width="6" fill="none" />
+                    <!-- Arrowheads -->
+                    <polygon points="88,58 97,50 88,42" fill="url(#arrow-gradient)" />
+                    <polygon points="12,42 3,50 12,58" fill="url(#arrow-gradient)" />
+                    <polygon points="42,12 50,3 58,12" fill="url(#arrow-gradient)" />
+                    <polygon points="58,88 50,97 42,88" fill="url(#arrow-gradient)" />
+                </svg>
 
-  <!-- Bloque 4: Cuestionario -->
-  <section class="content-block" data-animation="zoomIn">
-    <div class="hover-borde">
-      <h2 class="gradient-text2">¡Ponte a Prueba!</h2>
-      <p>
-        ¿Qué código de transacción se utiliza para
-        <strong class="highlight">CREAR</strong> una ubicación técnica?
-      </p>
-      <div class="quiz-options-wrapper">
-        <button class="quiz-option" data-answer="IL02">IL02</button>
-        <button class="quiz-option" data-answer="IL01">IL01</button>
-        <button class="quiz-option" data-answer="IL03">IL03</button>
-      </div>
-      <div class="quiz-feedback"></div>
-    </div>
-  </section>
+                <!-- Etapas del Proceso -->
+                <div class="process-step" data-step="1"><h4>1. Completar y Archivar</h4></div>
+                <div class="process-step" data-step="2"><h4>2. Monitorear Acciones</h4></div>
+                <div class="process-step" data-step="3"><h4>3. Revisar Regularmente</h4></div>
+                <div class="process-step" data-step="4"><h4>4. Identificar Oportunidades</h4></div>
+
+                <!-- Elemento Central -->
+                <div class="process-center">
+                    <a class="process-image-container" href="#" title="Haz clic para expandir">
+                        <img src="https://i.imgur.com/7gB8s2g.png" alt="Plantilla de Informe 8D">
+                    </a>
+                    <div class="process-description-panel">
+                        <h4 id="process-title"></h4>
+                        <p id="process-details"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nuevo Mini-Ejercicio -->
+            <div class="report-quiz-container">
+                <h4>Mini-Ejercicio: Toma de Decisión</h4>
+                <p class="quiz-question">Un cliente reporta un fallo crítico en un producto. Para asegurar que el problema no llegue a más clientes, ¿qué acción del ciclo 8D es la más urgente?</p>
+                <div class="quiz-dropdown-wrapper">
+                    <select id="quiz-select">
+                        <option value="">Selecciona una acción...</option>
+                        <option value="step1">Completar y Archivar</option>
+                        <option value="step2">Monitorear Acciones</option>
+                        <option value="step3">Revisar Regularmente</option>
+                        <option value="step4">Identificar Oportunidades</option>
+                    </select>
+                    <button id="check-answer-btn" class="start-button">Verificar</button>
+                </div>
+                <p class="quiz-feedback"></p>
+            </div>
+        </div>
+
+        <!-- Modal para la Imagen -->
+        <div id="image-modal" class="image-modal-container">
+            <span class="modal-close-btn">&times;</span>
+            <img id="modal-image" src="https://i.imgur.com/7gB8s2g.png" alt="Plantilla de Informe 8D ampliada">
+            <a id="download-btn" href="https://i.imgur.com/7gB8s2g.png" download="Informe_8D_Plantilla.png" class="start-button">Descargar Plantilla</a>
+        </div>
+
     </main>
     
     <button id="next-btn" class="start-button" onclick="goToNextPage()">
@@ -213,6 +177,6 @@
     
     <script src="../js/audioPlayer.js"></script>
     <script src="../js/SCORM.js"></script>
-    <script src="../js/M1_pagina3.js"></script>
+    <script src="../js/tema3.2.js"></script>
 </body>
 </html>

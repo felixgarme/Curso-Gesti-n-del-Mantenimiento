@@ -29,69 +29,41 @@
 
 /*Interactivo*/
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+  const moduleContainer = document.querySelector(".sap-pm-module-container");
+  if (!moduleContainer) return;
 
-    // =========================================================================
-    // LÓGICA COMPONENTE 6: CÓDIGOS DE UBICACIÓN Y EQUIPO
-    // =========================================================================
-    const flipCards = document.querySelectorAll('.le-flip-card');
-    flipCards.forEach(card => {
-        card.addEventListener('click', () => {
-            card.classList.toggle('flipped');
-        });
+  // --- 1. Animación Secuencial de Tarjetas al Hacer Scroll ---
+  const animatedCards = moduleContainer.querySelectorAll(".content-card");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = `${index * 100}ms`;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.1 });
+  animatedCards.forEach(card => observer.observe(card));
 
-    // =========================================================================
-    // LÓGICA COMPONENTE 7: CÓDIGOS DE CAUSA, DAÑO Y ACTIVIDAD
-    // =========================================================================
-    const accordionHeaders = document.querySelectorAll('.cda-accordion-header');
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const content = header.nextElementSibling;
-            content.classList.toggle('visible');
-            // Opcional: cerrar otros acordeones al abrir uno
-            accordionHeaders.forEach(otherHeader => {
-                if(otherHeader !== header) {
-                    otherHeader.nextElementSibling.classList.remove('visible');
-                }
-            });
-        });
+  // --- 2. Lógica del Simulador de Proceso ---
+  const processContainer = moduleContainer.querySelector(".process-flow-container");
+  if (processContainer) {
+    const controlButton = processContainer.querySelector(".process-flow-btn");
+    let isStep2 = false;
+
+    controlButton.addEventListener("click", () => {
+      isStep2 = !isStep2;
+      processContainer.classList.toggle("show-step-2", isStep2);
+
+      const arrow = controlButton.querySelector('.arrow');
+      if (isStep2) {
+        controlButton.classList.add("secondary");
+        controlButton.innerHTML = 'Volver al inicio';
+      } else {
+        controlButton.classList.remove("secondary");
+        controlButton.innerHTML = 'Crear Orden <span class="arrow">></span>';
+      }
     });
-
-    // Lógica del Mini-Ejercicio de Escenario
-    const scenarioBtns = document.querySelectorAll('.scenario-btn');
-    const scenarioFeedback = document.querySelector('.scenario-feedback p');
-    if (scenarioBtns.length > 0) {
-        scenarioBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const answer = btn.dataset.answer;
-                const type = btn.textContent.replace('Revelar ', '');
-                scenarioFeedback.innerHTML = `La <strong>${type}</strong> en este caso es: "<em>${answer}</em>"`;
-            });
-        });
-    }
-
-    // =========================================================================
-    // LÓGICA COMPONENTE 8: BENEFICIOS DE USO CORRECTO DE CÓDIGOS
-    // =========================================================================
-    const benefitItems = document.querySelectorAll('.benefits-list li');
-    if (benefitItems.length > 0) {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Añadir la clase .visible con un pequeño retraso escalonado
-                    const items = Array.from(entry.target.children);
-                    items.forEach((item, index) => {
-                        setTimeout(() => {
-                            item.classList.add('visible');
-                        }, index * 150); // 150ms de retraso entre cada item
-                    });
-                    observer.unobserve(entry.target); // Dejar de observar una vez animado
-                }
-            });
-        }, { threshold: 0.2 }); // Se activa cuando el 20% del contenedor es visible
-
-        observer.observe(document.querySelector('.benefits-list'));
-    }
-
+  }
 });

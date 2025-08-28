@@ -97,183 +97,69 @@
     </div>
 
     <main>
-<div class="brainstorm-component">
-    <h1>Lluvia de ideas</h1>
 
-    <div class="brainstorm-image-container">
-        <!-- La imagen original que se muestra de forma dinámica -->
-        <img src="../assets/images/Modulo3/brainstorm.png" alt="Brainstorming Session" class="brainstorm-image">
-    </div>
-
-    <!-- Sección de Definición -->
-    <div class="section definition-section" id="definition-section">
-        <div class="section-header">
-            <h2>Definición</h2>
-            <span class="toggle-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-            </span>
-        </div>
-        <div class="section-content">
-            <p>La <strong>lluvia de ideas</strong>, también denominada <strong>tormenta de ideas</strong>, es una herramienta de trabajo grupal que facilita el surgimiento de nuevas ideas sobre un tema o problema determinado.</p>
-            <p>Es una técnica de grupo para generar <strong>ideas originales</strong> en un ambiente relajado.</p>
-            <div class="interactive-quiz">
-                <p class="quiz-question">¿Cuál es el objetivo principal de la lluvia de ideas?</p>
-                <div class="quiz-options">
-                    <label>
-                        <input type="radio" name="definition-quiz" value="a"> Analizar críticamente las ideas existentes.
-                    </label>
-                    <label>
-                        <input type="radio" name="definition-quiz" value="b"> Generar la mayor cantidad de ideas nuevas y originales.
-                    </label>
-                    <label>
-                        <input type="radio" name="definition-quiz" value="c"> Evaluar la viabilidad de un proyecto.
-                    </label>
-                </div>
-                <button class="check-button" onclick="checkQuiz('definition-quiz', 'b', 'feedback-definition')">Verificar</button>
-                <div class="quiz-feedback" id="feedback-definition"></div>
+        <div class="interactive-exercises-container">
+            <div class="page-header">
+                <h1>Ejercicios Interactivos</h1>
             </div>
-        </div>
-    </div>
 
-    <!-- Sección de Cuándo se usa -->
-    <div class="section when-to-use-section" id="when-to-use-section">
-        <div class="section-header">
-            <h2>¿Cuándo se usa?</h2>
-            <span class="toggle-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-            </span>
-        </div>
-        <div class="section-content">
-            <p>La lluvia de ideas es muy útil cuando se trata de generar ideas sobre:</p>
-            <ul>
-                <li>Problemas</li>
-                <li>Aspectos para mejorar</li>
-                <li>Posibles causas</li>
-                <li>Otras soluciones</li>
-                <li>Oposición al cambio</li>
-            </ul>
-            <p>Al presentar la mayor cantidad de ideas posibles en un corto período e invitar a todos los miembros del grupo a participar, esta herramienta ayuda a la gente a pensar con mayor amplitud y tener otras perspectivas.</p>
-            <p>Sirve para que las ideas se propaguen por la influencia que ejercen entre ellas. Pero <strong>no sirve para reemplazar a los datos</strong>.</p>
+            <!-- =============== EJERCICIO 1: SELECCIÓN MÚLTIPLE =============== -->
+            <div class="multiple-choice-exercise">
+                <div class="exercise-header">
+                    <h4>Aplicación de selección múltiple</h4>
+                </div>
+                <div class="exercise-question">
+                    <span class="question-number">1</span>
+                    <p>¿Cuál de los siguientes códigos corresponde a una orden de mantenimiento preventivo en SAP PM?:</p>
+                </div>
+                
+                <div class="mc-options-container">
+                    <!-- Las opciones se desordenarán con JavaScript -->
+                    <button class="mc-option" data-correct="false">PM01</button>
+                    <button class="mc-option" data-correct="true">PM02</button>
+                    <button class="mc-option" data-correct="false">PM03</button>
+                    <button class="mc-option" data-correct="false">PM04</button>
+                </div>
 
-            <h3>Escenarios de uso (Desplazamiento Horizontal)</h3>
-            <div class="scroll-container">
-                <div class="scroll-item">
-                    <h4>Identificación de Problemas</h4>
-                    <p>Cuando un equipo busca entender las raíces de un problema o encontrar nuevas perspectivas sobre un desafío.</p>
-                </div>
-                <div class="scroll-item">
-                    <h4>Generación de Soluciones</h4>
-                    <p>Ideal para cuando se necesitan múltiples enfoques para resolver una situación, fomentando la creatividad.</p>
-                </div>
-                <div class="scroll-item">
-                    <h4>Mejora de Procesos</h4>
-                    <p>Permite a los miembros del equipo sugerir cambios e innovaciones en flujos de trabajo existentes.</p>
-                </div>
-                <div class="scroll-item">
-                    <h4>Superar la Resistencia al Cambio</h4>
-                    <p>Involucrar a todos en la generación de ideas puede ayudar a aceptar y adoptar nuevas direcciones.</p>
-                </div>
-                <div class="scroll-item">
-                    <h4>Desarrollo de Nuevos Productos</h4>
-                    <p>Explorar conceptos novedosos y características para futuros productos o servicios.</p>
+                <div class="mc-feedback">
+                    <!-- La retroalimentación aparecerá aquí -->
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Sección de Cómo se usa (Procedimiento) -->
-    <div class="section how-to-section" id="how-to-use-section">
-        <div class="section-header">
-            <h2>¿Cómo se usa?</h2>
-            <span class="toggle-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-            </span>
-        </div>
-        <div class="section-content">
-            <h3>Procedimiento:</h3>
-            <ul>
-                <li>Escriba en un rotafolio la pregunta o la cuestión a estudiar.</li>
-                <li>La lluvia de ideas puede responder a una estructura o no.</li>
-                <li>Deje que la gente piense algunas ideas durante unos minutos antes de empezar.</li>
-                <li>Escriba todas las ideas en un rotafolio.</li>
-                <li>Una vez generadas todas las ideas (por lo general toma entre 30 a 45 minutos), analice cada una para aclararlas y combinar las ideas afines de la lista.</li>
-                <li>Llegue a un acuerdo con respecto a las maneras de analizar las ideas y use una técnica de votación, porcentaje de importancia, etc., para elegir entre las distintas opciones.</li>
-                <li>Reducir la lista de 6 a 10 ideas principales, luego se podrá usar otra técnica para jerarquizarlas, de ser necesario.</li>
-            </ul>
+            <!-- =============== EJERCICIO 2: EMPAREJAMIENTO =============== -->
+            <div class="matching-exercise">
+                <div class="exercise-header">
+                    <h4>Aplicación de emparejamiento</h4>
+                </div>
+                <div class="exercise-question">
+                    <span class="question-number">1</span>
+                    <p>Relaciona el código con su descripción:</p>
+                </div>
 
-            <h3>Reglas Clave para el Brainstorming</h3>
-            <div class="rules-container">
-                <div class="rule-item">
-                    <span class="rule-icon">🚫</span>
-                    <p class="rule-text"><strong>No analice las ideas durante la lluvia de ideas.</strong> El momento de análisis será al final, al completar la lista.</p>
+                <div class="matching-wrapper">
+                    <!-- Canvas SVG para dibujar las flechas -->
+                    <svg class="matching-canvas"></svg>
+
+                    <!-- Columna Izquierda: Códigos -->
+                    <div class="matching-column-left">
+                        <div class="matching-item" data-pair-id="pm01">PM01</div>
+                        <div class="matching-item" data-pair-id="pm03">PM03</div>
+                        <div class="matching-item" data-pair-id="pm04">PM04</div>
+                    </div>
+                    <!-- Columna Derecha: Descripciones -->
+                    <div class="matching-column-right">
+                        <div class="matching-item" data-pair-id="pm03">Basado en condición (vibraciones, térmico)</div>
+                        <div class="matching-item" data-pair-id="pm01">Reparaciones no planificadas</div>
+                        <div class="matching-item" data-pair-id="pm04">Paradas técnicas grandes</div>
+                    </div>
                 </div>
-                <div class="rule-item">
-                    <span class="rule-icon">🤝</span>
-                    <p class="rule-text"><strong>No habrá juicio:</strong> no se permite criticar la idea de otra persona.</p>
-                </div>
-                <div class="rule-item">
-                    <span class="rule-icon">✨</span>
-                    <p class="rule-text"><strong>Se aceptan todas las ideas:</strong> no sea convencional, sea creativo.</p>
-                </div>
-                <div class="rule-item">
-                    <span class="rule-icon">🏗️</span>
-                    <p class="rule-text"><strong>Construya en las ideas de otros.</strong> (Este es un punto clave que a veces se interpreta mal del "no construir", aquí lo clarificamos como un fomento a la mejora colectiva).</p>
-                </div>
-                <div class="rule-item">
-                    <span class="rule-icon">⏰</span>
-                    <p class="rule-text"><strong>Establece una hora límite para la lluvia de ideas:</strong> de 30 a 45 minutos debe ser suficiente.</p>
+                
+                <div class="matching-feedback">
+                    <!-- La retroalimentación aparecerá aquí -->
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Sección de Precauciones -->
-    <div class="section precautions-section" id="precautions-section">
-        <div class="section-header">
-            <h2>Precauciones</h2>
-            <span class="toggle-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-            </span>
         </div>
-        <div class="section-content">
-            <div class="isometric-list">
-                <div class="isometric-item">
-                    <h4>Fundamento de Ideas</h4>
-                    <p>La lluvia de ideas es una técnica para generar ideas, pero cada una tiene que tener algún fundamento. No se trata de ideas totalmente aleatorias sin base.</p>
-                </div>
-                <div class="isometric-item">
-                    <h4>Análisis Post-Generación</h4>
-                    <p>El análisis o la crítica de las ideas <strong>durante</strong> la lluvia de ideas prolonga la duración del ejercicio y limita el flujo de ideas creativas. Deje el análisis de las ideas para el final.</p>
-                </div>
-                <div class="isometric-item">
-                    <h4>Evitar la Dominación</h4>
-                    <p>Si alguna persona o un grupito de personas domina el análisis, el líder tendrá que cambiar el formato de la lluvia de ideas a uno más estructurado (véase lo indicado antes).</p>
-                </div>
-                <div class="isometric-item">
-                    <h4>No Sustituye a los Datos</h4>
-                    <p>Recuerda que la lluvia de ideas genera hipótesis y posibilidades, pero no reemplaza la investigación o el análisis de datos concretos para la toma de decisiones finales.</p>
-                </div>
-            </div>
-            <div class="interactive-quiz" style="margin-top: 30px;">
-                <p class="quiz-question">¿Qué efecto negativo tiene criticar las ideas durante la fase de generación?</p>
-                <div class="quiz-options">
-                    <label>
-                        <input type="radio" name="precautions-quiz" value="a"> Fomenta la creatividad.
-                    </label>
-                    <label>
-                        <input type="radio" name="precautions-quiz" value="b"> Limita el flujo de ideas y prolonga el ejercicio.
-                    </label>
-                    <label>
-                        <input type="radio" name="precautions-quiz" value="c"> Ayuda a identificar las mejores ideas rápidamente.
-                    </label>
-                </div>
-                <button class="check-button" onclick="checkQuiz('precautions-quiz', 'b', 'feedback-precautions')">Verificar</button>
-                <div class="quiz-feedback" id="feedback-precautions"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
     </main>
     
     <button id="next-btn" class="start-button" onclick="goToNextPage()">

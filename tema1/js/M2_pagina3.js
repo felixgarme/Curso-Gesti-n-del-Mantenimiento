@@ -28,142 +28,78 @@
         });
 
 /*Interactivo*/
+document.addEventListener("DOMContentLoaded", () => {
+  const moduleContainer = document.querySelector(".sap-pm-module-container");
+  if (!moduleContainer) return;
 
-document.addEventListener('DOMContentLoaded', () => {
+  // --- 1. Animación Secuencial de Tarjetas al Hacer Scroll ---
+  const animatedCards = moduleContainer.querySelectorAll(".content-card");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Añade un delay escalonado para un efecto cascada
+        entry.target.style.transitionDelay = `${index * 150}ms`;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  animatedCards.forEach(card => observer.observe(card));
 
-    /**
-     * Función auxiliar para desordenar los hijos de un elemento padre.
-     */
-    function shuffleChildren(parent) {
-        if (!parent) return;
-        let children = Array.from(parent.children);
-        children.forEach(child => parent.removeChild(child));
-        children.sort(() => Math.random() - 0.5);
-        children.forEach(child => parent.appendChild(child));
-    }
+  // --- 2. Lógica para el Interruptor de Imágenes con Cross-Fade ---
+  const imageSwitcher = moduleContainer.querySelector(".image-switcher");
+  if (imageSwitcher) {
+    const switcherBtn = imageSwitcher.querySelector(".image-switcher-btn");
+    const images = imageSwitcher.querySelectorAll(".switcher-image");
+    const caption = imageSwitcher.querySelector("#imageCaption");
+    const captions = ["Vista: Acceso Inicial", "Vista: Resumen de Posiciones"];
+    let currentIndex = 0;
 
-    // =========================================================================
-    // LÓGICA PARA EL EJERCICIO 1: SELECCIÓN MÚLTIPLE (REDISEÑADO)
-    // =========================================================================
-    const mcOptionsContainer = document.querySelector('.mc-options-container');
-    const mcFeedback = document.querySelector('.mc-feedback');
+    switcherBtn.addEventListener("click", () => {
+      // Oculta la imagen actual
+      images[currentIndex].classList.remove("is-visible");
+      // Calcula el nuevo índice
+      currentIndex = (currentIndex + 1) % images.length;
+      // Muestra la nueva imagen
+      images[currentIndex].classList.add("is-visible");
+      
+      if (caption) caption.textContent = captions[currentIndex];
+    });
+  }
 
-    if (mcOptionsContainer) {
-        const mcOptions = mcOptionsContainer.querySelectorAll('.mc-option');
-        shuffleChildren(mcOptionsContainer); // Aleatoriedad
+  // --- 3. Lógica del Cuestionario Mejorado ---
+  const quizWrapper = moduleContainer.querySelector(".quiz-options-wrapper");
+  if (quizWrapper) {
+    const feedbackEl = moduleContainer.querySelector(".quiz-feedback");
+    const quizButtons = quizWrapper.querySelectorAll(".quiz-option");
+    let answered = false;
 
-        mcOptions.forEach(option => {
-            // Quitar el estilo verde inicial
-            option.classList.remove('is-correct-answer');
+    quizWrapper.addEventListener("click", (e) => {
+      const selectedButton = e.target.closest(".quiz-option");
+      if (!selectedButton || answered) return;
+      answered = true;
 
-            option.addEventListener('click', () => {
-                mcOptions.forEach(btn => btn.disabled = true);
-                const isCorrect = option.dataset.correct === 'true';
-                mcFeedback.classList.add('visible');
+      const isCorrect = selectedButton.dataset.correct === "true";
+      
+      quizButtons.forEach(btn => {
+        btn.disabled = true;
+        btn.classList.add("answered"); // Clase para atenuar los no seleccionados
+      });
 
-                if (isCorrect) {
-                    option.classList.add('correct');
-                    mcFeedback.classList.add('correct');
-                    mcFeedback.innerHTML = `<p><strong>¡Correcto!</strong> El código PM02 corresponde al mantenimiento preventivo, que se usa para inspecciones y tareas programadas.</p>`;
-                } else {
-                    option.classList.add('incorrect');
-                    mcFeedback.classList.add('incorrect');
-                    mcFeedback.innerHTML = `<p><strong>Incorrecto.</strong> La respuesta correcta es PM02 (Mantenimiento Preventivo).</p>`;
-                    const correctButton = mcOptionsContainer.querySelector('[data-correct="true"]');
-                    correctButton.classList.add('correct');
-                }
-            });
-        });
-    }
-
-    // =========================================================================
-    // LÓGICA PARA EL EJERCICIO 2: EMPAREJAMIENTO (CON FLECHAS)
-    // =========================================================================
-    const matchingWrapper = document.querySelector('.matching-wrapper');
-    const matchingFeedback = document.querySelector('.matching-feedback');
-    const svgCanvas = document.querySelector('.matching-canvas');
-
-    if (matchingWrapper && svgCanvas) {
-        const leftColumn = matchingWrapper.querySelector('.matching-column-left');
-        const rightColumn = matchingWrapper.querySelector('.matching-column-right');
-        let selectedItem = null;
-        let correctMatches = 0;
-        const totalPairs = leftColumn.children.length;
-        const connections = [];
-
-        shuffleChildren(leftColumn);
-        shuffleChildren(rightColumn);
-
-        const allItems = matchingWrapper.querySelectorAll('.matching-item');
-        allItems.forEach(item => {
-            item.addEventListener('click', () => {
-                if (item.classList.contains('matched-correct')) return;
-                
-                if (!selectedItem) {
-                    if (rightColumn.contains(item)) return;
-                    allItems.forEach(el => el.classList.remove('selected'));
-                    item.classList.add('selected');
-                    selectedItem = item;
-                } else {
-                    if (leftColumn.contains(item)) {
-                        allItems.forEach(el => el.classList.remove('selected'));
-                        item.classList.add('selected');
-                        selectedItem = item;
-                        return;
-                    }
-                    if (selectedItem.dataset.pairId === item.dataset.pairId) {
-                        selectedItem.classList.add('matched-correct');
-                        item.classList.add('matched-correct');
-                        connections.push({ startEl: selectedItem, endEl: item });
-                        drawAllConnections();
-                        correctMatches++;
-                        matchingFeedback.textContent = "¡Buena pareja!";
-                        matchingFeedback.style.color = '#15803d';
-                        if (correctMatches === totalPairs) {
-                            matchingFeedback.textContent = "¡Excelente! Has emparejado todos los códigos correctamente.";
-                        }
-                    } else {
-                        selectedItem.classList.add('matched-incorrect');
-                        item.classList.add('matched-incorrect');
-                        matchingFeedback.textContent = "Esa no es la descripción correcta. Intenta de nuevo.";
-                        matchingFeedback.style.color = 'var(--color-rojo)';
-                        setTimeout(() => {
-                            selectedItem.classList.remove('matched-incorrect');
-                            item.classList.remove('matched-incorrect');
-                            matchingFeedback.textContent = "";
-                        }, 1500);
-                    }
-                    selectedItem.classList.remove('selected');
-                    selectedItem = null;
-                }
-            });
-        });
-
-        function drawAllConnections() {
-            svgCanvas.innerHTML = ''; // Limpiar canvas
-            const wrapperRect = matchingWrapper.getBoundingClientRect();
-            
-            connections.forEach(({ startEl, endEl }) => {
-                const startRect = startEl.getBoundingClientRect();
-                const endRect = endEl.getBoundingClientRect();
-
-                // Calcular puntos relativos al contenedor
-                const x1 = startRect.right - wrapperRect.left;
-                const y1 = startRect.top - wrapperRect.top + startRect.height / 2;
-                const x2 = endRect.left - wrapperRect.left;
-                const y2 = endRect.top - wrapperRect.top + endRect.height / 2;
-
-                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                line.setAttribute('x1', x1);
-                line.setAttribute('y1', y1);
-                line.setAttribute('x2', x2);
-                line.setAttribute('y2', y2);
-                svgCanvas.appendChild(line);
-            });
+      if (isCorrect) {
+        selectedButton.classList.add("correct");
+        feedbackEl.textContent = "¡Correcto! Es un Equipo.";
+        feedbackEl.style.color = "#28a745";
+      } else {
+        selectedButton.classList.add("incorrect");
+        feedbackEl.textContent = "Respuesta Incorrecta. La correcta es 'Equipo'.";
+        feedbackEl.style.color = "var(--color-rojo)";
+        const correctButton = quizWrapper.querySelector('[data-correct="true"]');
+        if (correctButton) {
+            correctButton.classList.add("correct");
+            correctButton.classList.remove("answered"); // Quita atenuación de la correcta
         }
-
-        // Usar ResizeObserver para redibujar las líneas si el contenedor cambia de tamaño
-        const observer = new ResizeObserver(drawAllConnections);
-        observer.observe(matchingWrapper);
-    }
+      }
+    });
+  }
 });

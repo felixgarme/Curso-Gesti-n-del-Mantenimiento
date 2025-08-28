@@ -28,146 +28,81 @@
         });
 
 /*Interactivo*/
-document.addEventListener('DOMContentLoaded', () => {
 
-    // =========================================================================
-    // LÓGICA PARA EL COMPONENTE 3: ESTRUCTURA ORDEN DE TRABAJO
-    // =========================================================================
-    
-    const woTabBtns = document.querySelectorAll('.wo-tab-btn');
-    const woContents = document.querySelectorAll('.wo-content');
-    const tabSlider = document.querySelector('.wo-tab-slider');
+/*Interactivo*/
+document.addEventListener("DOMContentLoaded", () => {
+    // ---- LÓGICA DEL SELECTOR PRINCIPAL DE OBJETO ----
+    const selectorCards = document.querySelectorAll(".selector-card");
 
-    function updateSlider(activeBtn) {
-        if (!tabSlider) return;
-        tabSlider.style.width = `${activeBtn.offsetWidth}px`;
-        tabSlider.style.left = `${activeBtn.offsetLeft}px`;
-    }
+    const updateDynamicContent = (selectedObject) => {
+        const dynamicElements = document.querySelectorAll("[data-object]");
+        dynamicElements.forEach(el => {
+            if (el.dataset.object === selectedObject) {
+                el.classList.add("visible");
+            } else {
+                el.classList.remove("visible");
+            }
+        });
+    };
 
-    if (woTabBtns.length > 0) {
-        // Inicializar el slider
-        const initialActiveBtn = document.querySelector('.wo-tab-btn.active');
-        if (initialActiveBtn) {
-            updateSlider(initialActiveBtn);
-        }
-        
-        woTabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const targetId = btn.dataset.target;
-                woTabBtns.forEach(b => b.classList.remove('active'));
-                woContents.forEach(c => c.classList.remove('active'));
-                btn.classList.add('active');
-                document.getElementById(targetId).classList.add('active');
-                updateSlider(btn);
+    selectorCards.forEach(card => {
+        card.addEventListener("click", () => {
+            const selectedObject = card.dataset.object;
+            selectorCards.forEach(c => c.classList.remove("active"));
+            card.classList.add("active");
+            updateDynamicContent(selectedObject);
+        });
+    });
+
+    // ---- LÓGICA DE LAS PESTAÑAS (TABS) ----
+    const tabLinks = document.querySelectorAll(".tab-link");
+    const tabPanes = document.querySelectorAll(".tab-pane");
+
+    tabLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            const targetTab = link.dataset.tab;
+            
+            tabLinks.forEach(l => l.classList.remove("active"));
+            link.classList.add("active");
+
+            tabPanes.forEach(pane => {
+                if (pane.id === targetTab) {
+                    pane.classList.add("active");
+                } else {
+                    pane.classList.remove("active");
+                }
             });
         });
-    }
-
-    // Lógica del Mini-Ejercicio Drag & Drop (con soporte táctil)
-    const dragItems = document.querySelectorAll('.wo-drag-item');
-    const dropZones = document.querySelectorAll('.wo-drop-zone');
-    const feedbackEl = document.querySelector('.wo-quiz-feedback');
-    const dragItemsContainer = document.querySelector('.wo-drag-items');
-    let draggedItem = null;
-    let correctDrops = 0;
-
-    // --- Eventos de Escritorio ---
-    dragItems.forEach(item => {
-        item.addEventListener('dragstart', () => {
-            draggedItem = item;
-            setTimeout(() => item.classList.add('dragging'), 0);
-        });
-        item.addEventListener('dragend', () => {
-            draggedItem.classList.remove('dragging');
-            draggedItem = null;
-        });
-
-        // --- Eventos Táctiles ---
-        item.addEventListener('touchstart', (e) => {
-            draggedItem = item;
-            item.classList.add('dragging');
-        }, { passive: true });
     });
 
-    dropZones.forEach(zone => {
-        zone.addEventListener('dragover', e => {
-            e.preventDefault();
-            zone.classList.add('drag-over');
-        });
-        zone.addEventListener('dragleave', () => {
-            zone.classList.remove('drag-over');
-        });
-        zone.addEventListener('drop', e => {
-            e.preventDefault();
-            handleDrop(zone);
-        });
+    // ---- LÓGICA DE LA ANATOMÍA DE DATOS ----
+    const categoryButtons = document.querySelectorAll(".category-btn");
+    const dataItems = document.querySelectorAll(".data-item");
 
-        // --- Eventos Táctiles ---
-        zone.addEventListener('touchmove', e => {
-            e.preventDefault(); // Previene el scroll
-            const touch = e.touches[0];
-            const elementUnder = document.elementFromPoint(touch.clientX, touch.clientY);
-            if(elementUnder && elementUnder.closest('.wo-drop-zone') === zone){
-                 zone.classList.add('drag-over');
-            } else {
-                 zone.classList.remove('drag-over');
-            }
-        });
-        zone.addEventListener('touchend', e => {
-            const touch = e.changedTouches[0];
-            const elementUnder = document.elementFromPoint(touch.clientX, touch.clientY);
-            if(elementUnder && elementUnder.closest('.wo-drop-zone') === zone){
-                handleDrop(zone);
-            }
-            dropZones.forEach(z => z.classList.remove('drag-over'));
-            if(draggedItem) draggedItem.classList.remove('dragging');
-            draggedItem = null;
-        });
-    });
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const targetCategory = button.dataset.category;
 
-    function shuffleDragItems() {
-        if (!dragItemsContainer) return;
-        // Solo baraja los elementos que no han sido colocados correctamente
-        const itemsToShuffle = Array.from(dragItemsContainer.querySelectorAll('.wo-drag-item:not(.correct)'));
-        
-        // Algoritmo Fisher-Yates para barajar
-        for (let i = itemsToShuffle.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [itemsToShuffle[i], itemsToShuffle[j]] = [itemsToShuffle[j], itemsToShuffle[i]];
-        }
+            categoryButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
 
-        // Vuelve a añadir los elementos barajados al contenedor
-        itemsToShuffle.forEach(item => dragItemsContainer.appendChild(item));
-    }
-
-    function handleDrop(zone) {
-        if (!draggedItem || zone.classList.contains('correct')) return;
-
-        zone.classList.remove('drag-over');
-        if (zone.dataset.zone === draggedItem.dataset.match) {
-            // Correcto
-            feedbackEl.textContent = "¡Bien hecho! Concepto ubicado correctamente.";
-            feedbackEl.style.color = '#28a745';
-            zone.innerHTML = `✓ ${draggedItem.textContent}`;
-            zone.classList.add('correct');
-            draggedItem.classList.add('correct');
-            draggedItem.setAttribute('draggable', 'false');
-            correctDrops++;
-            if (correctDrops === dragItems.length) {
-                feedbackEl.textContent = "¡Excelente! Has organizado la OT correctamente.";
-            }
-        } else {
-            // Incorrecto
-            zone.classList.add('incorrect');
-            feedbackEl.textContent = "Incorrecto. Los conceptos se han reorganizado. ¡Intenta de nuevo!";
-            feedbackEl.style.color = 'var(--color-rojo)';
-            shuffleDragItems();
-            setTimeout(() => {
-                zone.classList.remove('incorrect');
-                if (correctDrops < dragItems.length) {
-                    feedbackEl.textContent = "";
+            dataItems.forEach(item => {
+                if (item.dataset.category === targetCategory) {
+                    item.classList.add("highlight");
+                } else {
+                    item.classList.remove("highlight");
                 }
-            }, 2000);
-        }
+            });
+        });
+    });
+
+    // ---- ESTADO INICIAL ----
+    // Activa la primera card y su contenido al cargar la página
+    if (selectorCards.length > 0) {
+        updateDynamicContent(selectorCards[0].dataset.object);
+    }
+    // Activa la primera categoría de datos al cargar la página
+    if (categoryButtons.length > 0) {
+        categoryButtons[0].click();
     }
 });

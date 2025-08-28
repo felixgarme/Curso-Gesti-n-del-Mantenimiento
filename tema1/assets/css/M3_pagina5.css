@@ -1,0 +1,239 @@
+body {
+  background-color: #ffffff;
+  color: var(--color-gris);
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo responsive */
+.logo-container {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: clamp(150px, 15vw, 200px);
+  margin: 3vh 3vh;
+}
+
+.container {
+  margin: auto;
+}
+
+/* Hero Section */
+.page-header {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto 0px;
+}
+
+.page-header h1 {
+  font-weight: normal;
+  background: var(--degrade-textos, linear-gradient(278deg, #7BDBFF 8.87%, #55b5da 39.24%, #3937bd 44.76%, #ea0606 54.73%, #eda3a4 100.62%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h4 {
+  color: var(--color-azul);
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Section styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.section-header p {
+  font-size: var(--font-6);
+  color: var(--color-gris);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content-section > .section-title {
+  font-size: var(--font-4);
+}
+
+/* Continue button */
+.start-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .logo {
+    width: 100px;
+  }
+
+  .logo-container {
+    top: 15px;
+    right: 15px;
+  }
+
+  .start-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/*ESTILOS DE INTERACTIVO*/
+
+/* ========================================================================= */
+/*      ESTILOS PARA LOS COMPONENTES 9 Y 10                                  */
+/* ========================================================================= */
+
+.sap-final-topics-container {
+    max-width: 1200px;
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+/* --- Componente 9: Transacciones SAP --- */
+.sap-terminal {
+    background: var(--color-azul-oscuro);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-top: var(--spacing-lg);
+}
+.terminal-header {
+    background: #e2e8f0;
+    padding: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+.terminal-header .dot { width: 12px; height: 12px; border-radius: 50%; background: #cbd5e1; }
+.terminal-title { margin-left: auto; color: var(--color-gris); font-weight: 600; }
+.terminal-screen {
+    padding: var(--spacing-lg);
+    color: #93c5fd; /* Azul claro para el texto */
+    font-family: monospace;
+    font-size: var(--font-6);
+    min-height: 80px;
+}
+.terminal-screen .cursor {
+    display: inline-block;
+    background: #93c5fd;
+    width: 10px;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.terminal-input {
+    background: rgba(0,0,0,0.2);
+    padding: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+.terminal-input button {
+    background: #1e3a8a; /* Azul oscuro */
+    color: var(--color-blanco);
+    border: 1px solid var(--color-azul);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+.terminal-input button:hover { background: var(--color-azul-claro); }
+
+.transaction-quiz, .example-quiz {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background-color: #f0f5fa;
+    border-radius: var(--border-radius-lg);
+}
+.quiz-options { display: flex; flex-direction: column; gap: var(--spacing-sm); margin-top: var(--spacing-sm); }
+.quiz-option { /* Reutiliza estilo de botón */
+    padding: var(--spacing-sm); border: 2px solid var(--color-celeste); border-radius: var(--border-radius-md);
+    background: var(--color-blanco); font-weight: 600; color: var(--color-azul); cursor: pointer;
+    transition: all var(--transition-normal); text-align: left;
+}
+.quiz-option:hover { background-color: #e0e7ff; }
+.quiz-option.correct { background-color: #28a745; border-color: #28a745; color: var(--color-blanco); }
+.quiz-option.incorrect { background-color: var(--color-rojo); border-color: var(--color-rojo); color: var(--color-blanco); }
+.quiz-feedback { margin-top: var(--spacing-md); min-height: 24px; font-weight: 600; }
+
+/* --- Componente 10: Ejemplo Práctico --- */
+.practical-example-wrapper { margin-top: var(--spacing-lg); }
+.scenario-card {
+    padding: var(--spacing-lg);
+    background: var(--color-azul-degradado);
+    color: var(--color-blanco);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+}
+.scenario-card strong { font-size: var(--font-5); }
+.applied-codes-section { margin: var(--spacing-lg) 0; }
+.code-selector { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-sm); }
+.code-btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: 1px solid var(--color-celeste);
+    border-radius: 30px;
+    background: transparent;
+    color: var(--color-celeste);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+}
+.code-btn:hover, .code-btn.active { background: var(--color-celeste); color: var(--color-blanco); }
+.code-details-display {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: #f8fafc;
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.code-details-display p { transition: opacity 0.3s; }
+.code-details-display strong { color: var(--color-azul-oscuro); }
+.code-details-display span { font-family: monospace; background: #e2e8f0; padding: 3px 6px; border-radius: 4px; }
+.result-card {
+    padding: var(--spacing-md);
+    background: #e6ffed;
+    border-left: 5px solid #28a745;
+    border-radius: var(--border-radius-sm);
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}

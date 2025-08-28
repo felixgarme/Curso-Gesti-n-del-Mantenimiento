@@ -28,100 +28,75 @@
         });
 
 /*Interactivo*/
+document.addEventListener("DOMContentLoaded", () => {
+  const moduleContainer = document.querySelector(".sap-pm-module-container");
+  if (!moduleContainer) return;
 
-document.addEventListener('DOMContentLoaded', () => {
+  // --- 1. Animación Secuencial de Tarjetas al Hacer Scroll ---
+  const animatedCards = moduleContainer.querySelectorAll(".content-card");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = `${index * 100}ms`;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  animatedCards.forEach(card => observer.observe(card));
 
-    // =========================================================================
-    // LÓGICA COMPONENTE 9: TRANSACCIONES SAP PM
-    // =========================================================================
-    const terminalInputBtns = document.querySelectorAll('.terminal-input button');
-    const terminalOutput = document.getElementById('terminal-output');
+  // --- 2. Lógica del Componente Acordeón ---
+  const accordionContainer = moduleContainer.querySelector(".accordion-container");
+  if (accordionContainer) {
+    accordionContainer.addEventListener("click", (e) => {
+      const header = e.target.closest(".accordion-header");
+      if (!header) return;
 
-    if (terminalInputBtns.length > 0) {
-        terminalInputBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const info = btn.dataset.info;
-                const command = btn.textContent;
-                terminalOutput.textContent = `> ${command}\n  Función: ${info}`;
-            });
-        });
-    }
-    
-    // Lógica del Quiz de Transacciones
-    const transactionQuizOptions = document.querySelectorAll('.transaction-quiz .quiz-option');
-    const transactionQuizFeedback = document.querySelector('.transaction-quiz .quiz-feedback');
-    if(transactionQuizOptions.length > 0) {
-        transactionQuizOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                const isCorrect = option.dataset.correct === 'true';
-                transactionQuizOptions.forEach(btn => btn.disabled = true);
-                if(isCorrect) {
-                    option.classList.add('correct');
-                    transactionQuizFeedback.textContent = "¡Correcto! IW39 es la transacción para reportes y listados.";
-                    transactionQuizFeedback.style.color = '#28a745';
-                } else {
-                    option.classList.add('incorrect');
-                    transactionQuizFeedback.textContent = "Incorrecto. La transacción para reportes es IW39.";
-                    transactionQuizFeedback.style.color = 'var(--color-rojo)';
-                    document.querySelector('.transaction-quiz .quiz-option[data-correct="true"]').classList.add('correct');
-                }
-            });
-        });
-    }
+      const item = header.parentElement;
+      const content = header.nextElementSibling;
+      const isActive = item.classList.contains("active");
 
-    // =========================================================================
-    // LÓGICA COMPONENTE 10: EJEMPLO PRÁCTICO
-    // =========================================================================
-    const codeBtns = document.querySelectorAll('.code-btn');
-    const codeDetailsDisplay = document.querySelector('.code-details-display p');
+      // Opcional: Cerrar otros items al abrir uno nuevo
+      // const allItems = accordionContainer.querySelectorAll('.accordion-item');
+      // allItems.forEach(i => {
+      //     i.classList.remove('active');
+      //     i.querySelector('.accordion-content').style.maxHeight = 0;
+      //     i.querySelector('.accordion-content').style.padding = "0 var(--spacing-md)";
+      // });
 
-    const exampleData = {
-        'tipo-orden': { title: 'Tipo de Orden', value: 'PM01 (Correctivo)' },
-        'prioridad': { title: 'Prioridad', value: '2 (Alta)' },
-        'ubicacion': { title: 'Ubicación Técnica', value: 'PLT-L2-BOMB01' },
-        'equipo': { title: 'Equipo', value: 'EQ00014567' },
-        'causa': { title: 'Código de Causa', value: 'CS01' },
-        'dano': { title: 'Código de Daño', value: 'DM02' },
-        'actividad': { title: 'Código de Actividad', value: 'AC05' }
+      if (!isActive) {
+        item.classList.add("active");
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.padding = "var(--spacing-md)";
+      } else {
+        item.classList.remove("active");
+        content.style.maxHeight = 0;
+        content.style.padding = "0 var(--spacing-md)";
+      }
+    });
+  }
+
+  // --- 3. Lógica del Slider de Imágenes ---
+  const sliderContainer = moduleContainer.querySelector(".image-slider-container");
+  if(sliderContainer) {
+    const track = sliderContainer.querySelector(".slider-track");
+    const slides = Array.from(track.children);
+    const nextButton = sliderContainer.querySelector(".next");
+    const prevButton = sliderContainer.querySelector(".prev");
+    let currentIndex = 0;
+
+    const updateSlidePosition = () => {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
     };
-    
-    if (codeBtns.length > 0) {
-        codeBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                codeBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                const codeKey = btn.dataset.code;
-                const data = exampleData[codeKey];
-                
-                codeDetailsDisplay.style.opacity = 0;
-                setTimeout(() => {
-                    codeDetailsDisplay.innerHTML = `<strong>${data.title}:</strong> <span>${data.value}</span>`;
-                    codeDetailsDisplay.style.opacity = 1;
-                }, 200);
-            });
-        });
-    }
 
-    // Lógica del Quiz de Ejemplo
-    const exampleQuizOptions = document.querySelectorAll('.example-quiz .quiz-option');
-    const exampleQuizFeedback = document.querySelector('.example-quiz .quiz-feedback');
-    if(exampleQuizOptions.length > 0) {
-        exampleQuizOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                 const isCorrect = option.dataset.correct === 'true';
-                exampleQuizOptions.forEach(btn => btn.disabled = true);
-                if(isCorrect) {
-                    option.classList.add('correct');
-                    exampleQuizFeedback.textContent = "¡Exacto! Una parada de producción requiere una orden correctiva y una prioridad urgente.";
-                    exampleQuizFeedback.style.color = '#28a745';
-                } else {
-                    option.classList.add('incorrect');
-                    exampleQuizFeedback.textContent = "Respuesta incorrecta. Al ser una falla crítica no planificada, es una orden correctiva de prioridad máxima.";
-                    exampleQuizFeedback.style.color = 'var(--color-rojo)';
-                    document.querySelector('.example-quiz .quiz-option[data-correct="true"]').classList.add('correct');
-                }
-            });
-        });
-    }
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlidePosition();
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlidePosition();
+    });
+  }
 });

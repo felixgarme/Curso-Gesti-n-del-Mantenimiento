@@ -97,96 +97,108 @@
     </div>
 
     <main>
-        <div class="page-header">
-            <h1>Evaluación: Proceso de Creación de Mapa Mental</h1>
-        </div>
-<div class="sap-final-topics-container">
+        <div class="sap-pm-module-container">
+          <!-- Título Principal -->
+          <header class="module-main-header">
+            <h1>Órdenes de Trabajo en SAP PM</h1>
+          </header>
 
-    <!-- =============== COMPONENTE 9: TRANSACCIONES SAP PM =============== -->
-    <div class="transactions-section">
-        <div class="instruction-box">
-            <h3>Transacciones SAP PM para Órdenes</h3>
-            <p>Haz clic en cada código de transacción en la "terminal" para descubrir su función principal.</p>
-        </div>
-
-        <div class="sap-terminal">
-            <div class="terminal-header">
-                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                <span class="terminal-title">SAP Easy Access</span>
-            </div>
-            <div class="terminal-screen">
-                <span id="terminal-output">> Bienvenido. Ingrese una transacción...</span>
-                <span class="cursor">_</span>
-            </div>
-            <div class="terminal-input">
-                <button data-info="Crear Orden de Trabajo (OT).">IW31</button>
-                <button data-info="Modificar una Orden de Trabajo existente.">IW32</button>
-                <button data-info="Liberar una Orden de Trabajo para su ejecución.">IW33</button>
-                <button data-info="Cerrar una o varias Órdenes de Trabajo.">IW38</button>
-                <button data-info="Obtener un listado de Órdenes de Trabajo (reportes).">IW39</button>
-            </div>
-        </div>
-
-        <!-- Mini-Ejercicio -->
-        <div class="transaction-quiz">
-            <h4>Mini-Ejercicio</h4>
-            <p>Necesitas ver todas las órdenes de trabajo completadas el mes pasado. ¿Qué transacción usarías para obtener este reporte?</p>
-            <div class="quiz-options">
-                <button class="quiz-option" data-correct="false">IW31</button>
-                <button class="quiz-option" data-correct="false">IW38</button>
-                <button class="quiz-option" data-correct="true">IW39</button>
-            </div>
-            <p class="quiz-feedback"></p>
-        </div>
-    </div>
-
-    <!-- =============== COMPONENTE 10: EJEMPLO PRÁCTICO =============== -->
-    <div class="practical-example-section">
-        <div class="instruction-box">
-            <h3>Ejemplo práctico</h3>
-            <p>Analiza cómo se aplican todos los códigos aprendidos en un escenario real. Haz clic en cada código para ver el valor asignado.</p>
-        </div>
-
-        <div class="practical-example-wrapper">
-            <div class="scenario-card hover-borde">
-                <strong>Escenario:</strong> Fuga de aceite en bomba hidráulica de la línea 2.
-            </div>
-            
-            <div class="applied-codes-section">
-                <h4>Códigos aplicados:</h4>
-                <div class="code-selector">
-                    <button class="code-btn" data-code="tipo-orden">Tipo de Orden</button>
-                    <button class="code-btn" data-code="prioridad">Prioridad</button>
-                    <button class="code-btn" data-code="ubicacion">Ubicación Técnica</button>
-                    <button class="code-btn" data-code="equipo">Equipo</button>
-                    <button class="code-btn" data-code="causa">Código de Causa</button>
-                    <button class="code-btn" data-code="dano">Código de Daño</button>
-                    <button class="code-btn" data-code="actividad">Código de Actividad</button>
+          <!-- ====================================================== -->
+          <!-- TEMA 1: OPCIONES DE CREACIÓN (ACORDEÓN INTERACTIVO)    -->
+          <!-- ====================================================== -->
+          <section class="content-card">
+            <h2 class="section-title">Órdenes de trabajo</h2>
+            <p>Existen 6 opciones para crear una orden de trabajo, dependiendo del punto de partida y la necesidad del proceso.</p>
+            <div class="content-grid single-col">
+              <div class="text-content">
+                <h4 class="sub-heading">Menú SAP ECC:</h4>
+                <p class="monospace-text">Logística → Mantenimiento → Gestión de objetos mantenimiento → Orden → IW31 - Crear en general</p>
+                <h4 class="sub-heading">Código de transacción:</h4>
+                <p class="monospace-text">IW31 - Crear en general / IW32 - Modificar / IW33 - Visualizar</p>
+              </div>
+              <div class="media-content">
+                <div class="accordion-container">
+                  <!-- Acordeón Item 1 -->
+                  <div class="accordion-item">
+                    <button class="accordion-header">Creación automática desde ítem de mantenimiento</button>
+                    <div class="accordion-content">
+                      <div class="sap-flow"><span class="sap-object source">Maintenance Item</span><span class="arrow-connector">→</span><span class="sap-object result">Orden</span></div>
+                    </div>
+                  </div>
+                  <!-- Acordeón Item 2 -->
+                  <div class="accordion-item">
+                    <button class="accordion-header">Creación desde una notificación</button>
+                    <div class="accordion-content">
+                      <div class="sap-flow"><span class="sap-object source">Notificación</span><span class="arrow-connector">→</span><span class="sap-object result">Orden</span></div>
+                    </div>
+                  </div>
+                  <!-- Acordeón Item 3 -->
+                  <div class="accordion-item">
+                    <button class="accordion-header">Creación desde varias notificaciones</button>
+                    <div class="accordion-content">
+                      <div class="sap-flow"><span class="sap-object source">Notificación</span><span class="arrow-connector">→</span><span class="sap-object result">Orden</span></div>
+                    </div>
+                  </div>
+                  <!-- Acordeón Item 4 -->
+                  <div class="accordion-item">
+                    <button class="accordion-header">Creación directa sin notificación</button>
+                    <div class="accordion-content">
+                      <div class="sap-flow"><span class="sap-object result single">Orden</span></div>
+                    </div>
+                  </div>
+                  <!-- Acordeón Item 5 y 6 -->
+                  <div class="accordion-item">
+                    <button class="accordion-header">Creación directa con y de una notificación</button>
+                    <div class="accordion-content">
+                      <div class="sap-flow"><span class="sap-object source">Orden</span><span class="arrow-connector">↔</span><span class="sap-object result">Notificación</span></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="code-details-display">
-                    <p>Selecciona un tipo de código para ver su valor.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ====================================================== -->
+          <!-- TEMA 2: ACCESO RÁPIDO (SLIDER)                         -->
+          <!-- ====================================================== -->
+          <section class="content-card">
+            <h2 class="section-title">Acceso rápido y Tipos de órdenes</h2>
+            <div class="text-content full-width">
+                <h4 class="sub-heading">Acceso y Transacciones:</h4>
+                <p class="monospace-text">Menú: ...Logística → Mantenimiento → Orden → IW33 - Visualizar<br>T-Code: IW31 → Visualizar</p>
+            </div>
+            <div class="image-slider-container">
+              <div class="slider-viewport">
+                <div class="slider-track">
+                  <div class="slider-slide">
+                    <img src="../assets/images/Modulo1/acceso_rapido.png" alt="Acceso rápido desde SAP Easy Access" />
+                    <p class="image-caption-styled">1. Acceso rápido desde SAP Easy Access</p>
+                  </div>
+                  <div class="slider-slide">
+                    <img src="../assets/images/Modulo1/tipo_orden.png" alt="Tipos de órdenes de trabajo" />
+                    <p class="image-caption-styled">2. Tipos de órdenes de trabajo (ej. PM01)</p>
+                  </div>
                 </div>
+              </div>
+              <button class="slider-btn prev">‹</button>
+              <button class="slider-btn next">›</button>
             </div>
-
-            <div class="result-card">
-                <strong>Resultado:</strong> Orden cerrada en SAP con trazabilidad completa.
+          </section>
+          
+          <!-- ====================================================== -->
+          <!-- TEMA 3: INFORMACIÓN RELEVANTE (IMAGEN ANOTADA)         -->
+          <!-- ====================================================== -->
+          <section class="content-card dark-section">
+            <h2 class="section-title-light">Información Relevante de la Orden</h2>
+            <div class="annotated-image-container">
+              <img src="../assets/images/Modulo1/informacion_orden.png" alt="Información relevante en una orden de mantenimiento" />
+              <div class="hotspot" style="top: 36.5%; left: 88%;" data-tooltip="Descripción"></div>
+              <div class="hotspot" style="top: 53%; left: 78%;" data-tooltip="Puesto de trabajo principal"></div>
+              <div class="hotspot" style="top: 77%; left: 88%;" data-tooltip="Puesto de trabajo"></div>
             </div>
+          </section>
         </div>
 
-        <!-- Mini-Ejercicio -->
-        <div class="example-quiz">
-            <h4>Mini-Ejercicio de Aplicación</h4>
-            <p><strong>Nuevo Escenario:</strong> Se rompe una correa crítica en una cinta transportadora, deteniendo la producción. Debe ser reparado inmediatamente. ¿Qué 'Tipo de Orden' y 'Prioridad' asignarías?</p>
-             <div class="quiz-options">
-                <button class="quiz-option" data-correct="true">Tipo: PM01 (Correctivo), Prioridad: 1 (Urgente)</button>
-                <button class="quiz-option" data-correct="false">Tipo: PM02 (Preventivo), Prioridad: 3 (Media)</button>
-                <button class="quiz-option" data-correct="false">Tipo: PM04 (Overhaul), Prioridad: 2 (Alta)</button>
-            </div>
-            <p class="quiz-feedback"></p>
-        </div>
-    </div>
-
-</div>
     </main>
     
     <button id="next-btn" class="start-button" onclick="goToNextPage()">

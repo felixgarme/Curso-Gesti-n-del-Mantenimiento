@@ -97,126 +97,153 @@
     </div>
 
     <main>
+        <div class="sap-pm-module-container">
+          <!-- Título Principal -->
+          <header class="module-main-header">
+            <h1>Avisos y Órdenes de Mantenimiento en <span class="highlight">SAP PM</span></h1>
+          </header>
 
-        <!-- =============== CONTENEDOR PRINCIPAL PARA LOS NUEVOS TEMAS =============== -->
-<div class="code-info-container">
-    <div class="page-header">
-        <h1>Importancia de los Códigos en el Mantenimiento</h1>
-    </div>
-    <!-- =============== COMPONENTE 6: CÓDIGOS DE UBICACIÓN Y EQUIPO =============== -->
-    <div class="location-equipment-section">
-        <div class="instruction-box">
-            <h3>Códigos de Ubicación y Equipo</h3>
-            <p>Haz clic en cada tarjeta para voltearla y descubrir la función de estos códigos esenciales.</p>
-        </div>
-        
-        <div class="le-cards-wrapper">
-            <!-- Tarjeta 1: Ubicación Técnica -->
-            <div class="le-flip-card">
-                <div class="le-card-inner">
-                    <div class="le-card-front">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.58172 2 4 5.58172 4 10C4 14.4183 12 22 12 22C12 22 20 14.4183 20 10C20 5.58172 16.4183 2 12 2ZM12 12C10.8954 12 10 11.1046 10 10C10 8.89543 10.8954 8 12 8C13.1046 8 14 8.89543 14 10C14 11.1046 13.1046 12 12 12Z"></path></svg>
-                        <h4>Ubicación Técnica</h4>
+          <section class="content-card">
+            <h2 class="section-title-accent">Avisos de mantenimiento</h2>
+            <p>Son operaciones utilizadas de manera excepcional para las siguientes actividades:</p>
+            <div class="intro-grid">
+              <div class="features-list-interactive">
+                <!-- Flip Card 1 -->
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <div class="feature-icon-wrapper">
+                        <svg class="feature-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                      </div>
+                      <h4 class="feature-title">Describir emergencias</h4>
                     </div>
-                    <div class="le-card-back">
-                        <p>Identifica <strong>dónde</strong> se realizará el trabajo.</p>
-                        <span>Ej: PLT-AREA01-LIN01</span>
+                    <div class="flip-card-back">
+                      <p>Detallar la situación de emergencia técnica de un objeto.</p>
                     </div>
+                  </div>
                 </div>
-            </div>
-
-            <!-- Tarjeta 2: Código de Equipo -->
-            <div class="le-flip-card">
-                <div class="le-card-inner">
-                    <div class="le-card-front">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2V4H4V7H2V2H7ZM22 2V7H20V4H17V2H22ZM7 22V20H4V17H2V22H7ZM22 22V17H20V20H17V22H22ZM17 8H7V16H17V8Z"></path></svg>
-                        <h4>Código de Equipo</h4>
+                <!-- Flip Card 2 -->
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <div class="feature-icon-wrapper">
+                        <svg class="feature-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                      </div>
+                      <h4 class="feature-title">Solicitar tareas</h4>
                     </div>
-                    <div class="le-card-back">
-                        <p>Número único que identifica la <strong>máquina</strong> o activo.</p>
-                        <span>Ej: EQ00012345</span>
+                    <div class="flip-card-back">
+                      <p>Requerir una tarea específica en la gestión de mantenimiento.</p>
                     </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-        
-        <div class="le-benefit-card hover-borde">
-            <p><strong>Beneficio:</strong> Facilita la trazabilidad y el análisis histórico de intervenciones en lugares y equipos específicos.</p>
-        </div>
-    </div>
-
-    <!-- =============== COMPONENTE 7: CÓDIGOS DE CAUSA, DAÑO Y ACTIVIDAD =============== -->
-    <div class="cda-section">
-        <div class="instruction-box">
-            <h3>Códigos de Causa, Daño y Actividad</h3>
-            <p>Comprende cómo se estructura el reporte de una falla a través de estos tres códigos clave.</p>
-        </div>
-
-        <div class="cda-accordion">
-            <div class="cda-accordion-item">
-                <button class="cda-accordion-header">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"></path></svg>
-                    <span>Código de Causa</span>
-                </button>
-                <div class="cda-accordion-content">
-                    <p>Indica el <strong>motivo raíz</strong> del fallo (ej. “CS01 – Desgaste normal”).</p>
+                <!-- Flip Card 3 -->
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <div class="feature-icon-wrapper">
+                        <svg class="feature-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                      </div>
+                      <h4 class="feature-title">Documentar trabajo</h4>
+                    </div>
+                    <div class="flip-card-back">
+                      <p>Registrar y documentar el trabajo que ha sido realizado.</p>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="cda-accordion-item">
-                <button class="cda-accordion-header">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path></svg>
-                    <span>Código de Daño</span>
-                </button>
-                <div class="cda-accordion-content">
-                    <p>Describe la <strong>condición encontrada</strong> (ej. “DM02 – Fuga de aceite”).</p>
+          </section>
+
+          <!-- ====================================================== -->
+          <!-- TEMA 2: CREACIÓN DE AVISOS (Y DEMÁS SECCIONES)         -->
+          <!-- ====================================================== -->
+          <section class="content-card">
+            <h2 class="section-title">Creación de avisos de mantenimiento</h2>
+            <!-- El resto del HTML (Creación, Diagrama, Conversión) no necesita cambios estructurales -->
+            <div class="text-content full-width">
+              <h4 class="sub-heading">Menú SAP ECC:</h4>
+              <p class="monospace-text">Logística → Mantenimiento → Gestión de mantenimiento → Aviso → IW21 - Crear en general</p>
+              <h4 class="sub-heading">Código de transacción:</h4>
+              <p class="monospace-text">IB01 - Crear en general / IW22 - Modificar / IW2 - Visualizar</p>
+            </div>
+            <div class="creation-grid">
+              <div class="media-content">
+                <div class="image-container-styled">
+                  <img src="../assets/images/Modulo1/crear_aviso.png" alt="Crear Aviso en SAP PM" />
+                  <p class="image-caption-styled">Crear Aviso en SAP PM</p>
                 </div>
-            </div>
-            <div class="cda-accordion-item">
-                <button class="cda-accordion-header">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22.7 19l-9.1-9.1c.9-2.2.4-4.7-1.3-6.5-1.9-1.9-4.6-2.6-7-2.1l4.2 4.2L3 14.5l-2.1-2.1L4.1 9l4.2 4.2-5.7 5.7c.5 2.4 2.2 4.5 4.5 5.4l9.1-9.1L19 16.7l3.7-3.7-2.1-2.1L22.7 19z"></path></svg>
-                    <span>Código de Actividad</span>
-                </button>
-                <div class="cda-accordion-content">
-                    <p>Indica la <strong>acción realizada</strong> (ej. “AC05 – Cambio de componente”).</p>
+              </div>
+              <div class="media-content">
+                <div class="interactive-image-container">
+                  <img src="../assets/images/Modulo1/detalle_aviso.png" alt="Detalle de aviso de mantenimiento" class="main-image" />
+                  <div class="hotspot" style="top: 18%; right: 5%;" data-tooltip="IW21: Crear Aviso">W21</div>
+                  <div class="hotspot" style="top: 30%; right: 5%;" data-tooltip="IW22: Modificar Aviso">W22</div>
+                  <div class="hotspot" style="top: 42%; right: 5%;" data-tooltip="IW23: Visualizar Aviso">W23</div>
                 </div>
+              </div>
             </div>
-        </div>
-        
-        <div class="cda-usage-card">
-            <p><strong>Uso General:</strong> Potenciar el análisis de fallas y la generación de reportes KPI.</p>
-        </div>
+          </section>
 
-        <!-- Mini-Ejercicio de Escenario -->
-        <div class="cda-scenario-exercise">
-            <h4>Mini-Ejercicio: Analiza el Escenario</h4>
-            <p class="scenario-text">"La bomba de agua tuvo una <strong>fuga de aceite</strong> debido al <strong>desgaste normal del sello</strong>, por lo que se realizó un <strong>cambio de componente</strong>."</p>
-            <div class="scenario-buttons">
-                <button class="scenario-btn" data-answer="Desgaste normal del sello">Revelar Causa</button>
-                <button class="scenario-btn" data-answer="Fuga de aceite">Revelar Daño</button>
-                <button class="scenario-btn" data-answer="Cambio de componente">Revelar Actividad</button>
+          <section class="content-card dark-section">
+            <h2 class="section-title-light">Estructura de Datos del Aviso</h2>
+            <div class="diagram-grid">
+              <div class="diagram-column">
+                <div class="diagram-node" data-tooltip="Equipo, ubicación técnica, conjunto, número de serie del material">Objeto de referencia</div>
+                <div class="diagram-node" data-tooltip="Grupo de planificación, puesto de trabajo principal">Responsabilidades</div>
+                <div class="diagram-node" data-tooltip="Avería, causa de avería, parte del objeto">Posición y causa</div>
+                <div class="diagram-node" data-tooltip="Disponibilidad del sistema antes, después">Disponibilidad del sistema</div>
+                <div class="diagram-node" data-tooltip="Inicio, fin, duración de la avería">Datos de avería</div>
+                <div class="diagram-node" data-tooltip="Prioridad, inicio requerido y fin requerido">Fechas de inicio/fin</div>
+                <div class="diagram-node" data-tooltip="Conjunto, texto">Item overview</div>
+              </div>
+              <div class="diagram-column">
+                <div class="diagram-node" data-tooltip="Tareas y causas para avisos">Actividades</div>
+                <div class="diagram-node" data-tooltip="De aviso y de objeto">Dirección</div>
+                <div class="diagram-node" data-tooltip="Función de interlocutor, interlocutor, dirección">Partner overview</div>
+                <div class="diagram-node">Garantía</div>
+                <div class="diagram-node" data-tooltip="Planta, centro de negocios">Ubicación</div>
+                <div class="diagram-node" data-tooltip="Fecha de avisos, control técnico">Programación</div>
+                <div class="diagram-node" data-tooltip="Hoja de ruta, plan de mantenimiento">Plan de mantenimiento</div>
+              </div>
             </div>
-            <div class="scenario-feedback">
-                <p>Haz clic en un botón para ver la respuesta.</p>
+            <div class="image-container-styled single-image">
+              <img src="../assets/images/Modulo1/pestañas_aviso.png" alt="Pestañas de un aviso de mantenimiento en SAP" />
             </div>
+          </section>
+          
+          <section class="content-card">
+            <h2 class="section-title-accent">Conversión a órdenes de mantenimiento</h2>
+            <div class="process-flow-container">
+              <div class="process-flow-viewport">
+                <div class="process-step">
+                  <h4 class="sub-heading">Paso 1: Acceso a la Creación de Orden</h4>
+                  <p class="monospace-text">Menú: ...Mantenimiento → Orden → Creación especial → IW34 - Orden para aviso</p>
+                  <p class="monospace-text">Transacción: <strong>IW34</strong> - Orden para aviso</p>
+                  <div class="image-container-styled">
+                    <img src="../assets/images/Modulo1/crear_aviso.png" alt="Crear orden para aviso: Pantalla de acceso" />
+                  </div>
+                </div>
+                <div class="process-step">
+                  <h4 class="sub-heading">Paso 2: Orden de Mantenimiento Creada</h4>
+                  <p>Se genera la orden de mantenimiento preventiva con los datos del aviso, lista para ser gestionada.</p>
+                  <div class="image-container-styled">
+                    <img src="../assets/images/Modulo1/visualizar_orden.png" alt="Visualizar orden de mantenimiento creada" />
+                  </div>
+                </div>
+              </div>
+              <div class="process-flow-controls">
+                <button class="process-flow-btn start-button">Crear Orden <span class="arrow">></span></button>
+              </div>
+            </div>
+          </section>
+          
+          <footer class="module-footer">
+            <button class="start-button">
+              Continuar
+              <span class="arrow">></span>
+            </button>
+          </footer>
         </div>
-    </div>
-
-    <!-- =============== COMPONENTE 8: BENEFICIOS DE USO CORRECTO DE CÓDIGOS =============== -->
-    <div class="benefits-section">
-         <div class="instruction-box">
-            <h3>Beneficios de Uso Correcto de Códigos</h3>
-            <p>El registro adecuado de códigos se traduce en mejoras tangibles para la gestión del mantenimiento.</p>
-        </div>
-        <ul class="benefits-list">
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4C2.89543 2 2 2.89543 2 4V20C2 21.1046 2.89543 22 4 22H20C21.1046 22 22 21.1046 22 20V4C22 2.89543 20 2ZM10 16L6 12L7.41 10.59L10 13.17L16.59 6.58L18 8L10 16Z"></path></svg><strong>Estandarización de datos</strong> → Mejora la calidad de reportes.</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM11 4C7.13401 4 4 7.13401 4 11C4 14.866 7.13401 18 11 18C14.866 18 18 14.866 18 11C18 7.13401 14.866 4 11 4ZM19.4853 18.0711L22.3137 20.8995L20.8995 22.3137L18.0711 19.4853L19.4853 18.0711ZM12 10.5V14H10V10.5C10 9.67157 10.6716 9 11.5 9C12.3284 9 13 9.67157 13 10.5H12Z"></path></svg><strong>Facilidad de búsqueda histórica</strong> → Acceso rápido a trabajos anteriores.</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3ZM7 11V17H9V11H7ZM11 7V17H13V7H11ZM15 14V17H17V14H15Z"></path></svg><strong>Mejora de KPIs de mantenimiento</strong> → MTTR, MTBF, costos, disponibilidad.</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM11 7H13V11H17V13H13V17H11V13H7V11H11V7Z"></path></svg><strong>Optimización en la planificación</strong> de futuros trabajos.</li>
-        </ul>
-    </div>
-
-</div>
-
     </main>
     
     <button id="next-btn" class="start-button" onclick="goToNextPage()">
