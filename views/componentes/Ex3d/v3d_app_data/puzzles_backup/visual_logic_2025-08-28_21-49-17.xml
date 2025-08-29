@@ -1,0 +1,18 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="1512" scrolly="619.555549621582" scale="0.9"></tab>
+  <tab name="General" type="CommonTab" active="true" scrollx="968.6671427188244" scrolly="163.92648523663968" scale="0.6937977888571658">
+    <block xmlns="https://developers.google.com/blockly/xml" type="connectorSlot" id="`beoLp:5Abf!`H/?GhcJ" x="-1024" y="-31">
+      <statement name="DO">
+        <block type="execScript" id="|N5Ox%2G~8]eAHUa?sRy">
+          <value name="TEXT">
+            <shadow type="textMultiline" id="O3+e6j+@vra[jI$-9N1Y">
+              <field name="HIGHLIGHT_MODE">javascript</field>
+              <field name="TEXT" editor-height="29" editor-width="520">// Bloque JS: limitar cámara por debajo de un objeto&amp;#10;function limitCameraBelowObject(objectName, offset = 0.1) {&amp;#10;    const obj = v3d.apps[0].scene.getObjectByName(objectName);&amp;#10;    if (!obj) {&amp;#10;        console.warn("Objeto no encontrado:", objectName);&amp;#10;        return;&amp;#10;    }&amp;#10;&amp;#10;    // Altura mínima (el bounding box inferior del objeto)&amp;#10;    const box = new v3d.Box3().setFromObject(obj);&amp;#10;    const minY = box.min.y + offset; // un pequeño margen de seguridad&amp;#10;&amp;#10;    // Obtén la cámara&amp;#10;    const cam = v3d.apps[0].camera;&amp;#10;&amp;#10;    // Si la cámara baja demasiado, súbela&amp;#10;    if (cam.position.y &lt; minY) {&amp;#10;        cam.position.y = minY;&amp;#10;    }&amp;#10;}&amp;#10;</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1047" viewport-y="37" viewport-w="710" viewport-h="398.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

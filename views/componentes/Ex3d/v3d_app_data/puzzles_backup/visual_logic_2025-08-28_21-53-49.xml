@@ -1,0 +1,18 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="1512" scrolly="520.6666564941406" scale="0.9"></tab>
+  <tab name="General" type="CommonTab" active="true" scrollx="1409.2118611090327" scrolly="260.17418159782073" scale="1">
+    <block xmlns="https://developers.google.com/blockly/xml" type="connectorSlot" id="`beoLp:5Abf!`H/?GhcJ" x="-1401" y="-191">
+      <statement name="DO">
+        <block type="execScript" id="|N5Ox%2G~8]eAHUa?sRy">
+          <value name="TEXT">
+            <shadow type="textMultiline" id="O3+e6j+@vra[jI$-9N1Y">
+              <field name="HIGHLIGHT_MODE">javascript</field>
+              <field name="TEXT" editor-height="42" editor-width="889.9444277551643">// No redeclaramos app, lo recibimos desde Verge3D&amp;#10;let limitePlana = null;&amp;#10;&amp;#10;// Inicialización&amp;#10;function runCode(app, puzzles) {&amp;#10;  // Obtén el objeto invisible que funciona como límite&amp;#10;  limitePlana = app.scenes[0].getObjectByName("LimitePlana");&amp;#10;  if (!limitePlana) {&amp;#10;    console.warn("Aviso: no se encontró el objeto 'LimitePlana'. Raycast cancelado.");&amp;#10;  }&amp;#10;&amp;#10;  app.tickManager.addTicker(checkBelowLimit);&amp;#10;}&amp;#10;&amp;#10;function checkBelowLimit() {&amp;#10;  if (!limitePlana) return;&amp;#10;  const camera = app.viewer.camera;&amp;#10;  const from = camera.position.clone();&amp;#10;  const to = from.clone().setY(limitePlana.position.y);&amp;#10;  &amp;#10;  const ray = new THREE.Raycaster(from, to.clone().sub(from).normalize());&amp;#10;  const hits = ray.intersectObject(limitePlana, true);&amp;#10;  &amp;#10;  if (hits.length &gt; 0 &amp;&amp; hits[0].distance &lt; Math.abs(from.y - limitePlana.position.y)) {&amp;#10;    // Si la cámara está más abajo que el límite, se corrige&amp;#10;    camera.position.y = limitePlana.position.y + 1.0; // ajustar altura mínima deseada&amp;#10;  }&amp;#10;}&amp;#10;&amp;#10;if (typeof window !== "undefined") {&amp;#10;  window.runCode = runCode;&amp;#10;}&amp;#10;</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1047" viewport-y="37" viewport-w="710" viewport-h="398.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

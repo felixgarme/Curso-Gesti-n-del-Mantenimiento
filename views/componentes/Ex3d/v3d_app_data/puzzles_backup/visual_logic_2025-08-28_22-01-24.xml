@@ -1,0 +1,28 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="1512" scrolly="520.6666564941406" scale="0.9"></tab>
+  <tab name="General" type="CommonTab" active="true" scrollx="1474.7674641363765" scrolly="361.6186090880551" scale="1">
+    <block xmlns="https://developers.google.com/blockly/xml" type="connectorSlot" id="`beoLp:5Abf!`H/?GhcJ" x="-1401" y="-191">
+      <statement name="DO">
+        <block type="execScript" id="|N5Ox%2G~8]eAHUa?sRy" disabled="true">
+          <value name="TEXT">
+            <shadow type="textMultiline" id="O3+e6j+@vra[jI$-9N1Y">
+              <field name="HIGHLIGHT_MODE">javascript</field>
+              <field name="TEXT" editor-height="7" editor-width="889.9444277551643">// Ejemplo: un poquito menos que 90°&amp;#10;// 1.57 rad = 90° exacto&amp;#10;// 1.4 rad ≈ 80°&amp;#10;app.controls.maxPolarAngle = 1.4;  // unos 80°, no llega a ver por debajo&amp;#10;</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="execScript" id="nF[ZM2MLY@uMO{Ts#kX(">
+              <value name="TEXT">
+                <shadow type="textMultiline" id="gDLk!qHgCs,kv96j2_vU">
+                  <field name="HIGHLIGHT_MODE">javascript</field>
+                  <field name="TEXT" editor-height="7" editor-width="889.9444277551643">// Hacer transparente el fondo&amp;#10;app.renderer.setClearColor(0x000000, 0);  // (color negro, alpha 0)&amp;#10;</field>
+                </shadow>
+              </value>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1047" viewport-y="35.88888931274414" viewport-w="710" viewport-h="398.5" viewport-hidden="true" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

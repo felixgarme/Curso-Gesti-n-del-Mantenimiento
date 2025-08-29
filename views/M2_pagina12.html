@@ -99,40 +99,43 @@
 
     <div class="pump-image-section">
       <div class="pump-image-container">
+
         <svg class="pump-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-          <!-- Cuerpo principal de la bomba -->
-          <ellipse cx="150" cy="100" rx="80" ry="50" fill="url(#pumpGradient)" stroke="#031794" stroke-width="3"/>
-          
-          <!-- Impulsor central -->
-          <circle cx="150" cy="100" r="25" fill="#031794" stroke="#FF0000" stroke-width="2"/>
-          
-          <!-- Aspas del impulsor -->
-          <g id="impeller">
-            <path d="M 150,85 Q 165,95 150,105 Q 135,95 150,85" fill="#FFFFFF" opacity="0.8"/>
-            <path d="M 165,100 Q 155,115 145,100 Q 155,85 165,100" fill="#FFFFFF" opacity="0.8"/>
-            <path d="M 150,115 Q 135,105 150,95 Q 165,105 150,115" fill="#FFFFFF" opacity="0.8"/>
-            <path d="M 135,100 Q 145,85 155,100 Q 145,115 135,100" fill="#FFFFFF" opacity="0.8"/>
+          <g transform="scale(1.3) translate(-23,-15)">
+            <!-- Cuerpo principal de la bomba -->
+            <ellipse cx="150" cy="100" rx="80" ry="50" fill="url(#pumpGradient)" stroke="#031794" stroke-width="3"/>
+            
+            <!-- Impulsor central -->
+            <circle cx="150" cy="100" r="25" fill="#031794" stroke="#FF0000" stroke-width="2"/>
+            
+            <!-- Aspas del impulsor -->
+            <g id="impeller">
+              <path d="M 150,85 Q 165,95 150,105 Q 135,95 150,85" fill="#FFFFFF" opacity="0.8"/>
+              <path d="M 165,100 Q 155,115 145,100 Q 155,85 165,100" fill="#FFFFFF" opacity="0.8"/>
+              <path d="M 150,115 Q 135,105 150,95 Q 165,105 150,115" fill="#FFFFFF" opacity="0.8"/>
+              <path d="M 135,100 Q 145,85 155,100 Q 145,115 135,100" fill="#FFFFFF" opacity="0.8"/>
+            </g>
+            
+            <!-- Entrada -->
+            <rect x="70" y="90" width="30" height="20" fill="#2A5BDF" stroke="#031794" stroke-width="2"/>
+            <text x="85" y="84" font-size="10" fill="red" text-anchor="middle">Entrada</text>
+            
+            <!-- Salida -->
+            <rect x="200" y="90" width="30" height="20" fill="#2A5BDF" stroke="#031794" stroke-width="2"/>
+            <text x="215" y="84" font-size="10" fill="red" text-anchor="middle" font-weight="bold">Salida</text>
+
+            <!-- Motor -->
+            <rect x="120" y="40" width="60" height="30" rx="5" fill="#031794" stroke="#FF0000" stroke-width="2"/>
+            <text x="150" y="30" font-size="12" fill="#031794" text-anchor="middle" font-weight="bold">Motor</text>
+
+            <!-- Sello mecánico -->
+            <circle cx="150" cy="75" r="8" fill="#FF0000" stroke="#031794" stroke-width="2"/>
+            <text x="150" y="65" font-size="8" fill="#031794" text-anchor="middle">Sello</text>
+            
+            <!-- Base -->
+            <rect x="100" y="150" width="100" height="15" rx="5" fill="#6B8BDF" stroke="#031794" stroke-width="1"/>
           </g>
-          
-          <!-- Entrada -->
-          <rect x="70" y="90" width="30" height="20" fill="#2A5BDF" stroke="#031794" stroke-width="2"/>
-          <text x="85" y="84" font-size="10" fill="red" text-anchor="middle">Entrada</text>
-          
-          <!-- Salida -->
-          <rect x="200" y="90" width="30" height="20" fill="#2A5BDF" stroke="#031794" stroke-width="2"/>
-          <text x="215" y="84" font-size="10" fill="red" text-anchor="middle" font-weight="bold">Salida</text>
 
-          <!-- Motor -->
-          <rect x="120" y="40" width="60" height="30" rx="5" fill="#031794" stroke="#FF0000" stroke-width="2"/>
-          <text x="150" y="30" font-size="12" fill="#031794" text-anchor="middle" font-weight="bold">Motor</text>
-
-          <!-- Sello mecánico -->
-          <circle cx="150" cy="75" r="8" fill="#FF0000" stroke="#031794" stroke-width="2"/>
-          <text x="150" y="65" font-size="8" fill="#031794" text-anchor="middle">Sello</text>
-          
-          <!-- Base -->
-          <rect x="100" y="150" width="100" height="15" rx="5" fill="#6B8BDF" stroke="#031794" stroke-width="1"/>
-          
           <!-- Definir gradiente -->
           <defs>
             <linearGradient id="pumpGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -142,6 +145,7 @@
             </linearGradient>
           </defs>
         </svg>
+
       </div>
     </div>
   </div>

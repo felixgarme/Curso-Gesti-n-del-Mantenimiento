@@ -1,0 +1,18 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="1512" scrolly="520.6666564941406" scale="0.9"></tab>
+  <tab name="General" type="CommonTab" active="true" scrollx="1294.7674641363765" scrolly="340.1741663390317" scale="1">
+    <block xmlns="https://developers.google.com/blockly/xml" type="connectorSlot" id="`beoLp:5Abf!`H/?GhcJ" x="-1401" y="-191">
+      <statement name="DO">
+        <block type="execScript" id="|N5Ox%2G~8]eAHUa?sRy">
+          <value name="TEXT">
+            <shadow type="textMultiline" id="O3+e6j+@vra[jI$-9N1Y">
+              <field name="HIGHLIGHT_MODE">javascript</field>
+              <field name="TEXT" editor-height="42" editor-width="889.9444277551643">app.controls.minPolarAngle = Math.PI / 6;   // 30° arriba&amp;#10;app.controls.maxPolarAngle = Math.PI / 2;   // 100° límite, evita ver debajo&amp;#10;</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1047" viewport-y="37" viewport-w="710" viewport-h="398.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

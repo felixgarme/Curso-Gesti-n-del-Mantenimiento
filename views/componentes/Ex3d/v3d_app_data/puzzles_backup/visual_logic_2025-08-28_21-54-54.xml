@@ -1,0 +1,18 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="1512" scrolly="520.6666564941406" scale="0.9"></tab>
+  <tab name="General" type="CommonTab" active="true" scrollx="1409.2118611090327" scrolly="260.17418159782073" scale="1">
+    <block xmlns="https://developers.google.com/blockly/xml" type="connectorSlot" id="`beoLp:5Abf!`H/?GhcJ" x="-1401" y="-191">
+      <statement name="DO">
+        <block type="execScript" id="|N5Ox%2G~8]eAHUa?sRy">
+          <value name="TEXT">
+            <shadow type="textMultiline" id="O3+e6j+@vra[jI$-9N1Y">
+              <field name="HIGHLIGHT_MODE">javascript</field>
+              <field name="TEXT" editor-height="42" editor-width="889.9444277551643">let limitePlano = null;&amp;#10;&amp;#10;function prepareExternalInterface(app) {&amp;#10;  // Escuchamos cuando la escena está completamente cargada&amp;#10;  app.addEventListener("sceneLoad", function(event) {&amp;#10;    const scene = event.scene;&amp;#10;    if (!scene) {&amp;#10;      console.error("No se encontró escena en sceneLoad");&amp;#10;      return;&amp;#10;    }&amp;#10;&amp;#10;    // Objeto invisible límite – revisa que exista y tenga ese nombre en Blender&amp;#10;    limitePlano = scene.getObjectByName("LimitePlano");&amp;#10;    if (!limitePlano) {&amp;#10;      console.warn("No existe el objeto 'LimitePlano'. La limitación no funcionará.");&amp;#10;    }&amp;#10;  });&amp;#10;}&amp;#10;&amp;#10;function runCode(app, puzzles) {&amp;#10;  app.tickManager.addTicker(checkBelowLimit);&amp;#10;}&amp;#10;&amp;#10;function checkBelowLimit() {&amp;#10;  if (!limitePlano) return;&amp;#10;&amp;#10;  const camera = app.viewer.camera;&amp;#10;  const origin = camera.position.clone();&amp;#10;  const direction = new v3d.Vector3(0, -1, 0); // hacia abajo&amp;#10;  const raycaster = new v3d.Raycaster(origin, direction);&amp;#10;&amp;#10;  const intersects = raycaster.intersectObject(limitePlano, true);&amp;#10;  if (intersects.length &gt; 0) {&amp;#10;    const dist = intersects[0].distance;&amp;#10;    if (dist &lt; 1.0) {  // Umbral ajustable&amp;#10;      camera.position.y = limitePlano.position.y + 1.0; // Ajusta la altura mínima&amp;#10;    }&amp;#10;  }&amp;#10;}&amp;#10;&amp;#10;if (typeof window !== "undefined") {&amp;#10;  window.prepareExternalInterface = prepareExternalInterface;&amp;#10;  window.runCode = runCode;&amp;#10;}&amp;#10;</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1047" viewport-y="37" viewport-w="710" viewport-h="398.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

@@ -1,0 +1,18 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="1512" scrolly="-198.22222900390625" scale="0.9"></tab>
+  <tab name="General" type="CommonTab" active="true" scrollx="802.0004557071056" scrolly="98.37092798566312" scale="0.6937977888571658">
+    <block xmlns="https://developers.google.com/blockly/xml" type="connectorSlot" id="`beoLp:5Abf!`H/?GhcJ" x="-1024" y="-31">
+      <statement name="DO">
+        <block type="execScript" id="|N5Ox%2G~8]eAHUa?sRy">
+          <value name="TEXT">
+            <shadow type="textMultiline" id="O3+e6j+@vra[jI$-9N1Y">
+              <field name="HIGHLIGHT_MODE">javascript</field>
+              <field name="TEXT" editor-height="29" editor-width="520">// Asume que 'app' es tu instancia de Verge3D (v3d.App)&amp;#10;// y que tienes acceso a app.scene, app.camera, etc.&amp;#10;&amp;#10;// Define un límite mínimo en coordenada Y (altura) para la cámara&amp;#10;const floorY = 1.0; // ajusta según la altura de tu objeto (piso, malla, colisionador, etc.)&amp;#10;&amp;#10;// Hook que se llama cada fotograma&amp;#10;app.events.on('update', () =&gt; {&amp;#10;  const camPos = app.camera.position;&amp;#10;  if (camPos.y &lt; floorY) {&amp;#10;    camPos.y = floorY;&amp;#10;  }&amp;#10;});&amp;#10;</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1047" viewport-y="37" viewport-w="710" viewport-h="398.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

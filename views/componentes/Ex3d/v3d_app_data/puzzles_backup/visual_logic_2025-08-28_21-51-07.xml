@@ -1,0 +1,18 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="1512" scrolly="520.6666564941406" scale="0.9"></tab>
+  <tab name="General" type="CommonTab" active="true" scrollx="1119.7782267031994" scrolly="183.92648523663968" scale="0.6937977888571658">
+    <block xmlns="https://developers.google.com/blockly/xml" type="connectorSlot" id="`beoLp:5Abf!`H/?GhcJ" x="-1024" y="-31">
+      <statement name="DO">
+        <block type="execScript" id="|N5Ox%2G~8]eAHUa?sRy">
+          <value name="TEXT">
+            <shadow type="textMultiline" id="O3+e6j+@vra[jI$-9N1Y">
+              <field name="HIGHLIGHT_MODE">javascript</field>
+              <field name="TEXT" editor-height="29" editor-width="520">// Solo una vez:&amp;#10;let app;&amp;#10;&amp;#10;function initApp(_app) {&amp;#10;  app = _app;&amp;#10;&amp;#10;  const suelo = app.scenes[0].getObjectByName("SueloCollider");&amp;#10;  if (!suelo) console.error("No se encontró SueloCollider");&amp;#10;&amp;#10;  app.tickManager.addTicker(function checkCameraHeight() {&amp;#10;    const cam = app.viewer.camera;&amp;#10;    const camY = cam.position.y;&amp;#10;    const sueloY = suelo ? suelo.position.y : 0;&amp;#10;    const alturaMin = 1.0;&amp;#10;&amp;#10;    if (camY - sueloY &lt; alturaMin) {&amp;#10;      cam.position.y = sueloY + alturaMin;&amp;#10;    }&amp;#10;  });&amp;#10;}&amp;#10;</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1047" viewport-y="37" viewport-w="710" viewport-h="398.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

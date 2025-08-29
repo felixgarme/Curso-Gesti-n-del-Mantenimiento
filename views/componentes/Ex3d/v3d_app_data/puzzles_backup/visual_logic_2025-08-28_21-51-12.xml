@@ -1,0 +1,18 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="1512" scrolly="520.6666564941406" scale="0.9"></tab>
+  <tab name="General" type="CommonTab" active="true" scrollx="1119.7782267031994" scrolly="183.92648523663968" scale="0.6937977888571658">
+    <block xmlns="https://developers.google.com/blockly/xml" type="connectorSlot" id="`beoLp:5Abf!`H/?GhcJ" x="-1024" y="-31">
+      <statement name="DO">
+        <block type="execScript" id="|N5Ox%2G~8]eAHUa?sRy">
+          <value name="TEXT">
+            <shadow type="textMultiline" id="O3+e6j+@vra[jI$-9N1Y">
+              <field name="HIGHLIGHT_MODE">javascript</field>
+              <field name="TEXT" editor-height="29" editor-width="520">// Este es todo el script completo para Verge3D, sin redeclarar 'app'&amp;#10;let suelo = null;&amp;#10;&amp;#10;function prepareExternalInterface(app) {&amp;#10;  // Aquí puedes registrar funciones para usarlas desde Puzzles si lo necesitas&amp;#10;}&amp;#10;&amp;#10;function runCode(app, puzzles) {&amp;#10;  // Obtén el objeto que servirá como límite, por nombre exacto&amp;#10;  suelo = app.scenes[0].getObjectByName("SueloCollider");&amp;#10;  if (!suelo) {&amp;#10;    console.warn("Advertencia: no se encontró el objeto 'SueloCollider'");&amp;#10;  }&amp;#10;&amp;#10;  // Registro de un ticker para chequear altura cada fotograma&amp;#10;  app.tickManager.addTicker(checkCameraHeight);&amp;#10;}&amp;#10;&amp;#10;function checkCameraHeight() {&amp;#10;  if (!suelo || !app.viewer || !app.viewer.camera) return;&amp;#10;&amp;#10;  const cam = app.viewer.camera;&amp;#10;  const pos = cam.position;&amp;#10;  const limiteY = suelo.position.y + 1.0; // ajusta 1.0 según tus necesidades&amp;#10;&amp;#10;  if (pos.y &lt; limiteY) {&amp;#10;    pos.y = limiteY;&amp;#10;    cam.position.set(pos.x, pos.y, pos.z);&amp;#10;  }&amp;#10;}&amp;#10;&amp;#10;// Exporta los puntos de enganche para Verge3D&amp;#10;if (typeof window !== "undefined") {&amp;#10;  window.prepareExternalInterface = prepareExternalInterface;&amp;#10;  window.runCode = runCode;&amp;#10;}&amp;#10;</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1047" viewport-y="37" viewport-w="710" viewport-h="398.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

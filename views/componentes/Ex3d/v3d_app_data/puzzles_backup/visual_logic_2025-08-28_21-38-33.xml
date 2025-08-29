@@ -1,0 +1,18 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="20" scrolly="20" scale="0.9"></tab>
+  <tab name="General" type="CommonTab" active="true" scrollx="19.425360107421966" scrolly="19.395823584662793" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="connectorSlot" id="`beoLp:5Abf!`H/?GhcJ" x="44" y="187">
+      <statement name="DO">
+        <block type="execScript" id="|N5Ox%2G~8]eAHUa?sRy">
+          <value name="TEXT">
+            <shadow type="textMultiline" id="O3+e6j+@vra[jI$-9N1Y">
+              <field name="HIGHLIGHT_MODE">javascript</field>
+              <field name="TEXT" editor-height="29" editor-width="520">let app; // tu instancia de Verge3D App&amp;#10;&amp;#10;function initApp(_app) {&amp;#10;  app = _app;&amp;#10;&amp;#10;  // Cambia 'SueloCollider' por el nombre exacto del objeto que representa el límite&amp;#10;  const suelo = app.scenes[0].getObjectByName("SueloCollider");&amp;#10;  if (!suelo) {&amp;#10;    console.error("No se encontró el objeto SueloCollider");&amp;#10;  }&amp;#10;&amp;#10;  app.tickManager.addTicker(checkCameraHeight);&amp;#10;}&amp;#10;&amp;#10;function checkCameraHeight() {&amp;#10;  const camPos = app.viewer.camera.position;&amp;#10;  const distancia = camPos.y - (suelo ? suelo.position.y : 0);&amp;#10;&amp;#10;  // Ajusta el umbral según tu escena (ej. 1.0 unidades sobre el suelo)&amp;#10;  const alturaMinima = 1.0;&amp;#10;&amp;#10;  if (distancia &lt; alturaMinima) {&amp;#10;    camPos.y = (suelo ? suelo.position.y : 0) + alturaMinima;&amp;#10;    app.viewer.camera.position.set(camPos.x, camPos.y, camPos.z);&amp;#10;  }&amp;#10;}&amp;#10;</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1047" viewport-y="37" viewport-w="710" viewport-h="398.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>
