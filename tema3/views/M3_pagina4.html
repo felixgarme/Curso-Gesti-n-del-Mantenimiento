@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/sidebar.css">
     <link rel="stylesheet" href="../assets/css/ProgressBar.css">
-    <link rel="stylesheet" href="../assets/css/tema3.1.css">
+    <link rel="stylesheet" href="../assets/css/M3_pagina4.css">
     <script type="text/javascript" src="../js/sidebar.js" defer></script>
 </head>
 <body>
@@ -86,7 +86,7 @@
 
             <!-- Audio element oculto -->
             <audio id="audioPlayer" preload="metadata" autoplay>
-                <source src="../assets/audio/tema3.1.wav" type="audio/mp3" />
+                <source src="../assets/audio/M3_pagina4.wav" type="audio/mp3" />
                 Tu navegador no soporta el elemento de audio.
             </audio>
         </div>
@@ -97,48 +97,110 @@
     </div>
 
     <main>
-        <div class="acr-8d-container">
-            <div class="page-header">
-                <h1>Las 8 Disciplinas (8D)</h1>
+<!-- =============== COMPONENTE REDISEÑADO: ACR - LOS 5 PORQUÉ =============== -->
+<div class="five-whys-container">
+    <div class="page-header">
+        <h1>ACR – Metodologías de Análisis de Causa Raíz</h1>
+        <h2>Los 5 por qué?</h2>
+    </div>
+
+    <!-- Interactivo 1: Tarjeta Reveladora -->
+    <div class="interactive-container">
+        <div class="reveal-card" id="revealCard">
+            <div class="reveal-front">
+                <h3>Definición</h3>
+                <p>Los 5 Porqué es un método basado en una técnica sistemática de preguntas para explorar la relación entre los síntomas y la causa raíz de un problema. Se utilizó por primera vez en Toyota y es parte del Toyota Production System (TPS) y Six Sigma.</p>
+                <button class="interactive-btn btn-primary">Ver Objetivos</button>
             </div>
-
-            <!-- Módulo Interactivo de Scrollytelling -->
-            <div class="acr-scrolly-wrapper">
-                <!-- Panel de Contenido Desplazable (Izquierda) -->
-                <div class="acr-scroll-content">
-                    <!-- Introducción -->
-                    <div classs="scroll-intro">
-                        <h3>Las 8 disciplinas para la solución de problemas</h3>
-                        <h4>¿En qué consiste las 8D?</h4>
-                        <p>El proceso de 8 disciplinas (8D) se usa para identificar, corregir y eliminar problemas. Esta metodología es de gran utilidad en la mejora de productos y procesos. Establece una práctica estándar basada en hechos.</p>
-                        <p>Se concentra en el origen del problema mediante la identificación de la causa raíz. Su eficacia proviene el hecho de que incorpora todos los aspectos importantes de la gerencia del problema, es decir, contención del problema, del análisis de la causa de la raíz, de la corrección de problema, y de la prevención del problema.</p>
-                    </div>
-
-                    <!-- Contenido de cada disciplina (se genera con JS) -->
-                    <div id="discipline-content-area"></div>
-                </div>
-
-                <!-- Panel de Navegación Fijo (Derecha) -->
-                <div class="acr-sticky-nav">
-                    <div class="sticky-nav-title">Proceso 8D</div>
-                    <!-- Los pasos se generan con JS -->
-                    <div id="sticky-nav-steps"></div>
-                </div>
-            </div>
-
-            <!-- Nuevo Mini-Ejercicio: Análisis de Escenario -->
-            <div class="acr-scenario-exercise">
-                <div class="exercise-header">
-                    <h4>Mini-Ejercicio: Identifica la Disciplina</h4>
-                </div>
-                <div class="scenario-content">
-                    <p class="scenario-context"></p>
-                    <h5 class="scenario-question"></h5>
-                    <div class="scenario-options"></div>
-                </div>
-                <div class="scenario-feedback"></div>
+            <div class="reveal-back">
+                <h3>Objetivos del Método</h3>
+                <ul>
+                    <li>Analizar información vital de modo sistemático.</li>
+                    <li>Descubrir causas ocultas.</li>
+                    <li>Desarrollar preguntas perspicaces que requieren soluciones creativas.</li>
+                </ul>
+                <button class="interactive-btn btn-secondary">Volver a Definición</button>
             </div>
         </div>
+    </div>
+
+    <!-- Interactivo 2: Línea de Tiempo Horizontal del Proceso -->
+    <div class="interactive-container">
+        <h3>Proceso de los 5 Porqué</h3>
+        <div class="process-timeline-container">
+            <div class="process-timeline">
+                <div class="process-timeline-progress"></div>
+                <div class="process-timeline-line"></div>
+                <div class="process-timeline-item" data-step="1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">Paso 1</div>
+                </div>
+                <div class="process-timeline-item" data-step="2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">Paso 2</div>
+                </div>
+                <div class="process-timeline-item" data-step="3">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">Paso 3</div>
+                </div>
+                <div class="process-timeline-item" data-step="4">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">Paso 4</div>
+                </div>
+            </div>
+            <div class="process-description-panel">
+                <!-- El contenido se insertará aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactivo 3: Simulador de Conversación -->
+    <div class="interactive-container">
+        <h3>Simulador de Análisis: Caso Toyota/Bomba</h3>
+        <div class="conversation-simulator">
+            <div class="conversation-log" id="conversation-log"></div>
+            <div class="conversation-controls">
+                <button id="next-step-btn" class="interactive-btn btn-primary">Siguiente Pregunta</button>
+                <button id="inverse-btn" class="interactive-btn btn-secondary" disabled>Verificación Inversa</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactivo 4: Balanza de Fortalezas y Debilidades -->
+    <div class="interactive-container">
+        <h3>Fortalezas vs. Debilidades</h3>
+        <div class="balance-container">
+            <div class="balance-beam">
+                <div class="balance-pan left"></div>
+                <div class="balance-pan right"></div>
+            </div>
+            <div class="balance-stand"></div>
+            <div class="balance-buttons">
+                <button class="interactive-btn btn-toggle" data-side="left">Ver Fortalezas</button>
+                <button class="interactive-btn btn-toggle" data-side="right">Ver Debilidades</button>
+            </div>
+        </div>
+        <div class="balance-content-area">
+             <!-- El contenido se insertará aquí -->
+        </div>
+    </div>
+
+    <!-- Interactivo 5: Mini-Ejercicio Constructor de Cadenas -->
+    <div class="interactive-container">
+        <h3>Mini-Ejercicio: Construye la Cadena Causal</h3>
+        <p><strong>Problema:</strong> El vehículo no arranca. Haz clic en las causas en el orden correcto para descubrir la causa raíz.</p>
+        <div class="chain-builder">
+            <div class="chain-links">
+                <div class="chain-link initial">Vehículo no arranca</div>
+            </div>
+            <div class="chain-options">
+                <!-- Las opciones se generan con JS -->
+            </div>
+        </div>
+        <p class="chain-feedback"></p>
+    </div>
+
+</div>
 
     </main>
     
@@ -149,6 +211,6 @@
     
     <script src="../js/audioPlayer.js"></script>
     <script src="../js/SCORM.js"></script>
-    <script src="../js/tema3.1.js"></script>
+    <script src="../js/M3_pagina4.js"></script>
 </body>
 </html>

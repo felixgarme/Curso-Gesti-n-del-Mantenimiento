@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/sidebar.css">
     <link rel="stylesheet" href="../assets/css/ProgressBar.css">
-    <link rel="stylesheet" href="../assets/css/tema3.1.css">
+    <link rel="stylesheet" href="../assets/css/M3_pagina2.css">
     <script type="text/javascript" src="../js/sidebar.js" defer></script>
 </head>
 <body>
@@ -86,7 +86,7 @@
 
             <!-- Audio element oculto -->
             <audio id="audioPlayer" preload="metadata" autoplay>
-                <source src="../assets/audio/tema3.1.wav" type="audio/mp3" />
+                <source src="../assets/audio/M3_pagina2.wav" type="audio/mp3" />
                 Tu navegador no soporta el elemento de audio.
             </audio>
         </div>
@@ -97,47 +97,75 @@
     </div>
 
     <main>
-        <div class="acr-8d-container">
-            <div class="page-header">
-                <h1>Las 8 Disciplinas (8D)</h1>
+
+        <div class="report-8d-container">
+            <div class="exercise-main-title">
+                <h2>Las 8 Disciplinas: El Informe 8D</h2>
             </div>
 
-            <!-- Módulo Interactivo de Scrollytelling -->
-            <div class="acr-scrolly-wrapper">
-                <!-- Panel de Contenido Desplazable (Izquierda) -->
-                <div class="acr-scroll-content">
-                    <!-- Introducción -->
-                    <div classs="scroll-intro">
-                        <h3>Las 8 disciplinas para la solución de problemas</h3>
-                        <h4>¿En qué consiste las 8D?</h4>
-                        <p>El proceso de 8 disciplinas (8D) se usa para identificar, corregir y eliminar problemas. Esta metodología es de gran utilidad en la mejora de productos y procesos. Establece una práctica estándar basada en hechos.</p>
-                        <p>Se concentra en el origen del problema mediante la identificación de la causa raíz. Su eficacia proviene el hecho de que incorpora todos los aspectos importantes de la gerencia del problema, es decir, contención del problema, del análisis de la causa de la raíz, de la corrección de problema, y de la prevención del problema.</p>
+            <div class="instruction-box">
+                <h3>Un Proceso de Mejora Continua</h3>
+                <p>El Informe 8D no es solo un documento, es el centro de un ciclo de monitoreo y mejora. Haz clic en cada etapa del proceso para entender su función.</p>
+            </div>
+
+            <div class="report-process-wrapper">
+                <!-- Flecha Circular SVG de fondo -->
+                <svg class="process-circular-arrow" viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="arrow-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="var(--color-celeste)" />
+                            <stop offset="100%" stop-color="var(--color-azul-claro)" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M 50,7 A 43,43 0 1,1 49.9,7.001" stroke="url(#arrow-gradient)" stroke-width="6" fill="none" />
+                    <!-- Arrowheads -->
+                    <polygon points="88,58 97,50 88,42" fill="url(#arrow-gradient)" />
+                    <polygon points="12,42 3,50 12,58" fill="url(#arrow-gradient)" />
+                    <polygon points="42,12 50,3 58,12" fill="url(#arrow-gradient)" />
+                    <polygon points="58,88 50,97 42,88" fill="url(#arrow-gradient)" />
+                </svg>
+
+                <!-- Etapas del Proceso -->
+                <div class="process-step" data-step="1"><h4>1. Completar y Archivar</h4></div>
+                <div class="process-step" data-step="2"><h4>2. Monitorear Acciones</h4></div>
+                <div class="process-step" data-step="3"><h4>3. Revisar Regularmente</h4></div>
+                <div class="process-step" data-step="4"><h4>4. Identificar Oportunidades</h4></div>
+
+                <!-- Elemento Central -->
+                <div class="process-center">
+                    <a class="process-image-container" href="#" title="Haz clic para expandir">
+                        <img src="../assets/images/Modulo3/informe_8d.png" alt="Plantilla de Informe 8D">
+                    </a>
+                    <div class="process-description-panel">
+                        <h4 id="process-title"></h4>
+                        <p id="process-details"></p>
                     </div>
-
-                    <!-- Contenido de cada disciplina (se genera con JS) -->
-                    <div id="discipline-content-area"></div>
-                </div>
-
-                <!-- Panel de Navegación Fijo (Derecha) -->
-                <div class="acr-sticky-nav">
-                    <div class="sticky-nav-title">Proceso 8D</div>
-                    <!-- Los pasos se generan con JS -->
-                    <div id="sticky-nav-steps"></div>
                 </div>
             </div>
 
-            <!-- Nuevo Mini-Ejercicio: Análisis de Escenario -->
-            <div class="acr-scenario-exercise">
-                <div class="exercise-header">
-                    <h4>Mini-Ejercicio: Identifica la Disciplina</h4>
+            <!-- Nuevo Mini-Ejercicio -->
+            <div class="report-quiz-container">
+                <h4>Mini-Ejercicio: Toma de Decisión</h4>
+                <p class="quiz-question">Un cliente reporta un fallo crítico en un producto. Para asegurar que el problema no llegue a más clientes, ¿qué acción del ciclo 8D es la más urgente?</p>
+                <div class="quiz-dropdown-wrapper">
+                    <select id="quiz-select">
+                        <option value="">Selecciona una acción...</option>
+                        <option value="step1">Completar y Archivar</option>
+                        <option value="step2">Monitorear Acciones</option>
+                        <option value="step3">Revisar Regularmente</option>
+                        <option value="step4">Identificar Oportunidades</option>
+                    </select>
+                    <button id="check-answer-btn" class="start-button">Verificar</button>
                 </div>
-                <div class="scenario-content">
-                    <p class="scenario-context"></p>
-                    <h5 class="scenario-question"></h5>
-                    <div class="scenario-options"></div>
-                </div>
-                <div class="scenario-feedback"></div>
+                <p class="quiz-feedback"></p>
             </div>
+        </div>
+
+        <!-- Modal para la Imagen -->
+        <div id="image-modal" class="image-modal-container">
+            <span class="modal-close-btn">&times;</span>
+            <img id="modal-image" src="../assets/images/Modulo3/informe_8d.png" alt="Plantilla de Informe 8D ampliada">
+            <a id="download-btn" href="../assets/images/Modulo3/informe_8d.png" download="Informe_8D_Plantilla.png" class="start-button">Descargar Plantilla</a>
         </div>
 
     </main>
@@ -149,6 +177,6 @@
     
     <script src="../js/audioPlayer.js"></script>
     <script src="../js/SCORM.js"></script>
-    <script src="../js/tema3.1.js"></script>
+    <script src="../js/M3_pagina2.js"></script>
 </body>
 </html>

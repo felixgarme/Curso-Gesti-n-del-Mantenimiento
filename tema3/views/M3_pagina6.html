@@ -1,0 +1,232 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árbol lógico de fallas</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/ProgressBar.css">
+    <link rel="stylesheet" href="../assets/css/M3_pagina6.css">
+    <script type="text/javascript" src="../js/sidebar.js" defer></script>
+</head>
+<body>
+    <button class="back-page-btn" onclick="backPage()">
+        <span class="arrow">❮</span>
+    </button>
+    <nav id="sidebar" class="close">
+        <div id="logo-seccion"><a href="../index.html"><img src="../assets/images/logo_blanco.png" height="10px" alt="logo"></a><button id="toggle-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" /></svg></button></div>
+        <div id="barra"><span id="barra-titulo"><strong>Progreso del Curso</strong></span><div id="progreso-container"><div id="progreso-barra"></div><span id="progreso-texto">0%</span></div></div>
+        <div id="menu-container"></div>
+    </nav>
+
+           <!-- control de audio -->
+    <div class="audio-control-wrapper">
+        <button class="audio-toggle-btn" id="audioToggle">
+            <svg id="togglePlayIcon" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg id="togglePauseIcon" viewBox="0 0 24 24" style="display: none">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+        </button>
+
+        <div class="audio-controls" id="audioControls">
+            <div class="custom-audio-player">
+                <div class="audio-main-controls">
+                    <button class="control-btn volume-btn" id="volumeToggle">
+                        <svg id="volumeIcon" viewBox="0 0 24 24">
+                            <path
+                                d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+                        </svg>
+                        <svg id="muteIcon" viewBox="0 0 24 24" style="display: none">
+                            <path
+                                d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+                        </svg>
+                    </button>
+
+                    <button class="control-btn play-pause-btn" id="playPauseBtn">
+                        <svg id="playIcon" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                        <svg id="pauseIcon" viewBox="0 0 24 24" style="display: none">
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                        </svg>
+                    </button>
+
+                    <button class="control-btn speed-btn" id="speedBtn">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0-.27-10.44z" />
+                            <path
+                                d="M10.59 15.41a2 2 0 0 0 2.83 0l5.66-5.66a2 2 0 0 0-2.83-2.83L12 11.17 7.76 6.93a2 2 0 0 0-2.83 2.83l5.66 5.65z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+
+                <div class="volume-control">
+                    <div class="volume-slider" id="volumeSlider">
+                        <div class="volume-fill" id="volumeFill"></div>
+                    </div>
+                    <div class="speed-control">
+                        <span class="speed-display" id="speedDisplay">1x</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio element oculto -->
+            <audio id="audioPlayer" preload="metadata" autoplay>
+                <source src="../assets/audio/M3_pagina6.wav" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+    </div>
+    
+    <div class="logo-container">
+        <img src="../assets/images/logo_color.png" alt="Logo AngloAmerican" class="logo">
+    </div>
+
+    <main>
+<div class="fault-tree-container">
+    <div class="page-header">
+        <h1>ACR – Metodologías de Análisis de Causa Raíz</h1>
+        <h2>Árbol lógico de fallas</h2>
+    </div>
+
+    <!-- Interactivo 1: El Árbol de Análisis Viviente -->
+    <div class="interactive-tree-container">
+        <div class="tree-text-content">
+            <div class="definition-header">
+                <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28"><path d="M320-240q-33 0-56.5-23.5T240-320v-320q0-33 23.5-56.5T320-720h320q33 0 56.5 23.5T720-640v320q0 33-23.5-56.5T640-240H320Zm0-80h320v-320H320v320Zm160-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm-80-240h160q-1-21-9-40.5T460-680q-12-12-26-18t-34-6q-20 0-37.5 7.5T340-680q-12 12-18 26.5t-6 33.5Z"/></svg>
+                <h3>Definición del Árbol Lógico</h3>
+            </div>
+            <p>Es una metodología disciplinada y estructurada para identificar y eliminar las causas de fallas, mejorando la seguridad y confiabilidad.</p>
+            <div class="tree-parts-list">
+                <div class="tree-part">
+                    <span class="part-name">Raíces</span>
+                    <p>Causas de tipo: físico, humano y latente.</p>
+                </div>
+                <div class="tree-part">
+                    <span class="part-name">Tronco</span>
+                    <p>El problema principal que se está analizando.</p>
+                </div>
+                <div class="tree-part">
+                    <span class="part-name">Ramas</span>
+                    <p>Las consecuencias o efectos visibles de la falla.</p>
+                </div>
+            </div>
+        </div>
+        <div class="tree-visual-wrapper">
+            <img src="../assets/images/Modulo3/arbol_logico.png" alt="Ejemplo de Árbol Lógico de Fallas" class="fault-tree-image">
+        </div>
+    </div>
+
+    <!-- Interactivo 2: Acordeón de Contenido -->
+    <div class="info-accordion-container">
+        <div class="instruction-box">
+            <h3>Explora los Conceptos Clave</h3>
+            <p>Haz clic en cada sección para expandir y conocer más sobre la aplicación, tipos y análisis del método RCA.</p>
+        </div>
+        <div class="info-card">
+            <button class="info-card-header"><h3>¿Cuándo y Dónde se debe aplicar un RCA?</h3><span class="toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg></span></button>
+            <div class="info-card-content">
+                <p>Se pueden aplicar de dos formas distintas:</p>
+                <ul>
+                    <li><strong>En forma proactiva (Análisis Inductivo):</strong> Para evitar la ocurrencia de un evento no deseado (antes de que ocurra).</li>
+                    <li><strong>En forma reactiva (Análisis Deductivo):</strong> Para eliminar la repetición de un evento no deseado y sus consecuencias.</li>
+                </ul>
+                <h4>Áreas de Aplicación:</h4>
+                <ul>
+                    <li><strong>Mantenimiento:</strong> Reducción de costos, duración y costos de producción.</li>
+                    <li><strong>Operaciones:</strong> Descongestionamiento, interrupciones, reducción de uso de energía, gastos operativos, mejora de calidad, incidentes ambientales.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="info-card">
+            <button class="info-card-header"><h3>Tipos de Fallas a Analizar</h3><span class="toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg></span></button>
+            <div class="info-card-content">
+                <div class="failure-types">
+                    <div class="failure-type-card">
+                        <h4>Fallas Esporádicas</h4>
+                        <p>Desviación fuera de rango normal, poco frecuentes (mayores a una vez por año). Suelen ser de muy alto impacto (paradas de emergencia, incendios, lesiones) y no relacionadas entre sí. La eliminación de una falla esporádica solo devuelve las cosas a un rango aceptable.</p>
+                    </div>
+                    <div class="failure-type-card">
+                        <h4>Fallas Crónicas (Repetitivas)</h4>
+                        <p>Desviación dentro de un rango aceptable, pero relativamente frecuentes (ej. fallas electrónicas, mecánicas, paros constantes de corta duración). La eliminación de fallas crónicas eleva el nivel promedio esperado del desempeño y tiene un impacto importante en el negocio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="info-card">
+            <button class="info-card-header"><h3>Fortalezas y Debilidades del Método</h3><span class="toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg></span></button>
+            <div class="info-card-content">
+                 <div class="strengths-weaknesses">
+                    <div class="sw-column">
+                        <h4>✓ Fortalezas</h4>
+                        <ul>
+                            <li>Proporciona un método para dividir el análisis de grandes eventos.</li>
+                            <li>Respaldado por muchos paquetes de software comerciales.</li>
+                            <li>Fomenta la participación del grupo.</li>
+                            <li>Utiliza un formato ordenado y fácil de leer.</li>
+                            <li>Identifica áreas para recopilar datos.</li>
+                        </ul>
+                    </div>
+                    <div class="sw-column">
+                        <h4>✗ Debilidades</h4>
+                        <ul>
+                            <li>Requiere un practicante experimentado.</li>
+                            <li>No tiene un modelo de causalidad subyacente.</li>
+                            <li>No representa fácilmente situaciones de cambio general de calidad (ej. adherencia a procedimientos).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactivo 3: Mini-Ejercicio de Clasificación de Escenarios -->
+    <div class="scenario-quiz-container">
+         <div class="instruction-box">
+            <h3>Mini-Ejercicio: Proactivo vs. Reactivo</h3>
+            <p>Lee cada escenario y clasifícalo como <strong>Proactivo</strong> (prevenir) o <strong>Reactivo</strong> (corregir).</p>
+        </div>
+        <div class="quiz-content-wrapper">
+            <div id="scenario-card" class="scenario-card">
+                <p id="scenario-text"></p>
+                <div id="scenario-choices" class="scenario-choices">
+                    <button class="choice-btn" data-choice="proactive">Proactivo</button>
+                    <button class="choice-btn" data-choice="reactive">Reactivo</button>
+                </div>
+                <div id="scenario-feedback" class="scenario-feedback"></div>
+            </div>
+            <div class="quiz-controls">
+                <span id="quiz-progress"></span>
+                <button id="quiz-next-btn" style="display: none;">Siguiente</button>
+                <button id="quiz-restart-btn" style="display: none;">Reiniciar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+    
+    <button id="next-btn" class="start-button" onclick="goToNextPage()">
+        Continuar
+        <span class="arrow">❯</span>
+    </button>
+    
+    <script src="../js/audioPlayer.js"></script>
+    <script src="../js/SCORM.js"></script>
+    <script src="../js/M3_pagina6.js"></script>
+</body>
+</html>

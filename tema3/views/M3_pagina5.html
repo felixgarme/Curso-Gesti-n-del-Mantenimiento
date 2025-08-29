@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/sidebar.css">
     <link rel="stylesheet" href="../assets/css/ProgressBar.css">
-    <link rel="stylesheet" href="../assets/css/tema3.1.css">
+    <link rel="stylesheet" href="../assets/css/M3_pagina5.css">
     <script type="text/javascript" src="../js/sidebar.js" defer></script>
 </head>
 <body>
@@ -86,7 +86,7 @@
 
             <!-- Audio element oculto -->
             <audio id="audioPlayer" preload="metadata" autoplay>
-                <source src="../assets/audio/tema3.1.wav" type="audio/mp3" />
+                <source src="../assets/audio/M3_pagina5.wav" type="audio/mp3" />
                 Tu navegador no soporta el elemento de audio.
             </audio>
         </div>
@@ -97,49 +97,62 @@
     </div>
 
     <main>
-        <div class="acr-8d-container">
-            <div class="page-header">
-                <h1>Las 8 Disciplinas (8D)</h1>
+<!-- =============== COMPONENTE: ACR - DIAGRAMA DE ISHIKAWA =============== -->
+<div class="ishikawa-container">
+    <div class="page-header">
+        <h1>ACR – Metodologías de Análisis de Causa Raíz</h1>
+        <h2>Diagrama de Ishikawa</h2>
+    </div>
+
+    <!-- Interactivo 1: Explorador de Contenido con Pestañas -->
+    <div class="interactive-container">
+        <div class="ishikawa-explorer">
+            <!-- Columna Izquierda: Contenido de Texto -->
+            <div class="explorer-text-content">
+                <h3 id="explorer-title">Definición.</h3>
+                <div id="explorer-details">
+                    <!-- El contenido se insertará aquí con JS -->
+                </div>
+                <nav class="explorer-nav">
+                    <button class="tab-button active" data-topic="definition">Definición</button>
+                    <button class="tab-button" data-topic="construction">Pasos</button>
+                    <button class="tab-button" data-topic="errors">Errores</button>
+                    <button class="tab-button" data-topic="strengths">Fortalezas</button>
+                    <button class="tab-button" data-topic="weaknesses">Debilidades</button>
+                </nav>
             </div>
-
-            <!-- Módulo Interactivo de Scrollytelling -->
-            <div class="acr-scrolly-wrapper">
-                <!-- Panel de Contenido Desplazable (Izquierda) -->
-                <div class="acr-scroll-content">
-                    <!-- Introducción -->
-                    <div classs="scroll-intro">
-                        <h3>Las 8 disciplinas para la solución de problemas</h3>
-                        <h4>¿En qué consiste las 8D?</h4>
-                        <p>El proceso de 8 disciplinas (8D) se usa para identificar, corregir y eliminar problemas. Esta metodología es de gran utilidad en la mejora de productos y procesos. Establece una práctica estándar basada en hechos.</p>
-                        <p>Se concentra en el origen del problema mediante la identificación de la causa raíz. Su eficacia proviene el hecho de que incorpora todos los aspectos importantes de la gerencia del problema, es decir, contención del problema, del análisis de la causa de la raíz, de la corrección de problema, y de la prevención del problema.</p>
-                    </div>
-
-                    <!-- Contenido de cada disciplina (se genera con JS) -->
-                    <div id="discipline-content-area"></div>
+            <!-- Columna Derecha: Diagrama Interactivo -->
+            <div class="explorer-visual">
+                <div class="fishbone-diagram">
+                    <img src="../assets/images/Modulo3/diagrama_ishikawa.png" class="fishbone-base-image" alt="Diagrama de espina de pescado base">
                 </div>
-
-                <!-- Panel de Navegación Fijo (Derecha) -->
-                <div class="acr-sticky-nav">
-                    <div class="sticky-nav-title">Proceso 8D</div>
-                    <!-- Los pasos se generan con JS -->
-                    <div id="sticky-nav-steps"></div>
-                </div>
-            </div>
-
-            <!-- Nuevo Mini-Ejercicio: Análisis de Escenario -->
-            <div class="acr-scenario-exercise">
-                <div class="exercise-header">
-                    <h4>Mini-Ejercicio: Identifica la Disciplina</h4>
-                </div>
-                <div class="scenario-content">
-                    <p class="scenario-context"></p>
-                    <h5 class="scenario-question"></h5>
-                    <div class="scenario-options"></div>
-                </div>
-                <div class="scenario-feedback"></div>
             </div>
         </div>
-
+    </div>
+    
+    <!-- Interactivo 2: Mini-Ejercicio Clasificador de Causas -->
+    <div class="interactive-container">
+        <h3>Mini-Ejercicio: Construye tu propio Diagrama</h3>
+        <div class="instruction-box">
+            <p><strong>Escenario:</strong> El café de la máquina de la oficina sabe quemado. Para cada causa listada, haz clic en ella y luego selecciona la categoría (6M) correcta a la que pertenece.</p>
+        </div>
+        <div class="cause-sorter-exercise">
+            <div class="causes-pool">
+                <h4>Causas a Clasificar:</h4>
+                <div class="causes-list">
+                    <!-- Las causas se generan con JS -->
+                </div>
+            </div>
+            <div class="categories-grid">
+                <h4>Categorías (6M):</h4>
+                <div class="category-buttons">
+                    <!-- Los botones de categoría se generan con JS -->
+                </div>
+            </div>
+        </div>
+        <p class="sorter-feedback"></p>
+    </div>
+</div>
     </main>
     
     <button id="next-btn" class="start-button" onclick="goToNextPage()">
@@ -149,6 +162,6 @@
     
     <script src="../js/audioPlayer.js"></script>
     <script src="../js/SCORM.js"></script>
-    <script src="../js/tema3.1.js"></script>
+    <script src="../js/M3_pagina5.js"></script>
 </body>
 </html>
