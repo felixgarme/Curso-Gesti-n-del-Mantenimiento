@@ -59,33 +59,33 @@
     <div class="container">
         <div class="sub_container">
             <div class="case-study">
-                <h1 style="color: #031795; font-family: 'AA Smart Sans'; font-size: 30px; font-style: normal; font-weight: 600; line-height: normal; margin-left: 45px;">Fallas eventuales o esporádicas</h1>
+                <h1 style="color: #031795; font-family: 'AA Smart Sans'; font-size: 30px; font-style: normal; font-weight: 600; line-height: normal; margin-left: 45px;">Fallas crónicas o repetitivas</h1>
                 <div class="card-content hover-highlight" style="color: #031795; font-size: 18px; margin-top: 22px;">
-                    La <span class="highlight">falla eventual</span>, generalmente es aleatoria, de mediana o alta criticidad, permanece corto tiempo y su costo es significativo.                    
+                    Falla frecuente que ha sido aceptada como <span class="highlight">“normal”</span>, y donde por lo general, se programa el costo de realizar la <span class="highlight">actividad correctiva</span>, como preventiva.
                     <br/><br>
                     Estas fallas se caracterizan por: 
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                             <span style="position: absolute; left: 0; color: var(--color-rojo);">•</span>
-                            Baja frecuencia / alta consecuencia
+                            Alta frecuencia / baja consecuencia. 
                         </li>
                         <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                             <span style="position: absolute; left: 0; color: var(--color-celeste);">•</span>
-                            Típico de equipos estáticos. 
+                            Típico de equipos rotativos. 
                         </li>
                         <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                             <span style="position: absolute; left: 0; color: var(--color-azul-oscuro);">•</span>
-                            Estudios basados en riesgo. 
+                            Estudios basados en “confiabilidad”. 
                         </li>
                         <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                             <span style="position: absolute; left: 0; color: var(--color-rojo);">•</span>
-                            La falla = perdida de la integridad mecánica.
+                            La falla = perdida de la función.
                         </li>
                     </ul>
                     
                     <!-- Botón para mostrar ejemplos -->
                     <div style="text-align: center; margin-top: 30px;">
-                        <div class="nav-btn" id="ejemplosBtn" onclick="toggleEjemplos()">Ejemplo de  fallas esporádicas</div>
+                        <div class="nav-btn" id="ejemplosBtn" onclick="toggleEjemplos()">Ejemplo de fallas crónicas</div>
                     </div>
                     
                     <!-- Lista de ejemplos (inicialmente oculta) -->
@@ -93,35 +93,31 @@
                         <ul style="list-style: none; padding: 0;">
                         <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                             <span style="position: absolute; left: 0; color: var(--color-rojo);">•</span>
-                            Incendio.
+                            Fuga en sellos de bombas.
                         </li>
                         <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                             <span style="position: absolute; left: 0; color: var(--color-celeste);">•</span>
-                            Explosión. 
+                            Fallas en arrancadores de motores.
                         </li>
                         <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                             <span style="position: absolute; left: 0; color: var(--color-azul-oscuro);">•</span>
-                            Falla de energía.
+                            Disparo de un variador de velocidad.
                         </li>
                         <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                             <span style="position: absolute; left: 0; color: var(--color-rojo);">•</span>
-                            Corto circuito. 
+                            Controladores en manual en vez de automático.
                         </li>
                         <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                             <span style="position: absolute; left: 0; color: var(--color-celeste);">•</span>
-                            Fallas Catastróficas. 
+                            Continúo rompimiento de stock del almacén.
                         </li>
                         <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                             <span style="position: absolute; left: 0; color: var(--color-azul-oscuro);">•</span>
-                            Personal con lesiones incapacitantes o fatalidades. 
+                            Paros recurrentes por instrumentación defectuosa o descalabrada.
                         </li>
                         <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                             <span style="position: absolute; left: 0; color: var(--color-rojo);">•</span>
-                            Emisiones de material peligroso a la atmósfera. 
-                        </li>
-                        <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--color-celeste);">•</span>
-                            Fuertes daños en el medio ambiente.
+                            Mantenimiento correctivo frecuente.
                         </li>
                         </ul>
                     </div>
@@ -199,7 +195,7 @@
 
           <!-- Audio element oculto -->
           <audio id="audioPlayer" preload="metadata" autoplay>
-              <source src="../assets/audio/M3_pagina7.wav" type="audio/mp3" />
+              <source src="../assets/audio/M3_pagina6.wav" type="audio/mp3" />
               Tu navegador no soporta el elemento de audio.
           </audio>
       </div>
@@ -271,7 +267,6 @@
         #ejemplosList.show ul li:nth-child(5) { animation-delay: 0.5s; }
         #ejemplosList.show ul li:nth-child(6) { animation-delay: 0.6s; }
         #ejemplosList.show ul li:nth-child(7) { animation-delay: 0.7s; }
-        #ejemplosList.show ul li:nth-child(8) { animation-delay: 0.8s; }
 
         @keyframes slideInLeft {
             to {
@@ -310,9 +305,9 @@
   <script src="../js/M2/M2pg7.js"></script>
   <script>
     // Navegación
-    function goHome() { window.location.href = 'index.html'; }
-    function backPage() { window.location.href = 'M3_pagina6.html'; }
-    function goToNextPage() { window.location.href = 'M3_pagina8.html'; }
+    function goHome() { window.location.href = '../index.html'; }
+    function backPage() { window.location.href = 'M1_pagina5.html'; }
+    function goToNextPage() { window.location.href = 'M1_pagina7.html'; }
 
     ScormManager.init();
     ScormManager.guardarProgreso("M2_pagina9.html");

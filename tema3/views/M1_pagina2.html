@@ -9,9 +9,8 @@
   <link rel="stylesheet" href="../assets/css/main_ex.css" />
   <link rel="stylesheet" href="../assets/css/sidebar.css" />
   <link rel="stylesheet" href="../assets/css/ProgressBar.css" />
-  <link rel="stylesheet" href="../assets/css/ex1.css" />  
-  <link rel="stylesheet" href="../assets/css/Funciones de supervivencia R(t)/exm3.css" />
-  <link rel="stylesheet" href="../assets/css/suplement.css" />
+  <link rel="stylesheet" href="../assets/css/ex1.css" />
+  <link rel="stylesheet" href="../assets/css/M1_pagina2.css" />
 
 
   <!-- Scripts -->
@@ -51,36 +50,26 @@
   <!-- Título principal -->
   <header><h1 class="titulo-epp" style="margin: 40px;"><span class="gradient-text2">ACR – Introducción</span></h1></header>
 
-  <!-- Subtítulo -->
-  <div style="text-align: center;">
-    <h2 style="color: #031794; font-family: 'AA Smart Sans'; font-size: 30px; font-style: normal; font-weight: 400; line-height: normal; margin-top: 20px;">Procesos evolutivos de las fallas</h2>  
-  </div>
+    <div class="container_2">
+        <div class="stats">
+            <h3>Términos y definiciones asociadas al RCA</h3>
+        </div>
 
-  <div class="container">
-    <div class="sub_container">
-        <div class="case-study">
-            <h1 style="color: #031795; font-family: 'AA Smart Sans'; font-size: 30px; font-style: normal; font-weight: 600; line-height: normal; margin-left: 45px;">Patrones de las curvas de tasa de falla.</h1>
-            <img src="../assets/images/M3/tpf_3.png" alt="Ajustes y tolerancias" class="img-concepto responsive-image" style="display:block; margin:32px auto 0 auto; max-width:360px; border-radius:18px; box-shadow: 0 4px 18px 0 rgba(0,0,0,0.10); background:#fff;"/>
-            <div class="card-content hover-highlight" style="color: #031795; font-size: 18px; margin-top: 22px;">
-                Las investigaciones recientes muestran que la relación entre el envejecimiento de una máquina y su probabilidad de falla no siempre es directa. Antes se creía en la <span class="highlight">“curva de bañera”</span> (más fallas al inicio y al final de la vida útil), pero hoy se reconocen seis patrones distintos de fallas.
-                <br/><br>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
-                        <span style="position: absolute; left: 0; color: var(--color-rojo);">•</span>
-                        En los patrones <span class="highlight">A, B y C</span> conviene reemplazar componentes antes de que fallen, pues su probabilidad de falla aumenta con la edad.
-                    </li>
-                    <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
-                        <span style="position: absolute; left: 0; color: var(--color-celeste);">•</span>
-                        En el patrón <span class="highlight">E</span>, reemplazar no mejora la confiabilidad, ya que el nuevo componente tiene la misma probabilidad de falla.
-                    </li>
-                    <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
-                        <span style="position: absolute; left: 0; color: var(--color-azul-oscuro);">•</span>
-                        En el patrón <span class="highlight">F</span>, reemplazar a intervalos fijos incluso empeora la confiabilidad, ya que los equipos nuevos suelen fallar más en su “infancia”.
-                    </li>
-                    </ul>
-                Más del 50% de los componentes presentan fallas tempranas tras ser reparados o reemplazados, generalmente por errores humanos, de diseño o del sistema. Por ello, el <span class="highlight">mantenimiento moderno</span> busca reducir intervenciones innecesarias y enfocarse en eliminar las causas de las fallas mediante herramientas como el <span class="highlight">Análisis Causa-Raíz</span>, usándolo de forma proactiva.
-                <br/><br>
-            </div>
+        <div class="grid" id="rulesGrid">
+            <!-- Las reglas se generarán dinámicamente con JavaScript -->
+        </div>
+
+        <div class="footer">
+            <p>¡A tomar nota!</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="close_modal" tabindex="0" role="button" aria-label="Cerrar">×</div>
+            <div id="modalContent">
+                <!-- Contenido del modal se llena dinámicamente -->
             </div>
         </div>
     </div>
@@ -154,12 +143,13 @@
 
           <!-- Audio element oculto -->
           <audio id="audioPlayer" preload="metadata" autoplay>
-              <source src="../assets/audio/M3_pagina5.wav" type="audio/mp3" />
+              <source src="../assets/audio/M3_pagina2.wav" type="audio/mp3" />
               Tu navegador no soporta el elemento de audio.
           </audio>
       </div>
   </div>
 
+  <script src="../js/M1_pagina2.js"></script>
   <script src="../js/audioPlayer.js"></script>
   <!--///////-->
   <!-- Scripts funcionales -->
@@ -167,9 +157,9 @@
   <script src="../js/M2/M2pg7.js"></script>
   <script>
     // Navegación
-    function goHome() { window.location.href = 'index.html'; }
-    function backPage() { window.location.href = 'M3_pagina4.html'; }
-    function goToNextPage() { window.location.href = 'M3_pagina6.html'; }
+    function goHome() { window.location.href = '../index.html'; }
+    function backPage() { window.location.href = 'M1_pagina1.html'; }
+    function goToNextPage() { window.location.href = 'M1_pagina3.html'; }
 
     ScormManager.init();
     ScormManager.guardarProgreso("M2_pagina9.html");

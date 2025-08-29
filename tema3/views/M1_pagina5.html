@@ -53,33 +53,34 @@
 
   <!-- Subtítulo -->
   <div style="text-align: center;">
-    <h2 style="color: #031794; font-family: 'AA Smart Sans'; font-size: 30px; font-style: normal; font-weight: 400; line-height: normal; margin-top: 20px;">Acciones y plan de acción</h2>  
+    <h2 style="color: #031794; font-family: 'AA Smart Sans'; font-size: 30px; font-style: normal; font-weight: 400; line-height: normal; margin-top: 20px;">Procesos evolutivos de las fallas</h2>  
   </div>
 
   <div class="container">
     <div class="sub_container">
         <div class="case-study">
+            <h1 style="color: #031795; font-family: 'AA Smart Sans'; font-size: 30px; font-style: normal; font-weight: 600; line-height: normal; margin-left: 45px;">Patrones de las curvas de tasa de falla.</h1>
+            <img src="../assets/images/M3/tpf_3.png" alt="Ajustes y tolerancias" class="img-concepto responsive-image" style="display:block; margin:32px auto 0 auto; max-width:360px; border-radius:18px; box-shadow: 0 4px 18px 0 rgba(0,0,0,0.10); background:#fff;"/>
             <div class="card-content hover-highlight" style="color: #031795; font-size: 18px; margin-top: 22px;">
-                Asignación para ejecutar una tarea o series de tareas para resolver una causa identificada en la investigación de una falla o problema.
-                <br></br>
-                El plan de acción debe contemplar que:
-                <br></br>
+                Las investigaciones recientes muestran que la relación entre el envejecimiento de una máquina y su probabilidad de falla no siempre es directa. Antes se creía en la <span class="highlight">“curva de bañera”</span> (más fallas al inicio y al final de la vida útil), pero hoy se reconocen seis patrones distintos de fallas.
+                <br/><br>
                 <ul style="list-style: none; padding: 0;">
                     <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                         <span style="position: absolute; left: 0; color: var(--color-rojo);">•</span>
-                        Las acciones deben priorizarse a través de una <span class="highlight">jerarquización</span>, basada en su aporte al problema, el riesgo y su impacto en el negocio. 
+                        En los patrones <span class="highlight">A, B y C</span> conviene reemplazar componentes antes de que fallen, pues su probabilidad de falla aumenta con la edad.
                     </li>
                     <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                         <span style="position: absolute; left: 0; color: var(--color-celeste);">•</span>
-                        Deben identificarse indicadores que permitan medir los resultados y establecer un <span class="highlight">plan de seguimiento</span> en un horizonte tiempo definido. 
+                        En el patrón <span class="highlight">E</span>, reemplazar no mejora la confiabilidad, ya que el nuevo componente tiene la misma probabilidad de falla.
                     </li>
                     <li style="margin-bottom: 5px; padding-left: 20px; position: relative;">
                         <span style="position: absolute; left: 0; color: var(--color-azul-oscuro);">•</span>
-                        De ser necesario, deberá realizarse un nuevo análisis, para obtener acciones que permitan ajustar las <span class="highlight">soluciones</span>, enfocadas en mejores resultados. 
+                        En el patrón <span class="highlight">F</span>, reemplazar a intervalos fijos incluso empeora la confiabilidad, ya que los equipos nuevos suelen fallar más en su “infancia”.
                     </li>
-                </ul>
+                    </ul>
+                Más del 50% de los componentes presentan fallas tempranas tras ser reparados o reemplazados, generalmente por errores humanos, de diseño o del sistema. Por ello, el <span class="highlight">mantenimiento moderno</span> busca reducir intervenciones innecesarias y enfocarse en eliminar las causas de las fallas mediante herramientas como el <span class="highlight">Análisis Causa-Raíz</span>, usándolo de forma proactiva.
+                <br/><br>
             </div>
-            <img src="../assets/images/M3/accion.png" alt="Ajustes y tolerancias" class="img-concepto responsive-image" style="display:block; margin:32px auto 0 auto; max-width:360px; border-radius:18px; box-shadow: 0 4px 18px 0 rgba(0,0,0,0.10); background:#fff;"/>
             </div>
         </div>
     </div>
@@ -153,7 +154,7 @@
 
           <!-- Audio element oculto -->
           <audio id="audioPlayer" preload="metadata" autoplay>
-              <source src="../assets/audio/M3_pagina8.wav" type="audio/mp3" />
+              <source src="../assets/audio/M3_pagina5.wav" type="audio/mp3" />
               Tu navegador no soporta el elemento de audio.
           </audio>
       </div>
@@ -166,9 +167,9 @@
   <script src="../js/M2/M2pg7.js"></script>
   <script>
     // Navegación
-    function goHome() { window.location.href = 'index.html'; }
-    function backPage() { window.location.href = 'M3_pagina7.html'; }
-    function goToNextPage() { window.location.href = 'M3_pagina9.html'; }
+    function goHome() { window.location.href = '../index.html'; }
+    function backPage() { window.location.href = 'M1_pagina4.html'; }
+    function goToNextPage() { window.location.href = 'M1_pagina6.html'; }
 
     ScormManager.init();
     ScormManager.guardarProgreso("M2_pagina9.html");
