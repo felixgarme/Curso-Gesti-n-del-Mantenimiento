@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluación: Proceso de Creación de Mapa Mental</title>
+    <title>Desarrollo del árbol lógico de fallas</title>
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/sidebar.css">
     <link rel="stylesheet" href="../assets/css/ProgressBar.css">
-    <link rel="stylesheet" href="../assets/css/M3_pagina7.css">
+    <link rel="stylesheet" href="../assets/css/M3_pagina8.css">
     <script type="text/javascript" src="../js/sidebar.js" defer></script>
 </head>
 <body>
@@ -86,7 +86,7 @@
 
             <!-- Audio element oculto -->
             <audio id="audioPlayer" preload="metadata" autoplay>
-                <source src="../assets/audio/M3_pagina7.wav" type="audio/mp3" />
+                <source src="../assets/audio/M3_pagina8.wav" type="audio/mp3" />
                 Tu navegador no soporta el elemento de audio.
             </audio>
         </div>
@@ -97,67 +97,11 @@
     </div>
 
     <main>
-
-<!-- =============== COMPONENTE: PROCESO DE ANÁLISIS CAUSA RAÍZ =============== -->
-<div class="rca-process-container">
-    <div class="page-header">
-        <h1>ACR – Metodología por Árbol Lógico de Fallas</h1>
-        <h2>Proceso de Análisis Causa Raíz</h2>
-    </div>
-
-    <!-- Interactivo 1: Explorador de Proceso Cíclico -->
-    <div class="process-explorer-wrapper">
-        <!-- Diagrama Interactivo (Izquierda) -->
-        <div class="process-diagram">
-            <div class="diagram-quadrant" data-step="1">
-                <span class="step-number">1</span>
-                <h4>Preparar el análisis</h4>
-            </div>
-            <div class="diagram-quadrant" data-step="2">
-                <span class="step-number">2</span>
-                <h4>Recabar la información</h4>
-            </div>
-            <div class="diagram-quadrant" data-step="3">
-                <span class="step-number">3</span>
-                <h4>Armar la lógica deductiva</h4>
-            </div>
-            <div class="diagram-quadrant" data-step="4">
-                <span class="step-number">4</span>
-                <h4>Establecer el plan de acción</h4>
-            </div>
-            <div class="diagram-arrow">
-                <svg viewBox="0 0 100 100"><path d="M 50,15 A 35,35 0 1,1 15.2,50" stroke="var(--color-azul)" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/></svg>
-            </div>
+        <div class="page-header">
+            <h1>ACR – Metodología por Árbol Lógico de Fallas</h1>
+            <h2>Desarrollo del árbol lógico de fallas</h2>
         </div>
 
-        <!-- Panel de Contenido (Derecha) -->
-        <div class="process-content-panel">
-            <div id="process-content-display">
-                <!-- El contenido se inserta aquí con JS -->
-            </div>
-        </div>
-    </div>
-    
-    <!-- Interactivo 2: Mini-Ejercicio de Secuenciación -->
-    <div class="sequence-builder-exercise">
-        <div class="instruction-box">
-            <h3>Mini-Ejercicio: Ordena el Proceso</h3>
-            <p>Lee la descripción de la tarea y haz clic en el número de paso correcto donde debería ocurrir.</p>
-        </div>
-        <div class="builder-wrapper">
-            <div class="task-description-card">
-                <p id="task-description"></p>
-            </div>
-            <div class="step-placeholders">
-                <button class="step-placeholder" data-step="1">1</button>
-                <button class="step-placeholder" data-step="2">2</button>
-                <button class="step-placeholder" data-step="3">3</button>
-                <button class="step-placeholder" data-step="4">4</button>
-            </div>
-        </div>
-        <p class="builder-feedback"></p>
-    </div>
-</div>
     </main>
     
     <button id="next-btn" class="start-button" onclick="goToNextPage()">
@@ -167,6 +111,6 @@
     
     <script src="../js/audioPlayer.js"></script>
     <script src="../js/SCORM.js"></script>
-    <script src="../js/M3_pagina7.js"></script>
+    <script src="../js/M3_pagina8.js"></script>
 </body>
 </html>
