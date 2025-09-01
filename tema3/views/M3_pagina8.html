@@ -97,10 +97,91 @@
     </div>
 
     <main>
-        <div class="page-header">
-            <h1>ACR – Metodología por Árbol Lógico de Fallas</h1>
-            <h2>Desarrollo del árbol lógico de fallas</h2>
+ <!-- =============== COMPONENTE: DESARROLLO DEL ÁRBOL LÓGICO DE FALLAS =============== -->
+<div class="fault-tree-dev-container">
+    <div class="page-header">
+        <h1>ACR – Metodología por Árbol Lógico de Fallas</h1>
+        <p>Desarrollo del Árbol Lógico de Fallas</p>
+    </div>
+
+    <!-- Interactivo 1: Introducción y Primer Nivel -->
+    <div class="interactive-section">
+        <h3>Primer Nivel: Identificación del Problema</h3>
+        <div class="zoom-diagram-container">
+            <div class="zoom-diagram">
+                <div class="zoom-level" data-level="tope">Evento Tope</div>
+                <div class="zoom-level" data-level="hechos">Los Hechos</div>
+                <div class="zoom-level" data-level="hipotesis">Hipótesis</div>
+            </div>
+            <div class="zoom-content-panel"></div>
         </div>
+    </div>
+
+    <!-- Interactivo 2: Jerarquización de Hechos -->
+    <div class="interactive-section">
+        <h3>Segundo Nivel: Selección y Jerarquización de Hechos</h3>
+        <p class="instruction-text">Clasifica cada "Hecho" (modo de falla) según su probabilidad de ocurrencia.</p>
+        <div class="ranking-exercise">
+            <div class="ranking-pool"></div>
+            <div class="ranking-zones">
+                <div class="ranking-zone" data-zone="1"><h4>Fase I (Más Probables)</h4></div>
+                <div class="ranking-zone" data-zone="2"><h4>Fase II (Probables)</h4></div>
+                <div class="ranking-zone" data-zone="3"><h4>Fase III (Poco Probables)</h4></div>
+            </div>
+        </div>
+        <p class="ranking-feedback"></p>
+    </div>
+
+    <!-- Interactivo 3: Fuentes de Información -->
+    <div class="interactive-section">
+        <h3>Fuentes de Información para Evaluar Probabilidades</h3>
+        <div class="carousel-3d-container">
+            <div class="carousel-3d"></div>
+            <button class="carousel-3d-nav prev">&lt;</button>
+            <button class="carousel-3d-nav next">&gt;</button>
+        </div>
+    </div>
+    
+    <!-- Interactivo 4: Proceso de Jerarquización -->
+    <div class="interactive-section">
+        <h3>Proceso: Bajar por la Rama de Mayor Valor</h3>
+        <div class="decision-simulator">
+            <img src="https://i.imgur.com/uGg0wzB.png" alt="Ejemplo de árbol con porcentajes">
+            <div class="decision-question">
+                <p>Según la regla, ¿cuál es la primera rama (Hecho) que se debe investigar?</p>
+                <div class="decision-options">
+                    <button data-correct="false">Cojinete Congelado (10%)</button>
+                    <button data-correct="true">Cojinetes Calientes (40%)</button>
+                    <button data-correct="false">Sello Reventado (20%)</button>
+                </div>
+                <p class="decision-feedback"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactivo 5: Desarrollo de Hipótesis -->
+    <div class="interactive-section">
+        <h3>Proceso del Desarrollo de Hipótesis</h3>
+        <div class="hypothesis-stepper">
+            <div class="stepper-track"></div>
+            <div class="stepper-controls">
+                <button class="stepper-btn prev" disabled>&lt; Anterior</button>
+                <button class="stepper-btn next">Siguiente &gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactivo 6: Las Causas Raíz -->
+    <div class="interactive-section">
+        <h3>Las Causas Raíz: Físicas, Humanas y Latentes</h3>
+        <div class="nested-accordion"></div>
+    </div>
+</div>
+
+<!-- Modal para la Matriz de Validación -->
+<div id="validation-matrix-modal" class="modal-overlay">
+    <div class="modal-content"><span class="modal-close">&times;</span><h4>Ejemplo de Matriz de Validación</h4><img src="https://i.imgur.com/8Qj8E7Y.png" alt="Matriz de Validación"></div>
+</div>
 
     </main>
     
