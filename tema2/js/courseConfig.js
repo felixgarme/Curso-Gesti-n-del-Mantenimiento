@@ -4,7 +4,7 @@
 const courseConfig = {
     // Información general del curso
     courseInfo: {
-        title: "Análisis de Tendencia",
+        title: "Gestión del mantenimiento",
         company: "Quellaveco",
         version: "1.0"
     },

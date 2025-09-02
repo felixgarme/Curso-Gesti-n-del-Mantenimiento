@@ -106,7 +106,7 @@
 
             <!-- Audio element oculto -->
             <audio id="audioPlayer" preload="metadata" autoplay>
-                <source src="../assets/audio/M2_inicio.wav" type="audio/mp3" />
+                <source src="../assets/audio/M3_inicio.wav" type="audio/mp3" />
                 Tu navegador no soporta el elemento de audio.
             </audio>
         </div>
@@ -114,8 +114,8 @@
     <div class="inicio-container">
         <img src="../assets/images/logo_blanco.png" alt="Logo AngloAmerican" class="logo-inicio">
         <div class="inicio-box">
-            <span class="inicio-module-number">02</span>
-            <h1 class="inicio-title">Acabados superficiales</h1>
+            <span class="inicio-module-number">03</span>
+            <h1 class="inicio-title">Pasos y metodología</h1>
             <button id="empezarBtn" class="start-button">Comenzar</button>
         </div>
     </div>
@@ -124,18 +124,18 @@
     <script src="../js/audioPlayer.js"></script>
     <script>
         document.getElementById('empezarBtn').addEventListener('click', () => {
-            window.location.href = 'M2_pagina1.html';
+            window.location.href = 'M3_pagina1.html';
         });
 
         function backPage() {
-            window.location.href = "M1_pagina2.html";
+            window.location.href = "M2_pagina2.html";
         }
 
         // Iniciar SCORM
         ScormManager.init();
 
         // Guardar progreso de esta página
-        ScormManager.guardarProgreso("M2_inicio.html"); // Cambia según la página
+        ScormManager.guardarProgreso("M3_inicio.html"); // Cambia según la página
 
         // Recuperar progreso
         const datos = ScormManager.cargarProgreso();

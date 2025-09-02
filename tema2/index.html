@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mantenimiento Industrial</title>
-    <link rel="stylesheet" href="menu_principal/main.css">
-    <link rel="stylesheet" href="menu_principal/index.css">
-    <script type="text/javascript" src="../js/sidebar.js" defer></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script src="js/courseConfig.js"></script>
 </head>
 
-<body>
-    <!-- <div class="audio-control-wrapper">
+<body> 
+    <button class="back-page-btn" style="left: 0;" onclick="backPage()">
+        <span class="arrow">❮</span>
+    </button>
+    <div class="background-container">
+        <img id="background_image" src="" alt="Fondo" class="background-image">
+    </div>
+    <img id="logo" src="" alt="Logo" class="logo">
+    <div class="audio-control-wrapper">
         <button class="audio-toggle-btn" id="audioToggle">
             <svg id="togglePlayIcon" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
@@ -74,44 +80,76 @@
                 </div>
             </div>
 
-           
+            <!-- Audio element oculto -->
             <audio id="audioPlayer" preload="metadata" autoplay>
-                <source src="../assets/audio/M1_inicio.wav" type="audio/mp3" />
+                <source src="assets/audio/bienvenida.wav" type="audio/mp3" />
                 Tu navegador no soporta el elemento de audio.
             </audio>
         </div>
-    </div> -->
-    <div class="inicio-container">
-        <video autoplay muted loop playsinline class="background-video">
-            <source src="menu_principal/videos/inicio.mp4" type="video/mp4">
-            Tu navegador no soporta el video HTML5.
-        </video>
-        <img src="menu_principal/images/logo_blanco.png" alt="Logo AngloAmerican" class="logo-inicio">
-
-        <div class="contenido-centrado">
-            <h1 class="inicio-title">Gestión del mantenimiento</h1>
-            <button id="empezarBtn" class="start-button">Comenzar</button>
-            <p>Conocerás los fundamentos para asegurar la eficiencia y rentabilidad de la organización.</p>
-        </div>
-
     </div>
-    <script src="../js/SCORM.js"></script>
+
+    <main class="content">
+        <h3 class="welcome-text">Bienvenido a </h3>
+        <h1 id="title_course"></h1>
+        <button id="btnModulos" class="start-button"
+            onclick="document.querySelector('.container').scrollIntoView({behavior: 'smooth'})">
+            Comenzar
+            <span class="arrow">❯</span>
+        </button>
+    </main>
+    <div class="scroll-indicator">
+        <span class="scroll-arrow">↓</span>
+        <span class="scroll-text">Desliza para ver más</span>
+    </div>
+
+    <div class="container">
+        <div class="learning-objectives">
+            <h2 class="section-title gradient-text">Logros de Aprendizaje</h2>
+            <h4 class="objectives-text">
+                Conocer los fundamentos para asegurar la eficiencia y rentabilidad de la organización.
+            </h4>
+        </div>
+        <div class="modules-container">
+            <div class="module-card hover-borde" onclick="cambiarModulo('views/M1_inicio.html')" data-module="1">
+                <div class="module-number">01</div>
+                <div class="card-content">
+                    <h3 class="module-title">Introducción</h3>
+                    <p class="module-description">
+                        Se presentan los conceptos básicos del mantenimiento y su papel clave en la eficiencia operativa y la productividad.
+                    </p>
+                </div>
+            </div>
+
+            <div class="module-card hover-borde" onclick="cambiarModulo('views/M2_inicio.html')" data-module="2">
+                <div class="module-number">02</div>
+                <div class="card-content">
+                    <h3 class="module-title">Historia y evolución</h3>
+                    <p class="module-description">
+                        Un recorrido breve por cómo ha cambiado el mantenimiento, desde enfoques correctivos hasta modelos modernos basados en tecnología.
+                    </p>
+                </div>
+            </div>
+
+            <div class="module-card hover-borde" onclick="cambiarModulo('views/M3_inicio.html')" data-module="3">
+                <div class="module-number">03</div>
+                <div class="card-content">
+                    <h3 class="module-title">Pasos y metodología</h3>
+                    <p class="module-description">
+                        Se explican los pasos fundamentales y las metodologías más utilizadas para gestionar el mantenimiento de forma planificada y eficiente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/audioPlayer.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const video = document.querySelector(".background-video");
-            video.playbackRate = 0.75;
-        });
-
-        document.getElementById('empezarBtn').addEventListener('click', () => {
-            window.location.href = 'menu_principal/vista_general.html';
-        });
-
-        function backPage() {
-            window.location.href = "../index.html";
+        function cambiarModulo(modulo) {
+            window.location.href = modulo;
         }
 
-        // Iniciar SCORM
-        ScormManager.init();
+        function backPage() {
+            window.location.href = '../menu_principal/vista_general.html'
+        }
     </script>
 </body>
 
