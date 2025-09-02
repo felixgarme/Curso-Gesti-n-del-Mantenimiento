@@ -20,7 +20,7 @@ const courseConfig = {
             alt: "Logo Quellaveco Blanco"
         },
         background: {
-            src: "assets/images/pantalla_inicio.png",
+            src: "assets/images/portadas/fondo_inicio.png",
             alt: "Fondo del curso"
         }
     },
@@ -60,6 +60,6 @@ function iniciarConfiguracion() {
 window.addEventListener('DOMContentLoaded', function () {
     var bgImg = document.getElementById('background_image');
     if (bgImg) {
-        bgImg.src = 'assets/images/pantalla_inicio.png';
+        bgImg.src = 'assets/images/portadas/fondo_inicio.png';
     }
 });
