@@ -27,7 +27,7 @@ body {
   margin: 0 auto 60px;
 }
 
-.page-header h1 {
+h1 {
   font-weight: normal;
   background: var(--degrade-textos, linear-gradient(278deg, #7BDBFF 8.87%, #55b5da 39.24%, #3937bd 44.76%, #ea0606 54.73%, #eda3a4 100.62%));
   background-clip: text;
@@ -117,7 +117,6 @@ body {
 /* ========================================================================= */
 .rca-process-container { max-width: 1100px; margin: var(--spacing-xl) auto; padding: var(--spacing-md); }
 .page-header { text-align: center; margin-bottom: var(--spacing-lg); }
-.page-header h1 { color: var(--color-azul-oscuro); font-size: var(--font-2); }
 .page-header h2 { color: var(--color-celeste); font-size: var(--font-4); }
 .instruction-box { background: #f0f5fa; border-radius: var(--border-radius-md); padding: var(--spacing-md); text-align: center; }
 
