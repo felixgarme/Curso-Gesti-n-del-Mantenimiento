@@ -71,16 +71,12 @@ ScormManager.paginasCurso = [
   
   // Módulo 2: Conocimiento de la Máquina
   "M2_inicio.html",
-  "M2_pagina1.html",
   "M2_pagina2.html", 
   "M2_pagina3.html",
   "M2_pagina4.html", 
   "M2_pagina5.html", 
   "M2_pagina6.html", 
-  "M2_pagina7.html", 
-
-  // Módulo 3: Mantenimiento
-  "M3_inicio.html",
+  "M2_pagina7.html",
   "M2_pagina8.html",
   "M2_pagina9.html", 
   "M2_pagina10.html", 
