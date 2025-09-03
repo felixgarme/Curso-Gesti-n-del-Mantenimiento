@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../assets/css/sidebar.css" />
   <link rel="stylesheet" href="../assets/css/ProgressBar.css" />
   <link rel="stylesheet" href="../assets/css/ex1.css" />
-  <link rel="stylesheet" href="../assets/css/M3/M3_s9.css" />
+  <link rel="stylesheet" href="../assets/css/M3_s10.css" />
 
 
   <!-- Scripts -->
@@ -53,20 +53,19 @@
   <!-- Contenido principal -->
   <div id="info" class="container" style="margin-left: 10%; margin-right: 10%;">
 
-
     <div class="gallery-component">
         <div class="container">
             <div class="title">Galería Secuencial</div>
             
             <div class="image-container">
                 <div class="image" id="image1">
-                    <img src="../assets/images/1/1.png" alt="Imagen 1">
+                    <img src="../assets/images/2/1.png" alt="Imagen 1">
                 </div>
                 <div class="image" id="image2">
-                    <img src="../assets/images/1/2.png" alt="Imagen 2">
+                    <img src="../assets/images/2/2.png" alt="Imagen 2">
                 </div>
                 <div class="image" id="image3">
-                    <img src="../assets/images/1/Group 3.png" alt="Imagen 3">
+                    <img src="../assets/images/2/4.png" alt="Imagen 3">
                 </div>
             </div>
             
@@ -212,7 +211,7 @@
 
           <!-- Audio element oculto -->
           <audio id="audioPlayer" preload="metadata" autoplay>
-              <source src="../assets/audio/M3p3.wav" type="audio/mp3" />
+              <source src="../assets/audio/M3_song10.wav" type="audio/mp3" />
               Tu navegador no soporta el elemento de audio.
           </audio>
       </div>
@@ -225,12 +224,12 @@
   <script src="../js/M2/M2pg7.js"></script>
   <script>
     // Navegación
-    function goHome() { window.location.href = 'index.html'; }
-    function backPage() { window.location.href = 'M2_pagina8.html'; }
-    function goToNextPage() { window.location.href = 'M3_pagina10.html'; }
+    function goHome() { window.location.href = '../index.html'; }
+    function backPage() { window.location.href = 'M3_pagina9.html'; }
+    function goToNextPage() { window.location.href = 'M3_pagina11.html'; }
 
     ScormManager.init();
-    ScormManager.guardarProgreso("M2_pagina9.html");
+    ScormManager.guardarProgreso("M3_pagina10.html");
 
     document.addEventListener("DOMContentLoaded", () => {
       const progreso = ScormManager.cargarProgreso();

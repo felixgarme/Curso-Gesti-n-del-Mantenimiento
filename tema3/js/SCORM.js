@@ -71,12 +71,15 @@ ScormManager.paginasCurso = [
   "M1_pagina2.html", 
   "M1_pagina3.html",
   "M1_pagina4.html",
+  "M1_pagina5.html",
+  "M1_pagina6.html",
+  "M1_pagina7.html",
+  "M1_pagina8.html",
 
   
   // Módulo 2: Selección de la clase según la aplicación
   "M2_inicio.html",
-  "M2_pagina1.html",
-  "M2_pagina2.html", 
+  "M2_pagina1.html", 
 
 
   // Módulo 3: Obtención de clase según proceso
@@ -84,13 +87,18 @@ ScormManager.paginasCurso = [
   "M3_pagina1.html",
   "M3_pagina2.html", 
   "M3_pagina3.html", 
-  "M3_pagina4.html", 
-
-  // Módulo 4: Instrumentos de medición
-  "M4_inicio.html",
-  "M4_pagina1.html",
-  "M4_pagina2.html", 
-  "M4_pagina3.html",
+  "M3_pagina4.html",
+  "M3_pagina5.html",
+  "M3_pagina6.html",
+  "M3_pagina7.html",
+  "M3_pagina8.html",
+  "M3_pagina9.html",
+  "M3_pagina10.html",
+  "M3_pagina11.html",
+  "M3_pagina12.html",
+  "M3_pagina13.html",
+  "M3_pagina14.html",
+  "M3_pagina15.html",
 
   // Conclusiones
   "conclusiones.html"

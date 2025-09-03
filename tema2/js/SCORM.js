@@ -68,25 +68,21 @@ ScormManager.paginasCurso = [
   // Módulo 1: Introducción a la Seguridad
   "M1_inicio.html",
   "M1_pagina1.html",
-  "M1_pagina2.html",
   
   // Módulo 2: Conocimiento de la Máquina
   "M2_inicio.html",
-  "M2_pagina1.html",
   "M2_pagina2.html", 
-  "M2_pagina3.html", 
-
-  // Módulo 3: Mantenimiento
-  "M3_inicio.html",
-  "M3_pagina1.html",
-  "M3_pagina2.html", 
-  "M3_pagina3.html", 
-  "M3_pagina4.html", 
-  "M3_pagina5.html", 
-  "M3_pagina6.html", 
-  "M3_pagina7.html", 
-  "M3_pagina8.html", 
-  "M3_pagina9.html", 
+  "M2_pagina3.html",
+  "M2_pagina4.html", 
+  "M2_pagina5.html", 
+  "M2_pagina6.html", 
+  "M2_pagina7.html",
+  "M2_pagina8.html",
+  "M2_pagina9.html", 
+  "M2_pagina10.html", 
+  "M2_pagina11.html", 
+  "M2_pagina12.html", 
+  "M2_pagina13.html", 
 
   // Conclusiones
   "conclusiones.html"

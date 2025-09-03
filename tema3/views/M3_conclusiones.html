@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión del mantenimiento</title>
+    <title>Análisis de Causa Raíz - Conclusiones</title>
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/sidebar.css">
     <link rel="stylesheet" href="../assets/css/ProgressBar.css">
-    <link rel="stylesheet" href="../assets/css/M3_inicio.css">
+    <link rel="stylesheet" href="../assets/css/conclusiones.css">
     <script type="text/javascript" src="../js/sidebar.js" defer></script>
 </head>
 
@@ -40,7 +40,16 @@
 
         <!-- Menú principal -->
         <div id="menu-container"></div>
+
+        <!-- Sección de información y logout -->
+        <div id="logout-seccion">
+            <h4 id="numero-unidad">3</h4>
+            <div id="descripcion-unidad">
+                <p>Análisis de Causa Raíz</p>
+            </div>
+        </div>
     </nav>
+
     <div class="audio-control-wrapper">
         <button class="audio-toggle-btn" id="audioToggle">
             <svg id="togglePlayIcon" viewBox="0 0 24 24">
@@ -106,43 +115,89 @@
 
             <!-- Audio element oculto -->
             <audio id="audioPlayer" preload="metadata" autoplay>
-                <source src="../assets/audio/M3_inicio.wav" type="audio/mp3" />
+                <source src="../assets/audio/.wav" type="audio/mp3" />
                 Tu navegador no soporta el elemento de audio.
             </audio>
         </div>
     </div>
+    
     <div class="inicio-container">
         <img src="../assets/images/logo_blanco.png" alt="Logo AngloAmerican" class="logo-inicio">
         <div class="inicio-box">
             <span class="inicio-module-number">03</span>
-            <h1 class="inicio-title">Pasos y metodología</h1>
-            <button id="empezarBtn" class="start-button">Comenzar</button>
+            <h1 class="inicio-title">Conclusiones</h1>
+        </div>
+
+        <div class="scroll-indicator">
+            <span class="scroll-arrow">↓</span>
+            <span class="scroll-text">Desliza para ver más</span>
         </div>
     </div>
-    <script src="../js/SCORM.js"></script>
-    <script src="../js/M5_inicio.js"></script>
-    <script src="../js/audioPlayer.js"></script>
-    <script>
-        document.getElementById('empezarBtn').addEventListener('click', () => {
-            window.location.href = 'M3_pagina1.html';
-        });
 
+    <!-- Nueva sección de contenido -->
+    <div class="content-section" id="contentSection">
+        <div class="content-header">
+            <h3 class="gradient-text2">¿Qué aprendimos?</h3>
+        </div>
+
+        <div class="learning-points">
+            <p style="margin-bottom: 30px; font-size: 18px; text-align: center;">
+                A través de este módulo hemos explorado los fundamentos del <strong>Análisis de Causa Raíz (ACR)</strong> 
+                y su aplicación práctica en el mantenimiento industrial. Las siguientes conclusiones resumen los aprendizajes clave:
+            </p>
+
+            <div class="learning-item">
+                <div class="learning-header">
+                    <div class="learning-number">1</div>
+                    <h3>Identificación y eliminación de causas fundamentales</h3>
+                </div>
+                <div class="learning-content">
+                    <p>La correcta aplicación del <strong>Análisis de Causa Raíz (ACR)</strong> permite identificar y eliminar las causas fundamentales de las fallas, evitando recurrencias y mejorando la <strong>confiabilidad operacional</strong>, lo que se traduce en mayor seguridad, continuidad de producción y reducción de costos.</p>
+                </div>
+            </div>
+
+            <div class="learning-item">
+                <div class="learning-header">
+                    <div class="learning-number">2</div>
+                    <h3>Metodologías estructuradas para el análisis</h3>
+                </div>
+                <div class="learning-content">
+                    <p>La <strong>clasificación precisa de fallas</strong>, el entendimiento de sus mecanismos y modos, junto con el uso disciplinado de metodologías como <strong>5 Porqués, Ishikawa o 8D</strong>, fortalecen la capacidad del equipo de mantenimiento para tomar decisiones basadas en datos y priorizar acciones de alto impacto.</p>
+                </div>
+            </div>
+
+            <div class="learning-item">
+                <div class="learning-header">
+                    <div class="learning-number">3</div>
+                    <h3>Implementación sostenible y mejora continua</h3>
+                </div>
+                <div class="learning-content">
+                    <p>La implementación de un <strong>plan de acción bien estructurado</strong>, con seguimiento mediante <strong>indicadores de gestión (KPIs)</strong>, garantiza que las soluciones adoptadas sean sostenibles en el tiempo y fomenten la mejora continua, elemento clave para la competitividad en la minería.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón para continuar al final -->
+        <button class="start-button" onclick="window.location.href='M1_inicio.html'">
+            Regresar al inicio del curso
+            <span class="arrow">❯</span>
+        </button>
+    </div>
+    
+    <script src="../js/M4_inicio.js"></script>
+    <script src="../js/SCORM.js"></script>
+    <script>
         function backPage() {
-            window.location.href = "M2_pagina2.html";
+            window.location.href = 'M3_pagina14.html';
         }
 
         // Iniciar SCORM
         ScormManager.init();
 
         // Guardar progreso de esta página
-        ScormManager.guardarProgreso("M3_inicio.html"); // Cambia según la página
+        ScormManager.guardarProgreso("M3_conclusiones.html");
 
         // Recuperar progreso
-        const datos = ScormManager.cargarProgreso();
-        // if (datos) {
-        //     console.log("Última página:", datos.ultimaPagina);
-        //     console.log("Progreso:", datos.score + "%");
-        // }
         document.addEventListener("DOMContentLoaded", () => {
             const progreso = ScormManager.cargarProgreso();
             const porcentaje = progreso.score ? parseInt(progreso.score) : 0;
