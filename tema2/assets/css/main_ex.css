@@ -1116,6 +1116,7 @@ p {
     navigation: auto;
 }
 
+/* Boton 2 */
 
 .button2 {
     display: inline-flex;
@@ -1135,3 +1136,12 @@ p {
     align-items: center;
     justify-content: space-around;
 }
+
+.button2:hover {
+    background: var(--color-azul);
+    color: #fff;
+    border-color: var(--color-azul);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px) scale(1.03);
+}
+
