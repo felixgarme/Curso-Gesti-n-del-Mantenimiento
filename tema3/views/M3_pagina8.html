@@ -53,33 +53,81 @@
     <!-- Contenido principal -->
     <div id="info" class="container" style="margin-left: 10%; margin-right: 10%;">
 
-        <div class="acr-curso-container">
+=<style>
+    .acr-curso-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+    }
 
-            <div class="acr-section" data-section="introduccion">
-                <div class="acr-section-header">
+    .acr-content {
+        flex: 2;
+    }
+
+    .acr-image {
+        flex: 1.5; /* más espacio para que sea más grande */
+        max-width: 500px;
+    }
+
+    .acr-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+        .acr-curso-container {
+            flex-direction: column;
+        }
+        .acr-image {
+            order: -1; /* la imagen aparece primero en móvil */
+            max-width: 100%;
+        }
+    }
+
+    /* Ajuste para que las secciones mantengan su estilo */
+    .acr-section-content {
+        display: block;
+    }
+</style>
+
+<div class="acr-curso-container">
+
+    <!-- IMAGEN (se moverá arriba en celular) -->
+    <div class="acr-image">
+        <img src="/tema3/assets/images/Modulo3/Plan de acción.webp" alt="Imagen ilustrativa">
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="acr-content">
+
+        <div class="acr-section" data-section="introduccion">
+            <div class="acr-section-header">
                 <h2 class="acr-section-title">Introducción al Plan de Acción</h2>
                 <div class="acr-toggle-icon">+</div>
-                </div>
-                <div class="acr-section-content">
-                <p class="acr-intro-text">Una vez identificadas las causas de la falla, asócielas con la(s) tarea(s) necesarias para la solución y establezca el plan de acción a seguir, para eliminar de forma sistemática y estructurada las fallas físicas, los errores humanos y las causas latentes o causas raíz.</p>
+            </div>
+            <div class="acr-section-content">
+                <p class="acr-intro-text">Una vez identificadas las causas de la falla, asócielas con la(s) tarea(s) necesarias para la solución y establezca el plan de acción a seguir...</p>
                 <div class="acr-methodology-tag">ACR – Metodología por árbol lógico de fallas</div>
                 <div class="acr-progress-bar">
                     <div class="acr-progress-fill" style="width: 25%;"></div>
                 </div>
-                </div>
             </div>
+        </div>
 
-            <div class="acr-section" data-section="generacion">
-                <div class="acr-section-header">
+        <div class="acr-section" data-section="generacion">
+            <div class="acr-section-header">
                 <h2 class="acr-section-title">Generación de Acciones</h2>
                 <div class="acr-toggle-icon">+</div>
-                </div>
-                <div class="acr-section-content">
+            </div>
+            <div class="acr-section-content">
                 <h3 class="acr-subtitle">Elementos Clave para la Generación de Acciones</h3>
                 <div class="acr-list">
                     <div class="acr-list-item">Definir de forma clara y breve las tareas correspondientes a cada causa.</div>
                     <div class="acr-list-item">Estimar costos de ejecución.</div>
-                    <div class="acr-list-item">Priorice las acciones de acuerdo al impacto que pudiese ocasionar el no ejecutarla.</div>
+                    <div class="acr-list-item">Priorice las acciones de acuerdo al impacto.</div>
                     <div class="acr-list-item">Tener respuesta detallada prevista para cada acción.</div>
                     <div class="acr-list-item">Establecer responsabilidades, para la implantación de la tarea.</div>
                     <div class="acr-list-item">Indicar el horizonte de ejecución.</div>
@@ -88,15 +136,15 @@
                 <div class="acr-progress-bar">
                     <div class="acr-progress-fill" style="width: 50%;"></div>
                 </div>
-                </div>
             </div>
+        </div>
 
-            <div class="acr-section" data-section="compromiso">
-                <div class="acr-section-header">
+        <div class="acr-section" data-section="compromiso">
+            <div class="acr-section-header">
                 <h2 class="acr-section-title">Compromiso y Seguimiento</h2>
                 <div class="acr-toggle-icon">+</div>
-                </div>
-                <div class="acr-section-content">
+            </div>
+            <div class="acr-section-content">
                 <h3 class="acr-subtitle">Acciones Complementarias</h3>
                 <div class="acr-list">
                     <div class="acr-list-item">Lograr que el líder del ENT se comprometa con el plan de acción.</div>
@@ -107,74 +155,74 @@
                 <div class="acr-progress-bar">
                     <div class="acr-progress-fill" style="width: 70%;"></div>
                 </div>
-                </div>
             </div>
+        </div>
 
-            <div class="acr-section" data-section="evaluacion">
-                <div class="acr-section-header">
+        <div class="acr-section" data-section="evaluacion">
+            <div class="acr-section-header">
                 <h2 class="acr-section-title">Evaluación de Acciones Correctivas</h2>
                 <div class="acr-toggle-icon">+</div>
-                </div>
-                <div class="acr-section-content">
+            </div>
+            <div class="acr-section-content">
                 <div class="acr-highlight-box">
-                    <p class="acr-highlight-text">Las acciones correctivas recomendadas deben evaluarse para determinar su efectividad y realismo. En general, las acciones correctivas tienen como objetivo lograr lo siguiente:</p>
+                    <p class="acr-highlight-text">Las acciones correctivas recomendadas deben evaluarse para determinar su efectividad...</p>
                 </div>
                 <div class="acr-list">
-                    <div class="acr-list-item">Cambiar la probabilidad del evento de enfoque y/o sus consecuencias (es decir, reducir la probabilidad o consecuencia de eventos indeseables o aumentar la probabilidad o consecuencia de eventos exitosos)</div>
-                    <div class="acr-list-item">No introducir nuevos riesgos inaceptables, por ejemplo: la seguridad de otros sistemas no debe verse degradada por la acción correctiva propuesta.</div>
+                    <div class="acr-list-item">Reducir la probabilidad o consecuencia de eventos indeseables.</div>
+                    <div class="acr-list-item">No introducir nuevos riesgos inaceptables.</div>
                 </div>
                 <div class="acr-methodology-tag">ACR – Metodología por árbol lógico de fallas</div>
                 <div class="acr-progress-bar">
                     <div class="acr-progress-fill" style="width: 85%;"></div>
                 </div>
-                </div>
             </div>
+        </div>
 
-            <div class="acr-section" data-section="seguimiento">
-                <div class="acr-section-header">
+        <div class="acr-section" data-section="seguimiento">
+            <div class="acr-section-header">
                 <h2 class="acr-section-title">Plan de Seguimiento</h2>
                 <div class="acr-toggle-icon">+</div>
-                </div>
-                <div class="acr-section-content">
-                <p class="acr-intro-text">Luego de finalizar el análisis causa raíz o tener un avance considerable que permita el inicio de acciones por etapas, se recomienda emplear dos planes de seguimiento:</p>
-                
+            </div>
+            <div class="acr-section-content">
+                <p class="acr-intro-text">Luego de finalizar el análisis causa raíz o tener un avance considerable...</p>
                 <h3 class="acr-subtitle">Primer Plan: Ejecución e Implantación</h3>
                 <div class="acr-highlight-box">
-                    <p class="acr-highlight-text">El primero dirigido a garantizar la ejecución e implantación oportuna de las acciones, de acuerdo con lo programado según las prioridades</p>
+                    <p class="acr-highlight-text">Garantizar la ejecución oportuna de las acciones.</p>
                 </div>
-                <p class="acr-intro-text">Organice un plan de acción de ejecución e implantación de acciones, para vigilar el cumplimiento en tiempo y forma, de acuerdo con la prioridad del programa establecido.</p>
-
+                <p class="acr-intro-text">Organice un plan de acción de ejecución e implantación...</p>
                 <h3 class="acr-subtitle">Segundo Plan: Evaluación del Desempeño</h3>
                 <div class="acr-highlight-box">
-                    <p class="acr-highlight-text">Un segundo plan, dirigido a evaluar el desempeño de las acciones, una vez ejecutadas o implantadas.</p>
+                    <p class="acr-highlight-text">Un segundo plan, dirigido a evaluar el desempeño de las acciones.</p>
                 </div>
-                <p class="acr-intro-text">Una vez ejecutadas e implantadas las acciones, integre un plan de seguimiento de resultados. Es importante establecer los objetivos de cada acción o grupo de acciones y adoptar un sistema de medición (KPIs) para monitorear el nivel de rendimiento de cada acción o grupo de acciones, en función del mejoramiento esperado.</p>
-                
+                <p class="acr-intro-text">Una vez ejecutadas e implantadas las acciones, integre un plan de seguimiento...</p>
                 <div class="acr-stats-container">
                     <div class="acr-stat-card">
-                    <p class="acr-stat-number">2</p>
-                    <p class="acr-stat-label">Planes de Seguimiento</p>
+                        <p class="acr-stat-number">2</p>
+                        <p class="acr-stat-label">Planes de Seguimiento</p>
                     </div>
                     <div class="acr-stat-card">
-                    <p class="acr-stat-number">KPI</p>
-                    <p class="acr-stat-label">Indicadores Clave</p>
+                        <p class="acr-stat-number">KPI</p>
+                        <p class="acr-stat-label">Indicadores Clave</p>
                     </div>
                     <div class="acr-stat-card">
-                    <p class="acr-stat-number">100%</p>
-                    <p class="acr-stat-label">Monitoreo Continuo</p>
+                        <p class="acr-stat-number">100%</p>
+                        <p class="acr-stat-label">Monitoreo Continuo</p>
                     </div>
                 </div>
-
                 <div class="acr-methodology-tag">ACR – Metodología por árbol lógico de fallas</div>
                 <div class="acr-progress-bar">
                     <div class="acr-progress-fill" style="width: 100%;"></div>
                 </div>
-                </div>
             </div>
-
-            <div style="margin-bottom: 90px;"></div>
-
         </div>
+
+        <div style="margin-bottom: 90px;"></div>
+    </div>
+
+</div>
+
+
+        
 
         <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -351,7 +399,7 @@
 
           <!-- Audio element oculto -->
           <audio id="audioPlayer" preload="metadata" autoplay>
-              <source src="../assets/audio/M3p3.wav" type="audio/mp3" />
+              <source src="../assets/audio/M1_paginax.wav" type="audio/mp3" />
               Tu navegador no soporta el elemento de audio.
           </audio>
       </div>
