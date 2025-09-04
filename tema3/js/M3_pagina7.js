@@ -1,7 +1,7 @@
 // Funciones de navegación y SCORM
         function goToNextPage() {
             // Redirigir a la siguiente página
-            window.location.href = 'M3_pagina8.html';
+            window.location.href = 'M3_pagina8_1.html';
         }
 
         function backPage() {

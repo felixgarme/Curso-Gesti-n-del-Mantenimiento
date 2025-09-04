@@ -1,0 +1,284 @@
+body {
+  background-color: #ffffff;
+  color: var(--color-gris);
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo responsive */
+.logo-container {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: clamp(150px, 15vw, 200px);
+  margin: 3vh 3vh;
+}
+
+.container {
+  margin: auto;
+}
+
+/* Hero Section */
+.page-header {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto 60px;
+}
+
+.page-header h1 {
+  font-weight: normal;
+  background: var(--degrade-textos, linear-gradient(278deg, #7BDBFF 8.87%, #55b5da 39.24%, #3937bd 44.76%, #ea0606 54.73%, #eda3a4 100.62%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+h4 {
+  color: var(--color-azul);
+  font-weight: normal;
+}
+
+/* Section styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.acr3-section-header h2 {
+  margin-bottom: 15px;
+  font-weight: normal;
+  color: var(--color-azul);
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-weight: normal;
+  color: var(--color-azul);
+}
+
+.acr3-section-header p {
+  font-size: var(--font-6);
+  color: var(--color-gris);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content-section > .section-title {
+  font-size: var(--font-4);
+}
+
+/* Continue button */
+.start-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .logo {
+    width: 100px;
+  }
+
+  .logo-container {
+    top: 15px;
+    right: 15px;
+  }
+
+  .start-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/*ESTILOS DE INTERACTIVO*/
+
+    :root {
+        --acr3-color-blanco: #FFFFFF;
+        --acr3-color-fondo: #f8f9fa;
+        --acr3-color-azul-oscuro: #0a2540;
+        --acr3-color-azul-medio: #0052cc;
+        --acr3-color-celeste: #007bff;
+        --acr3-color-gris-texto: #333;
+        --acr3-color-gris-claro: #e9ecef;
+        --acr3-color-rojo: #e53e3e;
+        --acr3-color-verde: #38a169;
+        --acr3-border-radius: 16px;
+        --acr3-shadow: 0 10px 30px rgba(0, 82, 204, 0.1);
+        --acr3-transition: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --acr3-font-family: 'Poppins', sans-serif; /* Asegúrate de tener Poppins cargada */
+    }
+
+    /* --- ESTILO BASE DEL CONTENEDOR --- */
+    .acr3-main-container {
+        font-family: var(--acr3-font-family);
+        background-color: var(--acr3-color-blanco);
+        color: var(--acr3-color-gris-texto);
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .acr3-section {
+        padding: 6rem 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        line-height: 2.1;
+    }
+    .acr3-section:nth-child(odd) {
+        background-color: var(--acr3-color-fondo);
+    }
+    
+    .acr3-section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .acr3-section-header p {
+        font-size: 1.1rem;
+        color: var(--acr3-color-gris-texto);
+        max-width: 800px;
+        line-height: 1.7;
+    }
+
+    /* --- ANIMACIÓN DE SCROLL --- */
+    .acr3-animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .acr3-animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* --- TEMA 1: INTRODUCCIÓN (MORPHING SVG) --- */
+    .acr3-intro-layout { 
+        display: flex; 
+        align-items: center; 
+        gap: 3rem; 
+        width: 100%; 
+    }
+    .acr3-intro-text { 
+        flex: 1.2; /* Dar un poco más de espacio al texto */
+        text-align: left;
+    }
+    .acr3-intro-image-container { 
+        flex: 1; 
+    }
+    .acr3-intro-image {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        border-radius: var(--acr3-border-radius);
+        box-shadow: var(--acr3-shadow);
+    }
+
+    /* --- TEMA 2: EVENTO TOPE (TIMELINE INTERACTIVO) --- */
+    .acr3-timeline-item {
+        padding: 1rem; margin-left: 2rem; border-left: 3px solid var(--acr3-color-gris-claro);
+        cursor: pointer; transition: background-color 0.3s ease;
+    }
+    .acr3-timeline-item.active { border-left-color: var(--acr3-color-celeste); }
+    .acr3-timeline-item:hover { background-color: var(--acr3-color-fondo); }
+    .acr3-timeline-info { flex-grow: 1; background: var(--acr3-color-fondo); padding: 2rem; border-radius: var(--acr3-border-radius); }
+
+    /* --- TEMA 3: LOS HECHOS (TARJETAS QUE SE REVELAN) --- */
+    .acr3-facts-container { display: flex; gap: 2rem; width: 100%; }
+    .acr3-fact-card {
+        background: var(--acr3-color-blanco); padding: 2rem; border-radius: var(--acr3-border-radius);
+        box-shadow: var(--acr3-shadow); flex: 1; text-align: center;
+    }
+    .acr3-question-card {
+        background: var(--acr3-color-azul-oscuro); color: var(--acr3-color-blanco);
+        font-size: 1.5rem; display: flex; align-items: center; justify-content: center;
+        cursor: pointer;
+    }
+    .acr3-question-card .question-mark { font-size: 4rem; transition: transform 0.5s ease; }
+    .acr3-question-card:hover .question-mark { transform: scale(1.2) rotate(10deg); }
+
+    /* --- TEMA 4: PRIORIZACIÓN (MINI-EJERCICIO DRAG & DROP) --- */
+    .acr3-triage-container { 
+        display: flex; 
+        gap: 2rem; 
+        width: 100%; 
+        align-items: flex-start;
+    }
+    .acr3-triage-files { flex-basis: 35%; }
+    .acr3-file {
+        background: var(--acr3-color-blanco); padding: 1.5rem; border-radius: 8px;
+        margin-bottom: 1rem; box-shadow: var(--acr3-shadow); cursor: grab; border-left: 5px solid;
+    }
+    .acr3-file.dragging { opacity: 0.6; }
+    .acr3-triage-bins { flex-grow: 1; display: flex; flex-direction: column; gap: 1rem; }
+    .acr3-bin {
+        padding: 2rem; background: var(--acr3-color-fondo); border-radius: var(--acr3-border-radius);
+        border: 2px dashed var(--acr3-color-gris-claro); min-height: 100px;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    .acr3-bin.hover { border-color: var(--acr3-color-celeste); background-color: #e7f5ff; }
+
+    /* --- TEMA 5: FUENTES DE DATOS (DATA HUB) --- */
+    .acr3-data-hub { width: 100%; text-align: center; }
+    .acr3-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .acr3-hub-item {
+        background: var(--acr3-color-blanco); padding: 1.5rem; border-radius: var(--acr3-border-radius);
+        box-shadow: var(--acr3-shadow); cursor: pointer; transition: transform 0.3s ease;
+    }
+    .acr3-hub-item:hover { transform: translateY(-10px); }
+    #acr3-hub-info-panel {
+        margin-top: 2rem; padding: 1.5rem; background: var(--acr3-color-azul-oscuro);
+        color: var(--acr3-color-blanco); border-radius: var(--acr3-border-radius); min-height: 80px;
+    }
+
+    /* --- TEMA 6 Y 7: DATOS BLANDOS Y EJEMPLOS (SIMULADOR) --- */
+    .acr3-consensus-tool {
+        width: 100%; max-width: 800px; background: var(--acr3-color-fondo);
+        padding: 2rem; border-radius: var(--acr3-border-radius);
+    }
+    .acr3-scale-example { margin: 1rem 0; padding: 1rem; background: var(--acr3-color-blanco); border-radius: 8px; }
+    #acr3-consensus-sliders label { font-weight: 600; }
+    #acr3-total-display { font-size: 1.2rem; font-weight: 700; text-align: center; margin-top: 1rem; }
+
+    /* --- RESPONSIVE DESIGN --- */
+    @media (max-width: 992px) {
+        .acr3-intro-layout {
+            flex-direction: column-reverse; /* Imagen arriba, texto abajo */
+        }
+        .acr3-intro-text {
+            text-align: center;
+        }
+        .acr3-facts-container, .acr3-triage-container { 
+            flex-direction: column; 
+        }
+        .acr3-triage-files { flex-basis: 100%; }
+    }

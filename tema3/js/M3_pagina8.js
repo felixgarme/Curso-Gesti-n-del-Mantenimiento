@@ -6,7 +6,7 @@
 
         function backPage() {
             // Redirigir a la página anterior
-            window.location.href = 'M3_pagina7.html';
+            window.location.href = 'M3_pagina8_2.html';
         }
 
         // Iniciar SCORM
