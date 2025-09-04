@@ -132,8 +132,9 @@ box-shadow: 0 4px 15px rgba(3, 23, 148, 0.3);
 }
 
 .rcm-nav-btn:hover {
-background: #FF0000;
+background: #ffffff;
 transform: scale(1.1);
+color: #031794;
 }
 
 .rcm-nav-btn:disabled {

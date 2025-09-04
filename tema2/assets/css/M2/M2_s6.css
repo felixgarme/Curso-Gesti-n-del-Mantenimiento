@@ -193,6 +193,18 @@
     justify-content: space-between;
     margin: 10px 0;
     gap: 10px;
+
+    display: flex;
+    justify-content: space-between; /* Anterior a la izquierda, Siguiente a la derecha */
+    margin-top: 20px;
+}
+
+#nextBtn {
+    margin-left: auto; /* Empuja el botón "Siguiente" a la derecha */
+}
+
+.rcm-navigation .button2 {
+  min-width: 120px; /* opcional: da tamaño uniforme */
 }
 
 .rcm-nav-button {

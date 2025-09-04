@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <button class="back-page-btn" onclick="backPage()">
+    <button class="back-page-btn" id="backPageBtn" onclick="backPage()">
         <span class="arrow">❮</span>
     </button>
     <nav id="sidebar" class="close">
@@ -140,9 +140,10 @@
         </div>
 
         <div class="rcm-navigation">
-            <button class="button2" id="prevBtn" onclick="previousSection()" disabled>Anterior</button>
+            <button class="button2" id="prevBtn" onclick="previousSection()">Anterior</button>
             <button class="button2" id="nextBtn" onclick="nextSection()">Siguiente</button>
         </div>
+
     </div>
 
     <script>
@@ -166,13 +167,20 @@
                 targetSection.classList.add('rcm-fade-in');
             }
 
-            document.getElementById('prevBtn').disabled = sectionNumber === 1;
-            document.getElementById('nextBtn').disabled = sectionNumber === totalSections;
-            
-            if (sectionNumber === totalSections) {
-                document.getElementById('nextBtn').textContent = 'Completado';
+            // ocultar botón "anterior" si no hay nada antes
+            const prevBtn = document.getElementById('prevBtn');
+            if (sectionNumber === 1) {
+                prevBtn.style.display = "none";
             } else {
-                document.getElementById('nextBtn').textContent = 'Siguiente';
+                prevBtn.style.display = "inline-block";
+            }
+
+            // ocultar botón "siguiente" si no hay nada después
+            const nextBtn = document.getElementById('nextBtn');
+            if (sectionNumber === totalSections) {
+                nextBtn.style.display = "none";
+            } else {
+                nextBtn.style.display = "inline-block";
             }
 
             updateProgress();
@@ -239,6 +247,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             showSection(1);
             updateProgress();
+
+            // Ocultar botón "atrás" si no hay página anterior
+            const backPageBtn = document.getElementById("backPageBtn");
+            if (!document.referrer || document.referrer === window.location.href) {
+                backPageBtn.style.display = "none";
+            }
         });
 
         window.addEventListener('resize', function() {
