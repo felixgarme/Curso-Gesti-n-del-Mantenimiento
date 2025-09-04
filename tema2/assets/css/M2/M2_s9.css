@@ -44,7 +44,7 @@
 }
 
 .rcm-nav-btn {
-  background: #031794;
+  /* background: #031794;
   color: #FFFFFF;
   border: 1px solid #DDE8F5;
   padding: 8px 10px;
@@ -52,19 +52,19 @@
   cursor: pointer;
   font-size: 0.9rem;
   transition: all 0.3s ease;
-  min-width: 120px;
+  min-width: 120px; */
 }
 
 .rcm-nav-btn:hover {
-  background: #2A5BDF;
+  /* background: #2A5BDF;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(3, 23, 148, 0.3);
+  box-shadow: 0 4px 8px rgba(3, 23, 148, 0.3); */
 }
 
 .rcm-nav-btn.active {
-  background: #6B8BDF;
+  /* background: #6B8BDF;
   border-color: #031794;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 .rcm-content {

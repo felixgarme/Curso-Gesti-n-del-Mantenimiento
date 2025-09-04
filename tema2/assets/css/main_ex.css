@@ -1139,3 +1139,8 @@ p {
     box-shadow: 0 8px 20px rgba(29, 78, 216, 0.25);
 }
 
+.button2:active {
+background: var(--color-azul-oscuro);
+
+}
+

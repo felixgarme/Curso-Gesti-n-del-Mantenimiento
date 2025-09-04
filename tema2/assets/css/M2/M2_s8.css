@@ -23,6 +23,10 @@
 --title-1: linear-gradient(90deg, #FF0000, #351EBD, #3479F6, #1F87C6);
 --title-2: #031794;
 
+/* MAIN */
+--color-azul: #031795;
+--color-azul-oscuro: #1D107A;
+
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 padding: 0;
 margin: 0;
@@ -59,7 +63,7 @@ flex-wrap: wrap;
 }
 
 .nav-btn {
-background: var(--background-1);
+/* background: var(--background-1);
 border: 2px solid var(--border-2);
 color: var(--text-3);
 padding: 8px 10px;
@@ -67,18 +71,18 @@ border-radius: 8px;
 cursor: pointer;
 font-weight: 600;
 transition: all 0.3s ease;
-font-size: clamp(0.9rem, 2.5vw, 1rem);
+font-size: clamp(0.9rem, 2.5vw, 1rem); */
 }
 
 .nav-btn:hover {
-background: var(--info-2);
-transform: translateY(-2px);
+/* background: var(--info-2);
+transform: translateY(-2px); */
 }
 
 .nav-btn.active {
-background: var(--gradient-1);
+/* background: var(--gradient-1);
 color: var(--text-4);
-border-color: var(--neutral-2);
+border-color: var(--neutral-2); */
 }
 
 /* Contenido principal */
@@ -180,7 +184,7 @@ margin: 10px 0;
 }
 
 .objective-card {
-background: var(--gradient-2);
+background: var(--color-azul);
 color: var(--text-4);
 border-radius: 10px;
 padding: 10px;
