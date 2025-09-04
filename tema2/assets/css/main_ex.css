@@ -1140,7 +1140,7 @@ p {
 }
 
 .button2:active {
-background: var(--color-azul-oscuro);
+background: var(--color-azul-oscuro) !important; 
 
 }
 

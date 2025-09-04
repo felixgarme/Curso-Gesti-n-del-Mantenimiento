@@ -87,10 +87,11 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    font-weight: 600;
+    font-weight: 400;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     animation: zoomIn 0.5s ease-out forwards;
     opacity: 0;
+  
 }
 
 .nav-btn:nth-child(2) {
